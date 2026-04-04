@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NFE LLC — Business Headquarters</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0a0a0a;
+      --ink2: #222;
+      --ink3: #555;
+      --ink4: #888;
+      --paper: #fafaf8;
+      --paper2: #f5f4f0;
+      --paper3: #eceae3;
+      --gold: #a07800;
+      --gold-l: #fef3c7;
+      --gold-b: #d4a017;
+      --green: #15803d;
+      --green-l: #f0fdf4;
+      --blue: #1d4ed8;
+      --blue-l: #eff6ff;
+      --red: #b91c1c;
+      --red-l: #fef2f2;
+      --border: #dbd9d1;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      padding-top: 56px;
+    }
+
+    /* ── NAV ── */
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      height: 56px;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: baseline;
+      gap: 2px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .nav-brand-nfe {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 22px;
+      color: var(--gold);
+    }
+    .nav-brand-llc {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      color: var(--ink);
+      font-weight: 500;
+    }
+    .nav-center {
+      display: flex;
+      align-items: stretch;
+      height: 56px;
+      gap: 0;
+    }
+    .nav-tab {
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      padding: 0 14px;
+      height: 100%;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink3);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .nav-tab:hover { color: var(--ink); }
+    .nav-tab.active {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex-shrink: 0;
+    }
+    .email {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--ink4);
+    }
+    .book-btn {
+      background: var(--gold);
+      color: white;
+      font-size: 12px;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      text-decoration: none;
+      margin-left: 12px;
+      display: inline-block;
+      transition: opacity 0.15s;
+    }
+    .book-btn:hover { opacity: 0.88; }
+
+    /* ── HERO ── */
+    .hero {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(160,120,0,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .hero-left { flex: 1; }
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .hero-h1-line1 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 72px;
+      color: var(--ink);
+      line-height: 1;
+      margin: 0;
+    }
+    .hero-h1-line2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 48px;
+      color: var(--ink3);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+    .hero-sub {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      color: var(--ink3);
+      line-height: 1.7;
+      max-width: 480px;
+      margin-bottom: 28px;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .hero-tag {
+      background: var(--paper2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      color: var(--ink3);
+    }
+    .hero-stats {
+      width: 220px;
+      flex-shrink: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      text-align: right;
+    }
+    .stat-value {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 40px;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--ink4);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    /* ── CONTENT WRAP ── */
+    .content-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 32px 80px;
+    }
+
+    /* ── TAB PANES ── */
+    .tab-pane { display: none; }
+    .tab-pane.active { display: block; }
+
+    /* ── SECTION HEADER ── */
+    .section-header { margin-bottom: 40px; }
+    .eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 44px;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    /* ── THREE COL ── */
+    .three-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .analogy-card {
+      border-radius: 6px;
+      padding: 28px;
+    }
+    .analogy-card.refrigerator {
+      background: var(--paper2);
+      border: 1px solid var(--border);
+    }
+    .analogy-card.manufacturer {
+      background: #fff5f5;
+      border: 1px solid #fca5a5;
+      opacity: 0.85;
+    }
+    .analogy-card.coke {
+      background: var(--gold-l);
+      border: 2px solid var(--gold-b);
+    }
+    .analogy-icon { font-size: 32px; margin-bottom: 12px; display: block; }
+    .analogy-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+    .analogy-label.lbl-gray { color: var(--ink4); }
+    .analogy-label.lbl-red { color: var(--red); }
+    .analogy-label.lbl-gold { color: var(--gold); }
+    .analogy-title {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 26px;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .analogy-title.ttl-ink2 { color: var(--ink2); }
+    .analogy-title.ttl-red { color: var(--red); }
+    .analogy-title.ttl-gold { color: var(--gold); }
+    .analogy-body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: var(--ink3);
+      line-height: 1.6;
+    }
+
+    /* ── MOAT BLOCK ── */
+    .moat-block {
+      background: var(--ink);
+      border-radius: 8px;
+      padding: 48px 56px;
+      margin-bottom: 48px;
+      text-align: center;
+    }
+    .moat-quote {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 32px;
+      color: var(--gold-b);
+      line-height: 1.4;
+      border: none;
+      margin: 0 0 16px;
+    }
+    .moat-attr {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: #888;
+      letter-spacing: 0.1em;
+    }
+
+    /* ── PITCH LINES ── */
+    .pitch-section-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+    .pitch-card {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      padding: 24px 28px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+    .pitch-card.door {
+      background: white;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+    }
+    .pitch-card.pushback {
+      background: var(--blue-l);
+      border: 1px solid #bfdbfe;
+      border-left: 3px solid var(--blue);
+    }
+    .pitch-card.proof {
+      background: var(--green-l);
+      border: 1px solid #86efac;
+      border-left: 3px solid var(--green);
+    }
+    .pitch-num {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 32px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .pitch-num.gold { color: var(--gold); }
+    .pitch-num.blue { color: var(--blue); }
+    .pitch-num.green { color: var(--green); }
+    .pitch-content-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+    .pitch-content-label.gold { color: var(--ink4); }
+    .pitch-content-label.blue { color: var(--blue); }
+    .pitch-content-label.green { color: var(--green); }
+    .pitch-body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      color: var(--ink2);
+      line-height: 1.7;
+    }
+
+    /* ── SERVICE LAYERS ── */
+    .layer-card {
+      display: flex;
+      min-height: 120px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .layer-card.layer-3-highlight {
+      border: 2px solid var(--gold-b);
+      box-shadow: 0 4px 16px rgba(160,120,0,0.12);
+    }
+    .layer-num {
+      width: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', cursive;
+      font-size: 64px;
+      flex-shrink: 0;
+    }
+    .layer-num.amber { background: var(--gold-l); color: var(--gold); }
+    .layer-num.blue { background: var(--blue-l); color: var(--blue); }
+    .layer-num.gold { background: var(--gold-l); color: var(--gold); }
+    .layer-num.teal { background: #f0fdfa; color: #0d9488; }
+    .layer-middle {
+      flex: 1;
+      padding: 24px 28px;
+    }
+    .layer-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+    }
+    .layer-label.amber { color: var(--gold); }
+    .layer-label.blue { color: var(--blue); }
+    .layer-label.gold { color: var(--gold); }
+    .layer-label.teal { color: #0d9488; }
+    .layer-title {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 28px;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .layer-desc {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      color: var(--ink3);
+      line-height: 1.6;
+    }
+    .layer-right {
+      width: 180px;
+      padding: 24px;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 8px;
+      background: var(--paper2);
+      border-left: 1px solid var(--border);
+    }
+    .layer-price {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 28px;
+      line-height: 1;
+    }
+    .layer-price.amber { color: var(--gold); }
+    .layer-price.blue { color: var(--blue); }
+    .layer-price.gold { color: var(--gold); }
+    .layer-price.teal { color: #0d9488; }
+    .layer-time {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--ink4);
+    }
+    .layer-tag {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .layer-tag.amber { background: var(--gold-l); color: var(--gold); border: 1px solid var(--gold-b); }
+    .layer-tag.blue { background: var(--blue-l); color: var(--blue); border: 1px solid #bfdbfe; }
+    .layer-tag.gold-filled { background: var(--gold); color: white; border: 1px solid var(--gold); }
+    .layer-tag.teal { background: #f0fdfa; color: #0d9488; border: 1px solid #99f6e4; }
+
+    /* ── FLYWHEEL ── */
+    .flywheel-wrap {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px;
+      margin: 40px 0;
+    }
+    .flywheel-title { font-family: 'DM Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 12px; }
+    .flywheel-subtitle { font-family: 'Bebas Neue', cursive; font-size: 32px; color: var(--ink); margin-bottom: 24px; }
+    .flywheel-nodes {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+    .fw-node {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      background: var(--paper2);
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: 20px;
+      color: var(--ink3);
+    }
+    .fw-arrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 14px;
+      color: var(--ink4);
+    }
+    .flywheel-caption {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      color: var(--ink4);
+      font-style: italic;
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    /* ── VERTICALS ── */
+    .verticals-section { margin-top: 48px; }
+    .verticals-eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 8px; }
+    .verticals-title { font-family: 'Bebas Neue', cursive; font-size: 32px; color: var(--ink); margin-bottom: 24px; }
+    .verticals-grid { display: grid; grid-template-columns: 1fr; gap: 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+    .vertical-section-head {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 10px 16px;
+      font-weight: 500;
+    }
+    .vertical-section-head.green { color: var(--green); border-bottom: 2px solid var(--green); background: var(--green-l); }
+    .vertical-section-head.blue { color: var(--blue); border-bottom: 2px solid var(--blue); background: var(--blue-l); }
+    .vertical-section-head.gold { color: var(--gold); border-bottom: 2px solid var(--gold); background: var(--gold-l); }
+    .vertical-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      background: white;
+    }
+    .vertical-row:last-child { border-bottom: none; }
+    .vertical-emoji { width: 24px; flex-shrink: 0; font-size: 16px; }
+    .vertical-name { font-weight: 600; color: var(--ink); min-width: 180px; }
+    .vertical-desc { color: var(--ink3); }
+
+    /* ── RESEARCH TIERS ── */
+    .tier-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .tier-card { border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+    .tier-head { padding: 20px 24px; color: white; }
+    .tier-head.amber { background: var(--gold); }
+    .tier-head.blue { background: var(--blue); }
+    .tier-head.teal { background: #0d9488; }
+    .tier-head-title { font-family: 'Bebas Neue', cursive; font-size: 22px; margin-bottom: 8px; }
+    .tier-eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; opacity: 0.8; margin-bottom: 8px; }
+    .tier-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 3px;
+      margin-right: 4px;
+      margin-top: 6px;
+    }
+    .tier-deliverable { font-family: 'DM Sans', sans-serif; font-size: 12px; opacity: 0.85; margin-top: 8px; }
+    .tier-body { background: white; padding: 20px 24px; }
+    .tier-body ul { list-style: none; padding: 0; }
+    .tier-body li { font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--ink3); line-height: 1.8; padding-left: 14px; position: relative; }
+    .tier-body li::before { content: '•'; position: absolute; left: 0; color: var(--gold); }
+
+    /* ── VARIABLE SUBSTITUTION ── */
+    .var-panel {
+      border: 2px solid var(--gold-b);
+      border-radius: 8px;
+      padding: 24px;
+      background: var(--gold-l);
+      margin-bottom: 40px;
+    }
+    .var-panel-title { font-family: 'DM Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 16px; }
+    .var-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+    .var-pill {
+      background: var(--ink);
+      color: var(--gold-b);
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    /* ── TOKEN RULES ── */
+    .token-block { margin-bottom: 48px; }
+    .token-head {
+      background: var(--red);
+      color: white;
+      padding: 14px 20px;
+      border-radius: 8px 8px 0 0;
+    }
+    .token-head-title { font-family: 'Bebas Neue', cursive; font-size: 22px; color: white; }
+    .token-head-sub { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 4px; }
+    .token-body {
+      background: var(--red-l);
+      border: 1px solid #fca5a5;
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      padding: 20px 24px;
+    }
+    .token-rule {
+      display: flex;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid #fca5a5;
+      align-items: flex-start;
+    }
+    .token-rule:last-child { border-bottom: none; }
+    .token-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      background: var(--red);
+      color: white;
+      border-radius: 4px;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+    .token-rule-text {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    .token-rule-text strong { font-weight: 600; }
+
+    /* ── DISCOVERY TIMELINE ── */
+    .week-headers {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+    .week-header-pill {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 4px;
+      text-align: center;
+    }
+    .week-header-pill.w1 { background: var(--ink); }
+    .week-header-pill.w2 { background: var(--ink2); }
+    .day-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .day-card {
+      border-radius: 6px;
+      padding: 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      text-align: center;
+      line-height: 1.4;
+    }
+    .day-card.teal { background: #f0fdfa; border: 1px solid #99f6e4; color: #0d9488; }
+    .day-card.blue { background: var(--blue-l); border: 1px solid #bfdbfe; color: var(--blue); }
+    .day-card.amber { background: var(--gold-l); border: 1px solid var(--gold-b); color: var(--gold); }
+    .day-card.green { background: var(--green-l); border: 1px solid #86efac; color: var(--green); }
+    .day-card.milestone { background: var(--gold); border: 2px solid var(--gold); color: white; font-weight: 600; }
+    .day-card.milestone-close { background: var(--ink); border: 2px solid var(--ink); color: white; font-weight: 600; }
+    .timeline-wrap { margin-bottom: 40px; }
+
+    /* ── ACCORDION ── */
+    .accordion-cards { margin-bottom: 40px; }
+    details {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    summary {
+      background: var(--paper2);
+      padding: 16px 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+      list-style: none;
+      user-select: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: '▶'; font-size: 12px; color: var(--ink4); transition: transform 0.2s; }
+    details[open] summary::after { content: '▲'; }
+    .accordion-body { padding: 20px 24px; background: white; }
+    .accordion-body ul { list-style: none; padding: 0; }
+    .accordion-body li {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--ink3);
+      padding: 6px 0 6px 20px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .accordion-body li:last-child { border-bottom: none; }
+    .accordion-body li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+
+    /* ── DISCOVERY CHECKLIST ── */
+    .checklist-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px; }
+    .checklist-group h4 {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .check-item {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: var(--ink3);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .check-box { font-family: 'DM Mono', monospace; color: var(--gold); flex-shrink: 0; }
+
+    /* ── CLIENT TABLE ── */
+    .client-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+    .client-table th {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ink4);
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 2px solid var(--border);
+      background: var(--paper2);
+    }
+    .client-table td {
+      padding: 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+    }
+    .case-num { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--gold); font-weight: 500; }
+    .client-name { font-weight: 600; color: var(--ink); }
+    .status-pill { display: inline-block; padding: 3px 10px; border-radius: 20px; font-family: 'DM Mono', monospace; font-size: 11px; }
+    .status-green { background: var(--green-l); color: var(--green); border: 1px solid #86efac; }
+    .status-amber { background: var(--gold-l); color: var(--gold); border: 1px solid var(--gold-b); }
+    .layer-pill { background: var(--paper2); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink3); }
+    .client-result { font-size: 13px; color: var(--ink3); line-height: 1.6; }
+    .note-card { background: var(--gold-l); border: 1px solid var(--gold-b); border-radius: 8px; padding: 24px 28px; margin-top: 24px; }
+    .note-eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 10px; }
+    .note-body { font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--ink3); line-height: 1.7; }
+
+    /* ── TEMPLATES ── */
+    .tmpl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+    .tmpl-card { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 12px; }
+    .tmpl-head { display: flex; align-items: center; gap: 12px; }
+    .tmpl-status { font-family: 'DM Mono', monospace; font-size: 10px; padding: 3px 8px; border-radius: 3px; background: var(--green-l); color: var(--green); border: 1px solid #86efac; flex-shrink: 0; }
+    .tmpl-status.draft { background: var(--gold-l); color: var(--gold); border-color: var(--gold-b); }
+    .tmpl-card h3 { font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; color: var(--ink); }
+    .tmpl-desc { font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--ink3); line-height: 1.6; flex: 1; }
+    .tmpl-btn {
+      display: inline-block;
+      padding: 8px 16px;
+      background: var(--paper2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ink3);
+      text-decoration: none;
+      width: fit-content;
+      transition: border-color 0.15s, color 0.15s;
+      cursor: pointer;
+    }
+    .tmpl-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .tmpl-btn.disabled { opacity: 0.5; cursor: default; }
+    .tmpl-btn-note { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--ink4); margin-top: -6px; }
+
+    /* ── LINKS ── */
+    .three-link-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+    .link-group { margin-bottom: 32px; }
+    .link-group-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .link-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      gap: 12px;
+    }
+    .link-name { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; color: var(--ink2); }
+    .link-url { color: var(--gold); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 12px; }
+    .link-url:hover { text-decoration: underline; }
+    .link-plain { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--ink3); }
+    .local-files-section {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
+      background: var(--paper2);
+    }
+    .local-files-title { font-family: 'DM Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink4); margin-bottom: 16px; }
+    .local-file-row { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink4); font-style: italic; padding: 6px 0; border-bottom: 1px solid var(--border); }
+    .local-file-row:last-child { border-bottom: none; }
+    .local-file-label { color: var(--ink3); font-weight: 500; }
+
+    /* ── FOOTER ── */
+    .site-footer { background: var(--ink); color: rgba(255,255,255,0.6); padding: 48px 32px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; align-items: center; }
+    .footer-logo { display: flex; align-items: baseline; gap: 2px; margin-bottom: 8px; }
+    .footer-left p { font-family: 'DM Sans', sans-serif; font-size: 13px; margin-top: 6px; color: rgba(255,255,255,0.5); }
+    .footer-quote { font-family: 'Bebas Neue', cursive; font-size: 20px; color: var(--gold-b); line-height: 1.5; text-align: center; }
+    .footer-right { text-align: right; font-family: 'DM Mono', monospace; font-size: 12px; line-height: 2; color: rgba(255,255,255,0.4); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .hero-inner { flex-direction: column; }
+      .hero-stats { display: none; }
+      .three-col { grid-template-columns: 1fr; }
+      .tier-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; text-align: center; }
+      .footer-right { text-align: center; }
+      .layer-card { flex-direction: column; }
+      .layer-num { width: 100%; height: 60px; }
+      .layer-right { width: 100%; text-align: left; border-left: none; border-top: 1px solid var(--border); align-items: flex-start; }
+      .client-table { font-size: 12px; }
+      .content-wrap { padding: 32px 16px 60px; }
+      .nav-center { display: none; }
+      .email { display: none; }
+      .three-link-cols { grid-template-columns: 1fr; }
+      .tmpl-grid { grid-template-columns: 1fr; }
+      .var-grid { grid-template-columns: repeat(2, 1fr); }
+      .checklist-cols { grid-template-columns: 1fr; }
+      .site-nav { padding: 0 16px; }
+      .moat-block { padding: 28px 24px; }
+      .moat-quote { font-size: 24px; }
+      .day-grid { grid-template-columns: repeat(3, 1fr); }
+      .week-headers { grid-template-columns: 1fr; gap: 4px; }
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      .site-nav { display: none; }
+      body { padding-top: 0; }
+      .tab-pane { display: block !important; page-break-before: always; }
+      .tab-pane:first-of-type { page-break-before: auto; }
+      .hero { page-break-after: avoid; }
+    }
+
+    /* ── UTILS ── */
+    .intro-para {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      color: var(--ink3);
+      line-height: 1.7;
+      max-width: 680px;
+      margin-bottom: 40px;
+    }
+    .intro-para.italic { font-style: italic; max-width: 100%; }
+  </style>
+</head>
+<body>
+
+  <!-- ── FIXED NAV ── -->
+  <nav class="site-nav">
+    <a class="nav-brand" href="#" title="Necaise Family Enterprises LLC" onclick="switchTab('positioning'); return false;">
+      <span class="nav-brand-nfe">NFE</span>
+      <span class="nav-brand-llc">LLC</span>
+    </a>
+
+    <div class="nav-center">
+      <button class="nav-tab active" data-tab="positioning" onclick="switchTab('positioning')">🥤 Positioning</button>
+      <button class="nav-tab" data-tab="services" onclick="switchTab('services')">📋 Services</button>
+      <button class="nav-tab" data-tab="research" onclick="switchTab('research')">🔍 Research</button>
+      <button class="nav-tab" data-tab="discovery" onclick="switchTab('discovery')">🏗️ Discovery</button>
+      <button class="nav-tab" data-tab="clients" onclick="switchTab('clients')">👥 Clients</button>
+      <button class="nav-tab" data-tab="templates" onclick="switchTab('templates')">📄 Templates</button>
+      <button class="nav-tab" data-tab="links" onclick="switchTab('links')">🔗 Links</button>
+    </div>
+
+    <div class="nav-right">
+      <span class="email">david@trustedservicessd.com</span>
+      <a href="https://calendar.app.google/7DjbWAb9omg1mzL49" target="_blank" class="book-btn">Book a Call →</a>
+    </div>
+  </nav>
+
+  <!-- ── HERO (always visible) ── -->
+  <section class="hero">
+    <div class="content-wrap" style="padding-top:72px;padding-bottom:56px;">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <p class="hero-eyebrow">Necaise Family Enterprises LLC</p>
+          <div class="hero-h1-line1">NFE LLC</div>
+          <div class="hero-h1-line2">BUSINESS HEADQUARTERS</div>
+          <p class="hero-sub">
+            AI automation consulting. Digital footprint intelligence. ICM deployment systems.<br>
+            The cold Coke in an industry selling refrigerators.
+          </p>
+          <div class="hero-tags">
+            <span class="hero-tag">FootprintIQ</span>
+            <span class="hero-tag">ICM Deployment</span>
+            <span class="hero-tag">CMMC Advisory</span>
+            <span class="hero-tag">NFE LLC</span>
+          </div>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="stat-value">1</div>
+            <div class="stat-label">Active Clients</div>
+          </div>
+          <div>
+            <div class="stat-value">2</div>
+            <div class="stat-label">Case Studies</div>
+          </div>
+          <div>
+            <div class="stat-value">1.0</div>
+            <div class="stat-label">Framework Version</div>
+          </div>
+          <div>
+            <div class="stat-value">2026</div>
+            <div class="stat-label">Est.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       TAB 1 — POSITIONING
+  ══════════════════════════════════════════ -->
+  <div class="tab-pane" id="tab-positioning">
+    <div class="content-wrap">
+      <div class="section-header">
+        <p class="eyebrow">CORE POSITIONING — EVERY CLIENT, EVERY PITCH</p>
+        <h2>The Coca-Cola Framework</h2>
+      </div>
+
+      <!-- Three Analogy Columns -->
+      <div class="three-col">
+        <div class="analogy-card refrigerator">
+          <span class="analogy-icon">🧊</span>
+          <div class="analogy-label lbl-gray">THE REFRIGERATOR</div>
+          <div class="analogy-title ttl-ink2">The Infrastructure</div>
+          <p class="analogy-body">Anthropic · OpenAI · Google. $20/month. Available to everyone. Commoditizing fast. They build the enabling technology.</p>
+        </div>
+        <div class="analogy-card manufacturer">
+          <span class="analogy-icon">🏭</span>
+          <div class="analogy-label lbl-red">THE MANUFACTURER</div>
+          <div class="analogy-title ttl-red">What NOT To Be</div>
+          <p class="analogy-body">Anyone who resells AI access, sets up a chatbot, or "adds AI" to existing workflows. This is the commodity lane. Avoid it.</p>
+        </div>
+        <div class="analogy-card coke">
+          <span class="analogy-icon">🥤</span>
+          <div class="analogy-label lbl-gold">COCA-COLA ← YOU ARE HERE</div>
+          <div class="analogy-title ttl-gold">The Application Layer</div>
+          <p class="analogy-body">NFE LLC builds the branded cooler, stocks it with the client's specific data, installs it in their building, and connects it to everything they already own. The refrigerator becomes invisible. The cold Coke is all they taste.</p>
+        </div>
+      </div>
+
+      <!-- Moat Quote -->
+      <div class="moat-block">
+        <blockquote class="moat-quote">
+          "The refrigerator is $20/month and available to everyone.<br>
+          What NFE LLC builds on top of it is not available to anyone."
+        </blockquote>
+        <p class="moat-attr">— The NFE LLC Moat</p>
+      </div>
+
+      <!-- Three Pitch Lines -->
+      <p class="pitch-section-title">THE THREE LINES THAT OPEN EVERY DOOR</p>
+
+      <div class="pitch-card door">
+        <div class="pitch-num gold">01</div>
+        <div>
+          <div class="pitch-content-label gold">THE DOOR OPENER</div>
+          <p class="pitch-body">Most businesses use AI like a vending machine — put in a question, get an answer, start over. I build the system that makes it behave like it has been on your team for six months.</p>
+        </div>
+      </div>
+
+      <div class="pitch-card pushback">
+        <div class="pitch-num blue">02</div>
+        <div>
+          <div class="pitch-content-label blue">WHEN THEY PUSH BACK</div>
+          <p class="pitch-body">I'm the Coca-Cola to the AI industry's refrigerator. Anthropic and Google are building the technology. I build the system that makes it work specifically for your business — because it's built around your data, your workflows, your clients, and your existing tools.</p>
+        </div>
+      </div>
+
+      <div class="pitch-card proof">
+        <div class="pitch-num green">03</div>
+        <div>
+          <div class="pitch-content-label green">THE PROOF POINT</div>
+          <p class="pitch-body">You stop explaining. You start executing. The context is already loaded. The playbooks are already written. The system already knows what matters.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       TAB 2 — SERVICES
+  ══════════════════════════════════════════ -->
+  <div class="tab-pane" id="tab-services">
+    <div class="content-wrap">
+      <div class="section-header">
+        <p class="eyebrow">FOUR LAYERS · FROM AUDIT TO EMBEDDED PARTNER</p>
+        <h2>FootprintIQ — Service Model</h2>
+      </div>
+
+      <p class="intro-para">FootprintIQ is the NFE LLC service methodology. Every engagement starts with a brief built before the first meeting. You show up with the cold Coke already in their hand. The layers build on each other — each one creates the conditions for the next.</p>
+
+      <!-- Layer 1 -->
+      <div class="layer-card">
+        <div class="layer-num amber">1</div>
+        <div class="layer-middle">
+          <div class="layer-label amber">FOOTPRINTIQ DIGITAL AUDIT</div>
+          <div class="layer-title">Show up with the brief already built</div>
+          <p class="layer-desc">OSINT research, tech stack audit, security exposure, leadership mapping, competitive gap analysis. Delivered as an interactive HTML artifact — not a PDF. A live URL they can open on their phone. The brief IS the demonstration. Walk in with the cold Coke already poured.</p>
+        </div>
+        <div class="layer-right">
+          <div class="layer-price amber">$1,500</div>
+          <div class="layer-time">2–3 hours</div>
+          <span class="layer-tag amber">THE SIGNATURE MOVE</span>
+        </div>
+      </div>
+
+      <!-- Layer 2 -->
+      <div class="layer-card">
+        <div class="layer-num blue">2</div>
+        <div class="layer-middle">
+          <div class="layer-label blue">CRITICAL FIX SPRINT</div>
+          <div class="layer-title">Implement what the audit found</div>
+          <p class="layer-desc">Hands-on implementation of the top 3–5 findings from the audit. Security remediation. DNS and email authentication. SAM.gov registration. Gravity Forms to CRM connection. Quick wins that demonstrate execution speed and build trust for the deeper engagement.</p>
+        </div>
+        <div class="layer-right">
+          <div class="layer-price blue">$3,500</div>
+          <div class="layer-time">30 days</div>
+          <span class="layer-tag blue">BUILDS TRUST</span>
+        </div>
+      </div>
+
+      <!-- Layer 3 -->
+      <div class="layer-card layer-3-highlight">
+        <div class="layer-num gold">3</div>
+        <div class="layer-middle">
+          <div class="layer-label gold">ICM DEPLOYMENT RETAINER</div>
+          <div class="layer-title">The machine that knows their business</div>
+          <p class="layer-desc">Full 6-layer AI context architecture deployment. The system loads the client's part numbers, clients, workflows, pricing, compliance requirements, and communication style before every session. AI that behaves like it has been on their team for six months. Extremely sticky — the system knows their business cold and switching costs are enormous.</p>
+        </div>
+        <div class="layer-right">
+          <div class="layer-price gold">$2,500/mo</div>
+          <div class="layer-time">Ongoing</div>
+          <span class="layer-tag gold-filled">THE REAL PRODUCT</span>
+        </div>
+      </div>
+
+      <!-- Layer 4 -->
+      <div class="layer-card">
+        <div class="layer-num teal">4</div>
+        <div class="layer-middle">
+          <div class="layer-label teal">CMMC COMPLIANCE ADVISORY</div>
+          <div class="layer-title">Defense contractor compliance</div>
+          <p class="layer-desc">NFE LLC operating as an RPO (Registered Provider Organization). Gap analysis, documentation (SSP/POA&amp;M), technical remediation, pre-assessment preparation, C3PAO referral. For defense subcontractors with NIST 800-171 obligations and upcoming CMMC Level 2 requirements. Phase 2 mandatory assessments: November 2026. C3PAOs already booked 18 months out.</p>
+        </div>
+        <div class="layer-right">
+          <div class="layer-price teal">$5K–$15K</div>
+          <div class="layer-time">Per engagement</div>
+          <span class="layer-tag teal">DEFENSE CHANNEL</span>
+        </div>
+      </div>
+
+      <!-- Flywheel -->
+      <div class="flywheel-wrap">
+        <div class="flywheel-title">HOW IT COMPOUNDS</div>
+        <div class="flywheel-subtitle">The Compounding Engine</div>
+        <div class="flywheel-nodes">
+          <span class="fw-node">OSINT Brief</span>
+          <span class="fw-arrow">→</span>
+          <span class="fw-node">Fix Sprint</span>
+          <span class="fw-arrow">→</span>
+          <span class="fw-node">ICM Retainer</span>
+          <span class="fw-arrow">→</span>
+          <span class="fw-node">Referrals</span>
+          <span class="fw-arrow">→</span>
+          <span class="fw-node">CMMC Advisory</span>
+          <span class="fw-arrow">→</span>
+          <span class="fw-node">C3PAO Partnership</span>
+          <span class="fw-arrow">→</span>
+          <span class="fw-node">new OSINT Briefs ↺</span>
+        </div>
+        <p class="flywheel-caption">The brief gets you in the door. The retainer keeps you there. The CMMC work opens the defense channel. The C3PAO partnership sends you clients.</p>
+      </div>
+
+      <!-- Target Verticals -->
+      <div class="verticals-section">
+        <p class="verticals-eyebrow">TARGET MARKETS</p>
+        <div class="verticals-title" style="font-family:'Bebas Neue',cursive;font-size:32px;color:var(--ink);">Who Needs This</div>
+
+        <div class="verticals-grid">
+          <div class="vertical-section-head green">EASY TO CONVERT</div>
+          <div class="vertical-row">
+            <span class="vertical-emoji">🏠</span>
+            <span class="vertical-name">Home Services</span>
+            <span class="vertical-desc">The Window Ninjas proof</span>
+          </div>
+          <div class="vertical-row">
+            <span class="vertical-emoji">🦷</span>
+            <span class="vertical-name">Medical / Dental</span>
+            <span class="vertical-desc">HIPAA + scheduling + reputation management</span>
+          </div>
+          <div class="vertical-row">
+            <span class="vertical-emoji">⚖️</span>
+            <span class="vertical-name">Law Firms</span>
+            <span class="vertical-desc">Case management + client intake</span>
+          </div>
+          <div class="vertical-row">
+            <span class="vertical-emoji">🏘️</span>
+            <span class="vertical-name">Real Estate</span>
+            <span class="vertical-desc">CRM + listing automation</span>
+          </div>
+
+          <div class="vertical-section-head blue">MEDIUM</div>
+          <div class="vertical-row">
+            <span class="vertical-emoji">🏗️</span>
+            <span class="vertical-name">Construction / Contractors</span>
+            <span class="vertical-desc">Bidding + project management + supplier ordering</span>
+          </div>
+          <div class="vertical-row">
+            <span class="vertical-emoji">🚛</span>
+            <span class="vertical-name">Freight / Logistics</span>
+            <span class="vertical-desc">Dispatch + tracking + compliance documentation</span>
+          </div>
+          <div class="vertical-row">
+            <span class="vertical-emoji">📦</span>
+            <span class="vertical-name">Distributors / Wholesalers</span>
+            <span class="vertical-desc">Inventory + order management + dealer portals</span>
+          </div>
+          <div class="vertical-row">
+            <span class="vertical-emoji">🏢</span>
+            <span class="vertical-name">Accountants / CPAs</span>
+            <span class="vertical-desc">Client portal + document automation + deadline tracking</span>
+          </div>
+
+          <div class="vertical-section-head gold">HIGH VALUE</div>
+          <div class="vertical-row">
+            <span class="vertical-emoji">🏭</span>
+            <span class="vertical-name">Specialty Manufacturers</span>
+            <span class="vertical-desc">Inventory + production + compliance + distributor networks (SpitzLift is Case Study 002)</span>
+          </div>
+          <div class="vertical-row" style="border-bottom:none;">
+            <span class="vertical-emoji">🛡️</span>
+            <span class="vertical-name">Defense Subcontractors</span>
+            <span class="vertical-desc">CMMC + SAM.gov + DFARS compliance + GSA channels (The NASSCO/WBE Supply proof)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       TAB 3 — RESEARCH
+  ══════════════════════════════════════════ -->
+  <div class="tab-pane" id="tab-research">
+    <div class="content-wrap">
+      <div class="section-header">
+        <p class="eyebrow">THE INTELLIGENCE METHODOLOGY</p>
+        <h2>Research Framework v1.0</h2>
+      </div>
+
+      <p class="intro-para">Every brief starts with structured intelligence gathering. Three tiers of depth — matched to the engagement value and timeline. The SpitzLift engagement was the R&D that built this framework. Every client after gets the refined version.</p>
+
+      <!-- Three Tier Cards -->
+      <div class="tier-grid">
+        <div class="tier-card">
+          <div class="tier-head amber">
+            <div class="tier-eyebrow">THE SIGNATURE MOVE</div>
+            <div class="tier-head-title">TIER 1 — QUICK STRIKE</div>
+            <span class="tier-badge">2–3 HOURS</span>
+            <span class="tier-badge">1 Chrome + 1 Terminal</span>
+            <div class="tier-deliverable">Deliverable: $1,500 audit brief</div>
+          </div>
+          <div class="tier-body">
+            <ul>
+              <li>Leadership snapshot</li>
+              <li>Tech stack surface scan</li>
+              <li>Security exposure</li>
+              <li>SAM.gov check</li>
+              <li>1 competitor</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tier-card">
+          <div class="tier-head blue">
+            <div class="tier-eyebrow">FULL FOOTPRINT</div>
+            <div class="tier-head-title">TIER 2 — FULL FOOTPRINT</div>
+            <span class="tier-badge">1–2 DAYS</span>
+            <span class="tier-badge">3 Chrome + 2 Terminal</span>
+            <div class="tier-deliverable">Deliverable: Complete intelligence package</div>
+          </div>
+          <div class="tier-body">
+            <ul>
+              <li>Full org chart</li>
+              <li>Complete tech stack</li>
+              <li>Distributor network</li>
+              <li>Federal contracts</li>
+              <li>Hiring signals</li>
+              <li>5-competitor field</li>
+              <li>Revenue benchmarking</li>
+              <li>Digital maturity scores</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tier-card">
+          <div class="tier-head teal">
+            <div class="tier-eyebrow">DEEP INTEL</div>
+            <div class="tier-head-title">TIER 3 — DEEP INTEL</div>
+            <span class="tier-badge">2–3 DAYS</span>
+            <span class="tier-badge">5 Chrome + 3 Terminal</span>
+            <div class="tier-deliverable">Deliverable: Master brief + 4 Pillars + demo brief</div>
+          </div>
+          <div class="tier-body">
+            <ul>
+              <li>Full stakeholder profiles</li>
+              <li>CMMC exposure</li>
+              <li>Government channel</li>
+              <li>Competitive moat</li>
+              <li>ROI statistics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Variable Substitution -->
+      <div class="var-panel">
+        <div class="var-panel-title">FILL THESE IN BEFORE FIRING ANY PROMPT</div>
+        <div class="var-grid">
+          <div class="var-pill">[CLIENT_NAME]</div>
+          <div class="var-pill">[DOMAIN]</div>
+          <div class="var-pill">[CEO_NAME]</div>
+          <div class="var-pill">[LOCATION]</div>
+          <div class="var-pill">[INDUSTRY]</div>
+          <div class="var-pill">[NAICS_CODE]</div>
+          <div class="var-pill">[KNOWN_CLIENTS]</div>
+          <div class="var-pill">[GOVT_CUSTOMER]</div>
+          <div class="var-pill">[COMPETITOR_1]</div>
+          <div class="var-pill">[TIER_TARGET]</div>
+          <div class="var-pill">[EMPLOYEE_COUNT]</div>
+          <div class="var-pill">[CLIENT_SHORT]</div>
+        </div>
+      </div>
+
+      <!-- Token Management Rules -->
+      <div class="token-block">
+        <div class="token-head">
+          <div class="token-head-title">TOKEN MANAGEMENT RULES</div>
+          <div class="token-head-sub">Reference: SpitzLift Chrome session hit 206,408 tokens and timed out</div>
+        </div>
+        <div class="token-body">
+          <div class="token-rule">
+            <span class="token-num">1</span>
+            <p class="token-rule-text"><strong>HARD LIMIT per Chrome session: 20 tool calls.</strong> Write this at the top of every Chrome prompt. Without a written limit, Chrome will go until it runs out of tokens or the session dies.</p>
+          </div>
+          <div class="token-rule">
+            <span class="token-num">2</span>
+            <p class="token-rule-text"><strong>SUMMARIZE AS YOU GO.</strong> Never ask Chrome to "read the full page" — always "extract and summarize only." Full-page reproductions are the single biggest token killer.</p>
+          </div>
+          <div class="token-rule">
+            <span class="token-num">3</span>
+            <p class="token-rule-text"><strong>SPLIT BY TOPIC not by time.</strong> Each Chrome session owns one topic completely. Don't mix leadership research with competitive research in the same session.</p>
+          </div>
+          <div class="token-rule">
+            <span class="token-num">4</span>
+            <p class="token-rule-text"><strong>REPORT FORMAT FIRST.</strong> Start every Chrome session with "Keep total output under [X] words" — this forces summarization and prevents token bloat from the first tool call.</p>
+          </div>
+          <div class="token-rule">
+            <span class="token-num">5</span>
+            <p class="token-rule-text"><strong>TERMINAL FOR APIS.</strong> Anything that can be done via an API (SAM.gov, USASpending, site crawl, revenue data) goes to Terminal. Chrome is for sites that require navigation and interpretation.</p>
+          </div>
+          <div class="token-rule">
+            <span class="token-num">6</span>
+            <p class="token-rule-text"><strong>NO FULL PAGE REPRODUCTIONS. EVER.</strong> Snippets and summaries only.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       TAB 4 — DISCOVERY
+  ══════════════════════════════════════════ -->
+  <div class="tab-pane" id="tab-discovery">
+    <div class="content-wrap">
+      <div class="section-header">
+        <p class="eyebrow">THE 2-WEEK ENGAGEMENT BLUEPRINT</p>
+        <h2>Discovery Sprint Methodology</h2>
+      </div>
+
+      <p class="intro-para">The Discovery Sprint is Phase 0 of every major engagement. It is what the $10,000 retainer buys. Two weeks. Four structured sessions. One architecture blueprint. One Phase 1 scope document with a fixed price. The SpitzLift engagement produced this framework.</p>
+
+      <!-- Two-Week Timeline -->
+      <div class="timeline-wrap">
+        <div class="week-headers">
+          <div class="week-header-pill w1">WEEK 1 — DAYS 1–5</div>
+          <div class="week-header-pill w2">WEEK 2 — DAYS 6–10</div>
+        </div>
+        <div class="day-grid">
+          <div class="day-card teal"><strong>Day 1–2</strong><br>Zoho / Tech Ecosystem Audit</div>
+          <div class="day-card blue"><strong>Day 2–3</strong><br>Stakeholder Workflow Sessions</div>
+          <div class="day-card amber"><strong>Day 3–4</strong><br>Site / Forms / Portal Audit</div>
+          <div class="day-card green"><strong>Day 4–5</strong><br>Security Remediation</div>
+          <div class="day-card milestone"><strong>Day 5 ★</strong><br>Week 1 Summary → CLIENT</div>
+        </div>
+        <div class="day-grid">
+          <div class="day-card blue"><strong>Day 6–7</strong><br>Integration Architecture Blueprint</div>
+          <div class="day-card amber"><strong>Day 7–8</strong><br>Priority Matrix</div>
+          <div class="day-card gold" style="background:var(--gold-l);border:1px solid var(--gold-b);color:var(--gold);"><strong>Day 8–9</strong><br>Phase 1 Scope Document</div>
+          <div class="day-card teal"><strong>Day 9–10</strong><br>Presentation Preparation</div>
+          <div class="day-card milestone-close"><strong>Day 10 ★</strong><br>Final Presentation → PHASE 1 CLOSE</div>
+        </div>
+      </div>
+
+      <!-- Session Templates -->
+      <p class="eyebrow" style="margin-bottom:16px;">FOUR SESSION TEMPLATES</p>
+      <div class="accordion-cards">
+        <details>
+          <summary>Session 1 — CEO/Founder &nbsp;·&nbsp; 45 min</summary>
+          <div class="accordion-body">
+            <ul>
+              <li>Walk me through a week in your life — where does most of your time actually go?</li>
+              <li>What's the one thing that, if fixed, would have the biggest impact?</li>
+              <li>Where do you see the company in 3 years and what would have to be true to get there?</li>
+              <li>What's been tried before and what happened?</li>
+              <li>Walk me through the journey of a single order from inquiry to shipped.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>Session 2 — VP Sales &nbsp;·&nbsp; 45 min</summary>
+          <div class="accordion-body">
+            <ul>
+              <li>Walk me through your sales process end to end — every step, every tool.</li>
+              <li>How do you track where each deal is right now?</li>
+              <li>What do you have to do manually that you wish happened automatically?</li>
+              <li>How do you follow up with leads from trade shows? What's the process?</li>
+              <li>If you could see one dashboard every morning, what would it show?</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>Session 3 — Operations &nbsp;·&nbsp; 45 min</summary>
+          <div class="accordion-body">
+            <ul>
+              <li>How does manufacturing find out about a new order?</li>
+              <li>How do you know when you're running low on a part?</li>
+              <li>Walk me through your worst week operationally — what fell apart?</li>
+              <li>What software do you actually open every day?</li>
+              <li>What process eats the most time that a system should handle?</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>Session 4 — CFO/Finance &nbsp;·&nbsp; 30 min</summary>
+          <div class="accordion-body">
+            <ul>
+              <li>What financial data can you not get today that you need?</li>
+              <li>How long does it take to close the books each month and why?</li>
+              <li>What's your biggest inventory-related financial exposure?</li>
+              <li>If you had a live dashboard showing one financial metric, what would it be?</li>
+              <li>What would you need to see to feel confident in a Phase 1 investment?</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <!-- Deliverables Checklist -->
+      <p class="eyebrow" style="margin-bottom:16px;">DELIVERABLES CHECKLIST</p>
+      <div class="checklist-cols">
+        <div class="checklist-group">
+          <h4>Week 1 Output</h4>
+          <div class="check-item"><span class="check-box">☐</span><span>Tech ecosystem map (every system, every connection, every gap)</span></div>
+          <div class="check-item"><span class="check-box">☐</span><span>Workflow documentation (as-is state for each department)</span></div>
+          <div class="check-item"><span class="check-box">☐</span><span>Security remediation confirmed</span></div>
+          <div class="check-item"><span class="check-box">☐</span><span>Initial findings summary (1 page)</span></div>
+        </div>
+        <div class="checklist-group">
+          <h4>Week 2 Output</h4>
+          <div class="check-item"><span class="check-box">☐</span><span>Integration architecture blueprint</span></div>
+          <div class="check-item"><span class="check-box">☐</span><span>Priority matrix (impact × feasibility × time-to-value)</span></div>
+          <div class="check-item"><span class="check-box">☐</span><span>Phase 1 scope document (fixed price, exact deliverables, exact timeline)</span></div>
+          <div class="check-item"><span class="check-box">☐</span><span>Formal presentation deck</span></div>
+          <div class="check-item"><span class="check-box">☐</span><span>Phase 1 kickoff date proposed</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       TAB 5 — CLIENTS
+  ══════════════════════════════════════════ -->
+  <div class="tab-pane" id="tab-clients">
+    <div class="content-wrap">
+      <div class="section-header">
+        <p class="eyebrow">PROOF OF WORK</p>
+        <h2>Client Portfolio</h2>
+      </div>
+
+      <p class="intro-para italic">Every engagement becomes a case study. Every case study opens the next door. After 3 clients this table tells the story automatically.</p>
+
+      <table class="client-table">
+        <thead>
+          <tr>
+            <th>Case #</th>
+            <th>Client</th>
+            <th>Industry</th>
+            <th>Layer</th>
+            <th>Status</th>
+            <th>Key Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="case-num">001</span></td>
+            <td><span class="client-name">WBE Supply Solutions</span></td>
+            <td style="color:var(--ink3);font-size:13px;">Defense supply chain / WOSB</td>
+            <td><span class="layer-pill">Layer 1 — Audit</span></td>
+            <td><span class="status-pill status-green">✅ DELIVERED</span></td>
+            <td class="client-result">OSINT brief surfaced $8.4B in missed NASSCO Navy contract revenue. SAM.gov lapse identified. Brief delivered as interactive HTML artifact. First NFE LLC paid engagement.</td>
+          </tr>
+          <tr>
+            <td><span class="case-num">002</span></td>
+            <td><span class="client-name">SpitzLift Manufacturing</span></td>
+            <td style="color:var(--ink3);font-size:13px;">Defense-adjacent specialty manufacturing</td>
+            <td><span class="layer-pill">Layer 2 — Discovery</span></td>
+            <td><span class="status-pill status-amber">🟡 ACTIVE</span></td>
+            <td class="client-result">
+              Demo delivered in &lt;1 week. "Love this!" — Lt. Col. Janet Pattison (USAF Ret.) and CEO Michael Spitsbergen. Retainer call completed April 3, 2026. Follow-up in 2–3 days.
+              <br><br>
+              <a href="https://davethebrave-automation.github.io/spitzlift-automation-demo/command-center.html" target="_blank" style="color:var(--gold);font-size:12px;font-family:'DM Mono',monospace;">→ Command Center</a>
+            </td>
+          </tr>
+          <tr style="opacity:0.4;">
+            <td><span class="case-num">003</span></td>
+            <td style="font-style:italic;color:var(--ink3);">[Next client]</td>
+            <td>—</td><td>—</td><td>—</td><td>—</td>
+          </tr>
+          <tr style="opacity:0.3;">
+            <td><span class="case-num">004</span></td>
+            <td style="font-style:italic;color:var(--ink3);">[Next client]</td>
+            <td>—</td><td>—</td><td>—</td><td>—</td>
+          </tr>
+          <tr style="opacity:0.2;">
+            <td><span class="case-num">005</span></td>
+            <td style="font-style:italic;color:var(--ink3);">[Next client]</td>
+            <td>—</td><td>—</td><td>—</td><td>—</td>
+          </tr>
+          <tr style="opacity:0.15;">
+            <td><span class="case-num">006</span></td>
+            <td style="font-style:italic;color:var(--ink3);">[Next client]</td>
+            <td>—</td><td>—</td><td>—</td><td>—</td>
+          </tr>
+          <tr style="opacity:0.1;">
+            <td><span class="case-num">007</span></td>
+            <td style="font-style:italic;color:var(--ink3);">[Next client]</td>
+            <td>—</td><td>—</td><td>—</td><td>—</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="font-style:italic;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink4);">After 3 clients this table tells the story automatically. After 5 clients you stop pitching. You just show the table.</p>
+
+      <div class="note-card">
+        <p class="note-eyebrow">CASE STUDY FORMAT</p>
+        <p class="note-body">Each engagement generates a case study card showing: industry, layer engaged, time to first deliverable, client reaction, outcome. The SpitzLift case study documents: full demo built in &lt;1 week, Janet Pattison ("Love this!"), phases.html delivered, security disclosure prepared, retainer agreement drafted. That's the proof.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       TAB 6 — TEMPLATES
+  ══════════════════════════════════════════ -->
+  <div class="tab-pane" id="tab-templates">
+    <div class="content-wrap">
+      <div class="section-header">
+        <p class="eyebrow">READY TO USE — FILL IN THE CLIENT</p>
+        <h2>Document Templates</h2>
+      </div>
+
+      <div class="tmpl-grid">
+        <!-- Template 1 -->
+        <div class="tmpl-card">
+          <div class="tmpl-head">
+            <span class="tmpl-status">BUILT</span>
+            <h3>Quick Strike Brief</h3>
+          </div>
+          <p class="tmpl-desc">Interactive HTML brief showing: leadership, tech stack, security findings, top 3 gaps, recommended next step. Delivered as a GitHub Pages URL, not a PDF.</p>
+          <span class="tmpl-btn disabled" style="opacity:0.45;cursor:default;">SpitzLift Version (Local)</span>
+        </div>
+
+        <!-- Template 2 -->
+        <div class="tmpl-card">
+          <div class="tmpl-head">
+            <span class="tmpl-status">BUILT</span>
+            <h3>Full Intelligence Brief</h3>
+          </div>
+          <p class="tmpl-desc">Complete intelligence package with org chart, tech stack audit, competitive field, revenue benchmarking, digital maturity scores, 4 Pillar strategic brief.</p>
+          <span class="tmpl-btn disabled" style="opacity:0.45;cursor:default;">Local Only</span>
+        </div>
+
+        <!-- Template 3 -->
+        <div class="tmpl-card">
+          <div class="tmpl-head">
+            <span class="tmpl-status">BUILT</span>
+            <h3>Operations Command Demo</h3>
+          </div>
+          <p class="tmpl-desc">Live interactive dashboard showing client's actual part numbers, clients, and workflows. Light theme. Phases tab. KTURS-700 cascade simulation.</p>
+          <a class="tmpl-btn" href="https://davethebrave-automation.github.io/spitzlift-automation-demo/" target="_blank">Open SpitzLift Demo →</a>
+        </div>
+
+        <!-- Template 4 -->
+        <div class="tmpl-card">
+          <div class="tmpl-head">
+            <span class="tmpl-status">BUILT</span>
+            <h3>Engagement Phases Document</h3>
+          </div>
+          <p class="tmpl-desc">Standalone phases roadmap safe to email. Phase 0 through ongoing. No pricing. Professional. Zoho-specific integration narrative.</p>
+          <a class="tmpl-btn" href="https://davethebrave-automation.github.io/spitzlift-automation-demo/phases.html" target="_blank">Open SpitzLift Phases →</a>
+        </div>
+
+        <!-- Template 5 -->
+        <div class="tmpl-card">
+          <div class="tmpl-head">
+            <span class="tmpl-status">BUILT</span>
+            <h3>Retainer Agreement</h3>
+          </div>
+          <p class="tmpl-desc">NFE LLC engagement retainer. $10K/2-week discovery. Credit toward build. Managing Member signature block. SL-2026-001 reference number.</p>
+          <a class="tmpl-btn" href="file:///C:/Users/djnec/spitzlift/SPITZLIFT_RETAINER_AGREEMENT.html" target="_blank">Open Local File →</a>
+          <p class="tmpl-btn-note">(Local file — not on GitHub)</p>
+        </div>
+
+        <!-- Template 6 -->
+        <div class="tmpl-card">
+          <div class="tmpl-head">
+            <span class="tmpl-status">BUILT</span>
+            <h3>Security Disclosure</h3>
+          </div>
+          <p class="tmpl-desc">High contrast, CEO-readable security disclosure. Single HIGH finding. Plain English. Step-by-step fix instructions. Authorization request.</p>
+          <span class="tmpl-btn disabled" style="opacity:0.45;cursor:default;">Local Only — Confidential</span>
+        </div>
+
+        <!-- Template 7 -->
+        <div class="tmpl-card">
+          <div class="tmpl-head">
+            <span class="tmpl-status">BUILT</span>
+            <h3>Research Framework</h3>
+          </div>
+          <p class="tmpl-desc">Complete 3-tier research framework with 9 prompts (5 Chrome, 4 Terminal), variable substitution, token management rules, output templates.</p>
+          <a class="tmpl-btn" href="file:///C:/Users/djnec/CommandCenter/research/NFE_RESEARCH_FRAMEWORK.html" target="_blank">Open Research Framework →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       TAB 7 — LINKS
+  ══════════════════════════════════════════ -->
+  <div class="tab-pane" id="tab-links">
+    <div class="content-wrap">
+      <div class="section-header">
+        <p class="eyebrow">TOOLS AND RESOURCES</p>
+        <h2>Quick Links</h2>
+      </div>
+
+      <div class="three-link-cols">
+        <!-- Column 1 -->
+        <div class="link-group">
+          <div class="link-group-title">ACTIVE CLIENT TOOLS</div>
+          <div class="link-row">
+            <span class="link-name">SpitzLift Demo</span>
+            <a href="https://davethebrave-automation.github.io/spitzlift-automation-demo/" target="_blank" class="link-url">Open →</a>
+          </div>
+          <div class="link-row">
+            <span class="link-name">SpitzLift Command Center</span>
+            <a href="https://davethebrave-automation.github.io/spitzlift-automation-demo/command-center.html" target="_blank" class="link-url">Open →</a>
+          </div>
+          <div class="link-row">
+            <span class="link-name">SpitzLift Phases</span>
+            <a href="https://davethebrave-automation.github.io/spitzlift-automation-demo/phases.html" target="_blank" class="link-url">Open →</a>
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="link-group">
+          <div class="link-group-title">RESEARCH TOOLS</div>
+          <div class="link-row">
+            <span class="link-name">SAM.gov</span>
+            <a href="https://sam.gov" target="_blank" class="link-url">Open →</a>
+          </div>
+          <div class="link-row">
+            <span class="link-name">USASpending.gov</span>
+            <a href="https://usaspending.gov" target="_blank" class="link-url">Open →</a>
+          </div>
+          <div class="link-row">
+            <span class="link-name">FPDS.gov</span>
+            <a href="https://fpds.gov" target="_blank" class="link-url">Open →</a>
+          </div>
+          <div class="link-row">
+            <span class="link-name">CMMC-AB Marketplace</span>
+            <a href="https://cyberab.org/marketplace" target="_blank" class="link-url">Open →</a>
+          </div>
+          <div class="link-row">
+            <span class="link-name">LinkedIn</span>
+            <a href="https://linkedin.com" target="_blank" class="link-url">Open →</a>
+          </div>
+          <div class="link-row">
+            <span class="link-name">BuiltWith</span>
+            <a href="https://builtwith.com" target="_blank" class="link-url">Open →</a>
+          </div>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="link-group">
+          <div class="link-group-title">NFE LLC</div>
+          <div class="link-row">
+            <span class="link-name">Portfolio / Living Resume</span>
+            <a href="https://davethebrave-automation.github.io/davidnecaise/" target="_blank" class="link-url">Open →</a>
+          </div>
+          <div class="link-row">
+            <span class="link-name">Book a Call</span>
+            <a href="https://calendar.app.google/7DjbWAb9omg1mzL49" target="_blank" class="link-url">Open →</a>
+          </div>
+          <div class="link-row">
+            <span class="link-name">Email</span>
+            <span class="link-plain">david@trustedservicessd.com</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Local Files -->
+      <div class="local-files-section">
+        <div class="local-files-title">LOCAL FILES</div>
+        <div class="local-file-row"><span class="local-file-label">Retainer Agreement: </span>C:\Users\djnec\spitzlift\SPITZLIFT_RETAINER_AGREEMENT.html</div>
+        <div class="local-file-row"><span class="local-file-label">Security Disclosure: </span>C:\Users\djnec\spitzlift\SPITZLIFT_SECURITY_DISCLOSURE.html</div>
+        <div class="local-file-row"><span class="local-file-label">Research Framework: </span>C:\Users\djnec\CommandCenter\research\NFE_RESEARCH_FRAMEWORK.html</div>
+        <div class="local-file-row"><span class="local-file-label">Zoho API Map: </span>C:\NFE\research\zoho-api\ZOHO_API_MAP.md</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">
+          <span style="font-family:'Bebas Neue',cursive;font-size:32px;color:var(--gold)">NFE</span>
+          <span style="font-family:'Bebas Neue',cursive;font-size:32px;color:rgba(255,255,255,0.7)">LLC</span>
+        </div>
+        <p>Necaise Family Enterprises LLC</p>
+        <p>david@trustedservicessd.com</p>
+      </div>
+      <div class="footer-center">
+        <p class="footer-quote">"The refrigerator is $20/month.<br>What we build on top of it<br>is not available to anyone."</p>
+      </div>
+      <div class="footer-right">
+        <p>Built on the SpitzLift engagement</p>
+        <p>April 2026</p>
+        <p>Version 1.0</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-pane').forEach(function(p) {
+        p.style.display = 'none';
+        p.classList.remove('active');
+      });
+      document.querySelectorAll('.nav-tab').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      var pane = document.getElementById('tab-' + tabId);
+      if (pane) {
+        pane.style.display = 'block';
+        pane.classList.add('active');
+      }
+      var btn = document.querySelector('[data-tab="' + tabId + '"]');
+      if (btn) btn.classList.add('active');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      switchTab('positioning');
+    });
+  </script>
+</body>
+</html>
