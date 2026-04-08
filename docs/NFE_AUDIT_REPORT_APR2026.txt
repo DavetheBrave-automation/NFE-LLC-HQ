@@ -1,0 +1,401 @@
+════════════════════════════════════════════════════════════════════
+NFE LLC — FULL OPERATIONS AUDIT REPORT
+April 8, 2026 | Prepared by TC
+════════════════════════════════════════════════════════════════════
+
+REPO: github.com/DavetheBrave-automation/NFE-LLC-HQ
+DASHBOARD: https://davethebrave-automation.github.io/NFE-LLC-HQ/
+COMMITS REVIEWED: 11 total | 20 days of work
+
+════════════════════════════════════════════════════════════════════
+SECTION A — WHAT EXISTS AND WHERE
+════════════════════════════════════════════════════════════════════
+
+GITHUB REPO (accessible from any device)
+─────────────────────────────────────────
+NAME                           | LOCATION           | SIZE   | STATUS
+index.html (HQ Dashboard)      | GitHub Pages       | 82KB   | LIVE ✅
+clients/gsd/index.html         | GitHub Pages       | 20KB   | LIVE ✅
+clients/gsd/brief/index.html   | GitHub Pages       | 51KB   | LIVE ✅
+clients/gsd/discovery.txt      | GitHub Pages       | 14KB   | LIVE ✅
+pricing/index.html             | GitHub Pages       | 75KB   | LIVE ✅
+templates/TEASER_TEMPLATE.html | GitHub Pages       | 18KB   | LIVE ✅
+
+SURGE DEPLOYMENTS (6 active, publicly accessible)
+──────────────────────────────────────────────────
+footprintiq-gsd.surge.sh       | Surge              | 20KB   | LIVE ✅ (GSD teaser — send to Dr. Gardner)
+nfe-gsd-brief.surge.sh         | Surge              | 50KB   | LIVE ✅ (GSD full brief — after payment)
+nfe-pricing.surge.sh           | Surge              | 75KB   | LIVE ✅ (ICM pricing menu)
+nfe-david.surge.sh             | Surge              | 28KB   | LIVE ✅ (resume/portfolio)
+wbe-intel-brief.surge.sh       | Surge              | 42KB   | LIVE ✅ (WBE Case 001 brief)
+footprintiq.surge.sh           | Surge              | 59KB   | LIVE — ORPHAN ⚠️ (not in dashboard — see Section D)
+
+LOCAL — SPITZLIFT (C:\Users\djnec\spitzlift\)
+──────────────────────────────────────────────
+MASTER_BRIEF.html              | Local              | 48KB   | ⚠️ Local only — contains sensitive client intel
+MASTER_BRIEF.md                | Local              | 27KB   | ⚠️ Local only — SpitzLift research
+SPITZLIFT_RETAINER_AGREEMENT.html | Local           | 16KB   | 🔴 SENSITIVE — local only, file:/// in dashboard
+SPITZLIFT_RETAINER_AGREEMENT.txt  | Local           | 7KB    | ⚠️ Local only
+SPITZLIFT_SECURITY_DISCLOSURE.html | Local          | 22KB   | 🔴 SENSITIVE — local only
+SPITZLIFT_SECURITY_DISCLOSURE.txt  | Local          | 8KB    | ⚠️ Local only
+Security Disclosure SpitzLift.pdf  | Local          | 731KB  | 🔴 SENSITIVE — local only
+demo/                          | Local (git repo)   | —      | SpitzLift command center demo
+intel/                         | Local              | —      | SpitzLift intel research files
+
+LOCAL — COMMANDCENTER RESEARCH (C:\Users\djnec\CommandCenter\research\)
+──────────────────────────────────────────────────────────────────────
+GSD_FOOTPRINTIQ_BRIEF.txt      | Local              | 26KB   | ⚠️ Local only — master GSD brief data
+GSD_CONVERSATION_GUIDE.txt     | Local              | 10KB   | ⚠️ Local only — David's field script
+GSD_TEASER_SUMMARY.html        | Local              | 14KB   | ⚠️ SUPERSEDED — early draft, Surge version is live
+NFE_RESEARCH_FRAMEWORK.html    | Local              | 54KB   | 🔴 file:/// in dashboard — local only
+system_map_v1.html             | Local              | 40KB   | ⚠️ Local only — NFE ops system map
+icm-deployment-kit/index.html  | Local              | 28KB   | ⚠️ Local only — ICM kit
+ARSENAL_SESSION_SUMMARY.md     | Local              | 8KB    | ⚠️ Internal session notes
+
+LOCAL — NFE RESEARCH (C:\NFE\research\)
+────────────────────────────────────────
+ENTITY_HISTORY_REPORT.md       | Local              | —      | SpitzLift entity OSINT report
+entity_sweep.py                | Local              | —      | Federal contract sweep script
+hirok/ilu/spitzlift JSON files  | Local              | —      | USASpending raw data
+ZOHO_API_MAP.md                | Local              | —      | Zoho API capability research
+PHASE1_SCOPE_INPUTS.md         | Local              | —      | SpitzLift Phase 1 scope doc
+
+LOCAL — WBE (C:\Users\djnec\wbe-inte-brief\)
+─────────────────────────────────────────────
+index.html                     | Local + Surge      | 42KB   | Also on wbe-intel-brief.surge.sh ✅
+
+LOCAL — FOOTPRINTIQ DEPLOY (C:\Users\djnec\footprintiq-deploy\)
+────────────────────────────────────────────────────────────────
+index.html (Business Playbook) | Local + Surge      | 59KB   | Deployed as footprintiq.surge.sh — ORPHAN ⚠️
+
+SURGE STAGING (C:\Users\djnec\surge-deploy\) — deploy copies only
+────────────────────────────────────────────────────────────────
+surge-deploy/index.html        | Local staging      | 56KB   | Unknown — likely an old deploy copy, not the current HQ
+surge-deploy/gsd-teaser/       | Local staging      | —      | Matches footprintiq-gsd.surge.sh ✅
+surge-deploy/gsd-brief/        | Local staging      | —      | Matches nfe-gsd-brief.surge.sh ✅
+surge-deploy/nfe-pricing/      | Local staging      | —      | Matches nfe-pricing.surge.sh ✅
+surge-deploy/nfe-resume/       | Local staging      | —      | Matches nfe-david.surge.sh ✅
+
+
+════════════════════════════════════════════════════════════════════
+SECTION B — LOCAL-ONLY FILES THAT NEED TO MOVE
+════════════════════════════════════════════════════════════════════
+
+1. NFE_RESEARCH_FRAMEWORK.html
+   Priority: HIGH
+   Issue: file:/// link in dashboard Templates tab — breaks on every device except David's
+   Action: Deploy to Surge as nfe-framework.surge.sh OR move to repo at /tools/research-framework.html
+   Complexity: QUICK — already built, just needs deploy
+
+2. SPITZLIFT_RETAINER_AGREEMENT.html
+   Priority: HIGH
+   Issue: file:/// link in dashboard — client-sensitive, breaks on mobile/other devices
+   Action: Create a blank retainer template in /templates/ with variables. Keep SpitzLift
+           version local-only intentionally (sensitive), but remove the file:/// link from
+           the dashboard and replace with an internal note or generalized version.
+   Complexity: QUICK
+
+3. GSD_FOOTPRINTIQ_BRIEF.txt
+   Priority: MEDIUM
+   Issue: Master GSD data file is local-only. If David loses access to this machine,
+          the source data for the paid brief is gone.
+   Action: Add to repo under clients/gsd/ or encrypt and push to private repo.
+   Complexity: QUICK
+
+4. GSD_CONVERSATION_GUIDE.txt
+   Priority: MEDIUM
+   Issue: Local only. David needs this on mobile before a call.
+   Action: Move to repo under clients/gsd/guide.txt or add as a section in the brief.
+   Complexity: QUICK
+
+5. ZOHO_API_MAP.md + PHASE1_SCOPE_INPUTS.md
+   Priority: MEDIUM
+   Issue: SpitzLift Phase 1 architecture lives at C:\NFE\research\ — not in GitHub
+   Action: Move to repo under clients/spitzlift/ or a private notes folder
+   Complexity: QUICK
+
+6. system_map_v1.html
+   Priority: LOW
+   Issue: NFE ops system map exists locally but isn't referenced or deployed anywhere
+   Action: Either deploy to Surge or add to dashboard as internal reference
+   Complexity: QUICK
+
+
+════════════════════════════════════════════════════════════════════
+SECTION C — MISSING DOCUMENTS (GAPS)
+════════════════════════════════════════════════════════════════════
+
+CORE BUSINESS DOCUMENTS
+────────────────────────
+☐ Blank retainer agreement (client-agnostic)
+  What: A fillable retainer template — [CLIENT_NAME], [ENGAGEMENT_TYPE], [PRICE], [DATE]
+  Why: SpitzLift-specific version exists but cannot be reused. Every new client needs one.
+  Complexity: QUICK — clone SpitzLift retainer, replace specifics with variables
+  TC action: Copy SPITZLIFT_RETAINER_AGREEMENT.html, extract variables, save to /templates/RETAINER_TEMPLATE.html
+
+☐ Engagement letter / SOW template
+  What: 1-page scope of work: what NFE delivers, timeline, price, what client provides
+  Why: Needed before any paid engagement begins. Protects both parties. Sets expectations.
+  Complexity: MEDIUM — needs to be built fresh, but content exists in the engagement tiers
+  TC action: Build from pricing menu tier descriptions + retainer structure
+
+☐ NDA template
+  What: Simple mutual NDA for sharing sensitive client data (especially healthcare/dental)
+  Why: HIPAA-adjacent work (GSD) requires confidentiality agreement before data sharing
+  Complexity: QUICK — standard template with NFE + [CLIENT] variables
+  TC action: 1-page HTML NDA with NFE branding
+
+☐ Invoice template
+  What: A clean invoice for sending to clients after engagement
+  Why: SpitzLift retainer discussion happened — need an actual invoice to collect payment
+  Complexity: QUICK — HTML/PDF invoice with NFE LLC details, client, amount, due date
+  TC action: Build simple HTML invoice template with print/PDF styling
+
+☐ Proposal template (1-pager)
+  What: A send-before-retainer one-pager: problem, our approach, deliverables, price
+  Why: Some clients will want a proposal before signing a retainer. Bridges FootprintIQ → retainer.
+  Complexity: MEDIUM
+  TC action: Build from existing tier structure; client-specific gap summary at top
+
+CLIENT DELIVERABLES
+────────────────────
+☐ FootprintIQ brief template (master)
+  What: Same as TEASER_TEMPLATE but for the full paid $1,500 brief
+  Why: TEASER_TEMPLATE exists. BRIEF_TEMPLATE does not. Next client brief requires
+       rebuilding from scratch against the GSD brief. A template prevents that.
+  Complexity: MEDIUM — clone clients/gsd/brief/index.html, replace with variables
+  TC action: Build /templates/BRIEF_TEMPLATE.html with same variable system as TEASER_TEMPLATE
+
+☐ WBE brief — not in repo
+  What: WBE intel brief HTML exists at wbe-inte-brief/index.html and on Surge but is NOT
+        in the NFE-LLC-HQ repo. Case 001 is live on Surge but orphaned from the repo.
+  Why: Repo should be the single source of truth for all client deliverables.
+  Complexity: QUICK — copy wbe-inte-brief/index.html into clients/wbe/ in repo
+  TC action: Add clients/wbe/index.html to repo, update Case 001 dashboard row with link
+
+SALES TOOLS
+────────────
+☐ Case study cards (shareable format)
+  What: A standalone 1-page format for each closed case — what we found, what we built, result
+  Why: As the client list grows, David needs something to send cold prospects. "Here's what we
+       did for a dental practice similar to yours."
+  Complexity: MEDIUM — design a case study card template, fill for WBE + GSD once closed
+  TC action: Build /templates/CASE_STUDY_TEMPLATE.html; fill WBE version
+
+☐ One-liner pitch sheet by vertical
+  What: A 1-pager with the 5–6 verticals NFE serves + the one-liner for each
+  Why: David needs this for any networking or cold outreach scenario
+  Complexity: QUICK — extract vertical descriptions from pricing/index.html
+  TC action: Build /sales/verticals.html — simple card grid by industry
+
+FINANCIAL / LEGAL
+──────────────────
+☐ Stripe or payment link setup
+  What: A live URL David can send to collect $1,500 for the FootprintIQ brief or any engagement
+  Why: Currently no confirmed payment collection mechanism. If GSD engages, how does David
+       collect? Email invoice and hope? Need a Stripe link or Square or equivalent.
+  Complexity: QUICK to set up (outside TC scope — requires David to set up Stripe account)
+  TC action: Once Stripe link exists, add it to every FootprintIQ CTA button
+  Note: This is the single highest-priority item that BLOCKS REVENUE.
+
+☐ W9 on file
+  What: IRS W9 for NFE LLC — needed if client is a business paying > $600/yr
+  Why: Dental practices are businesses. If GSD pays $1,500 + retainer they will request a W9.
+  Complexity: Not a TC build — David fills out and saves as PDF
+  TC action: None (David action). Add local path reference to dashboard once done.
+
+☐ NFE LLC formation docs
+  What: Certificate of formation, EIN confirmation, operating agreement
+  Why: Needed for contracts, banking, client verification
+  Complexity: Not a build — David should have these from LLC formation
+  TC action: Add a local file reference to dashboard once confirmed
+
+
+════════════════════════════════════════════════════════════════════
+SECTION D — BROKEN/PLACEHOLDER LINKS IN DASHBOARD
+════════════════════════════════════════════════════════════════════
+
+1. Line 1609 — RETAINER AGREEMENT (file:/// link)
+   Current: file:///C:/Users/djnec/spitzlift/SPITZLIFT_RETAINER_AGREEMENT.html
+   Problem: Breaks on any device other than David's local machine
+   Fix: Either (a) remove the link and replace with "Local file — see C:\spitzlift\"
+        or (b) build a generalized retainer template and put it in /templates/
+
+2. Line 1630 — RESEARCH FRAMEWORK (file:/// link)
+   Current: file:///C:/Users/djnec/CommandCenter/research/NFE_RESEARCH_FRAMEWORK.html
+   Problem: Breaks on any device. This is a tool David uses regularly.
+   Fix: Deploy NFE_RESEARCH_FRAMEWORK.html to Surge as nfe-framework.surge.sh
+        and update the link. HIGHEST PRIORITY local-to-live fix.
+
+3. Line 1569 — QUICK STRIKE BRIEF template button
+   Current: <span class="tmpl-btn disabled">SpitzLift Version (Local)</span>
+   Problem: Disabled button — no link, no path, no way to access from dashboard
+   Fix: Add the GitHub Pages path for SpitzLift demo OR note the local path
+
+4. Line 1579 — FULL INTELLIGENCE BRIEF template button
+   Current: <span class="tmpl-btn disabled">Local Only</span>
+   Problem: No path given. The file is MASTER_BRIEF.html at C:\spitzlift\
+   Fix: Add the local path in a note, or build a generic brief template
+
+5. Line 1620 — SECURITY DISCLOSURE template button
+   Current: <span class="tmpl-btn disabled">Local Only — Confidential</span>
+   Problem: Intentionally local (good — sensitive). But no path for David to find it.
+   Fix: Add a text note with the exact local path
+
+6. Surge orphan: footprintiq.surge.sh
+   Problem: Live on Surge (FootprintIQ Business Playbook, 59KB), NOT linked from HQ dashboard.
+   Either add it to the dashboard under Templates/Tools, or tear it down if superseded.
+   Local source: C:\Users\djnec\footprintiq-deploy\index.html
+
+7. Case 001 (WBE) — wbe-intel-brief.surge.sh
+   Problem: The Surge URL for the WBE brief (wbe-intel-brief.surge.sh) is not linked
+   in the Case 001 dashboard row. David has to remember the URL separately.
+   Fix: Add → link to the Case 001 client-result cell the same way GSD has Surge links.
+
+8. surge-deploy/index.html (56KB, unidentified)
+   Problem: A large HTML file sitting at the root of surge-deploy with no clear ownership.
+   It does NOT appear to be the current HQ dashboard (that's in the repo).
+   Action: Identify and either move to proper location or delete.
+
+
+════════════════════════════════════════════════════════════════════
+SECTION E — PRIORITY BUILD LIST
+════════════════════════════════════════════════════════════════════
+
+IMMEDIATE — Do today (blocking revenue or breaking daily ops)
+─────────────────────────────────────────────────────────────
+1. STRIPE PAYMENT LINK
+   Why: GSD is warm. If Dr. Gardner says yes to the $1,500 brief, there is no payment
+        mechanism. This is the only item on this list that directly blocks a dollar.
+   TC action: None — David must set up Stripe. Once link exists, TC will wire it into
+              every FootprintIQ CTA button across teaser, brief, and dashboard in < 5 min.
+
+2. RESEARCH FRAMEWORK → SURGE
+   Why: file:/// link in dashboard breaks on mobile and every device except David's.
+        David uses this regularly. One deploy fixes it permanently.
+   TC action: surge /c/Users/djnec/CommandCenter/research/NFE_RESEARCH_FRAMEWORK.html nfe-framework.surge.sh
+              Update dashboard link. 10 minutes total.
+
+3. WBE BRIEF → REPO
+   Why: Case 001 client deliverable exists on Surge but is orphaned from the repo.
+        The repo should be the single source of truth.
+   TC action: Copy wbe-inte-brief/index.html to clients/wbe/index.html in repo.
+              Add Surge link to Case 001 dashboard row. git push.
+
+THIS WEEK
+──────────
+4. BLANK RETAINER TEMPLATE
+   Why: Every future client needs one. SpitzLift-specific version can't be reused.
+   TC action: Clone SPITZLIFT_RETAINER_AGREEMENT.html, replace specifics with
+              [CLIENT_NAME] [ENGAGEMENT_TYPE] [PRICE] [DATE] variables.
+              Save to /templates/RETAINER_TEMPLATE.html. Push to GitHub.
+
+5. FOOTPRINTIQ BRIEF TEMPLATE (master)
+   Why: TEASER_TEMPLATE exists. BRIEF_TEMPLATE doesn't. Next client brief requires
+        full rebuild from scratch unless the template is built now.
+   TC action: Clone clients/gsd/brief/index.html, replace all GSD content with
+              the same variable system as TEASER_TEMPLATE.
+              Save to /templates/BRIEF_TEMPLATE.html.
+
+6. FIX BROKEN DASHBOARD LINKS
+   Why: Two file:/// links, three disabled buttons with no paths, one orphan Surge URL.
+        The dashboard is the ops center — dead links erode its usefulness.
+   TC action: Replace file:/// links, add text paths to disabled buttons,
+              add footprintiq.surge.sh to Tools section, add WBE Surge link to Case 001.
+              Single git commit fixes all of these.
+
+7. INVOICE TEMPLATE
+   Why: Need to collect payment from SpitzLift retainer and GSD if they engage.
+   TC action: Simple HTML invoice — NFE LLC header, client details, line items,
+              total, due date, payment instructions. 1 hour build.
+
+NEXT PHASE
+──────────
+8. CASE STUDY CARD TEMPLATE
+   After GSD delivers results: build a shareable case study for cold outreach.
+   This is what turns one client into three via referral.
+
+9. NDA TEMPLATE
+   Needed before sharing sensitive client data. Especially relevant for healthcare.
+   Not urgent until GSD engagement formally begins.
+
+10. SOW / ENGAGEMENT LETTER TEMPLATE
+    Build once — use for every retainer. Defines scope, deliverables, timeline, price.
+    Bridges FootprintIQ brief → signed retainer → payment.
+
+11. VERTICALS PITCH SHEET (/sales/verticals.html)
+    One-pager by industry for networking and cold outreach.
+    Content exists in pricing/index.html — just needs extraction and reformatting.
+
+
+════════════════════════════════════════════════════════════════════
+SECTION F — SURGE DEPLOYMENT STATUS
+════════════════════════════════════════════════════════════════════
+
+URL                         | CONTENT                       | LINKED IN HQ? | STATUS
+────────────────────────────────────────────────────────────────────────────────────
+footprintiq-gsd.surge.sh    | GSD FootprintIQ teaser        | YES ✅         | LIVE — send to Dr. Gardner
+nfe-gsd-brief.surge.sh      | GSD full paid brief           | YES ✅         | LIVE — send after payment
+nfe-pricing.surge.sh        | ICM pricing menu (all tiers)  | YES ✅         | LIVE
+nfe-david.surge.sh          | David Necaise portfolio/resume | YES ✅         | LIVE — baked into all teasers
+wbe-intel-brief.surge.sh    | WBE Supply Case 001 brief     | PARTIAL ⚠️     | LIVE — on Surge but NOT linked in Case 001 row
+footprintiq.surge.sh        | FootprintIQ Business Playbook | NO ❌ ORPHAN   | LIVE — unlinked, purpose unclear
+
+
+════════════════════════════════════════════════════════════════════
+SECTION G — QUICK WINS (TC can fix right now, < 10 min each)
+════════════════════════════════════════════════════════════════════
+
+G1. DEPLOY RESEARCH FRAMEWORK TO SURGE
+    Command: surge "C:/Users/djnec/CommandCenter/research/NFE_RESEARCH_FRAMEWORK.html" nfe-framework.surge.sh
+    Then update line 1630 in index.html from file:/// to https://nfe-framework.surge.sh
+    Time: 5 minutes
+
+G2. ADD WBE SURGE LINK TO CASE 001 ROW
+    Find Case 001 row in index.html, add:
+    <br><a href="https://wbe-intel-brief.surge.sh" target="_blank" style="color:var(--gold);">Brief →</a>
+    Time: 3 minutes
+
+G3. FIX THREE DISABLED TEMPLATE BUTTONS WITH TEXT PATHS
+    Add the actual local file paths as text notes so David can find them:
+    - SPITZLIFT_RETAINER_AGREEMENT.html → C:\Users\djnec\spitzlift\
+    - MASTER_BRIEF.html → C:\Users\djnec\spitzlift\
+    - SPITZLIFT_SECURITY_DISCLOSURE.html → C:\Users\djnec\spitzlift\
+    Time: 5 minutes
+
+G4. LINK OR TEARDOWN footprintiq.surge.sh ORPHAN
+    Option A: Add to Templates tab as "FootprintIQ Business Playbook" with the Surge link
+    Option B: surge teardown footprintiq.surge.sh (if content is superseded)
+    Ask David which — then execute in 2 minutes
+
+G5. IDENTIFY surge-deploy/index.html
+    Read the file title and first section to determine what it is.
+    Either move to proper location, add to repo, or delete if obsolete.
+    Time: 5 minutes
+
+G6. ADD GSD_CONVERSATION_GUIDE.txt AND GSD_FOOTPRINTIQ_BRIEF.txt TO REPO
+    git add / git push from their current local locations
+    These are active client files that should survive a machine failure.
+    Time: 5 minutes
+
+
+════════════════════════════════════════════════════════════════════
+INVENTORY SUMMARY (counts)
+════════════════════════════════════════════════════════════════════
+
+In GitHub repo (publicly accessible):      6 files
+Live on Surge:                             6 deployments
+Local-only files (meaningful):            ~20 files
+Local-only files (sensitive):              4 files (retainer, disclosure, PDF)
+file:/// links in dashboard:               2
+Orphaned Surge deployments:               1 (footprintiq.surge.sh)
+Unidentified local files:                 1 (surge-deploy root index.html)
+
+Missing (blocking revenue):               1 (Stripe payment link — David action)
+Missing (high-priority builds for TC):    5 (brief template, retainer template,
+                                            invoice template, WBE → repo, framework → Surge)
+
+════════════════════════════════════════════════════════════════════
+END AUDIT REPORT
+NFE LLC · April 8, 2026
+════════════════════════════════════════════════════════════════════

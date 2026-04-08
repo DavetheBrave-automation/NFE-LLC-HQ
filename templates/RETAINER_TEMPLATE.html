@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NFE LLC — Retainer Agreement Template</title>
+<style>
+/* ── PRINT CSS ── */
+@media print {
+  .no-print { display: none !important; }
+  body { margin: 0; font-size: 11pt; }
+  .page { box-shadow: none; border: none; padding: 0.75in; max-width: 100%; }
+  a { color: #111111; text-decoration: none; }
+  .page-break { page-break-before: always; }
+  .section { page-break-inside: avoid; }
+}
+
+/* ── BASE ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #e8e8e8;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 12pt;
+  color: #111111;
+  line-height: 1.65;
+}
+
+/* ── TOP BAR (screen only) ── */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #0a0f1e;
+  color: #f1f5f9;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+  font-family: system-ui, sans-serif;
+  font-size: 13px;
+}
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.top-bar-label {
+  font-weight: 600;
+  color: #f59e0b;
+}
+.top-bar-sub {
+  color: #94a3b8;
+  font-size: 11px;
+}
+.top-bar-actions {
+  display: flex;
+  gap: 10px;
+}
+.btn-bar {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  font-family: system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.btn-bar:hover { opacity: 0.85; }
+.btn-print { background: #f59e0b; color: #0a0f1e; }
+.btn-copy { background: #1e293b; color: #f1f5f9; border: 1px solid #334155; }
+
+/* ── PAGE ── */
+.page-wrapper {
+  padding: 80px 20px 40px;
+  min-height: 100vh;
+}
+.page {
+  background: #ffffff;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 64px 72px;
+  box-shadow: 0 4px 40px rgba(0,0,0,0.15);
+  border: 1px solid #ddd;
+}
+
+/* ── HEADER ── */
+.doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 2px solid #111111;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+}
+.nfe-brand {
+  font-family: system-ui, sans-serif;
+}
+.nfe-name {
+  font-size: 16pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #111111;
+}
+.nfe-full {
+  font-size: 9pt;
+  color: #555;
+  margin-top: 2px;
+}
+.nfe-contact {
+  font-size: 9pt;
+  color: #555;
+  margin-top: 4px;
+}
+.doc-ref {
+  text-align: right;
+  font-family: system-ui, sans-serif;
+  font-size: 9pt;
+  color: #555;
+}
+.doc-ref-num {
+  font-size: 11pt;
+  font-weight: 700;
+  color: #111;
+  display: block;
+  margin-bottom: 3px;
+}
+
+/* ── TITLE ── */
+.doc-title {
+  text-align: center;
+  margin: 28px 0 24px;
+}
+.doc-title h1 {
+  font-family: system-ui, sans-serif;
+  font-size: 14pt;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #111;
+}
+.doc-title .subtitle {
+  font-size: 10pt;
+  color: #555;
+  margin-top: 6px;
+  font-family: system-ui, sans-serif;
+}
+
+/* ── PARTIES ── */
+.parties-block {
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px 24px;
+  margin: 20px 0;
+}
+.party {
+  margin-bottom: 16px;
+}
+.party:last-child { margin-bottom: 0; }
+.party-role {
+  font-family: system-ui, sans-serif;
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 4px;
+}
+.party-name {
+  font-weight: 700;
+  font-size: 11pt;
+}
+.party-detail {
+  font-size: 10pt;
+  color: #333;
+  line-height: 1.5;
+}
+.parties-divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 16px 0;
+}
+
+/* ── SECTIONS ── */
+.section {
+  margin: 24px 0;
+}
+.section-title {
+  font-family: system-ui, sans-serif;
+  font-size: 10pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #111;
+  border-bottom: 1px solid #111;
+  padding-bottom: 4px;
+  margin-bottom: 12px;
+}
+.section p {
+  font-size: 10.5pt;
+  margin-bottom: 8px;
+}
+.section ul {
+  margin: 8px 0 8px 20px;
+  font-size: 10.5pt;
+}
+.section ul li {
+  margin-bottom: 4px;
+}
+
+/* ── PHASE TABLE ── */
+.phase-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: system-ui, sans-serif;
+  font-size: 9.5pt;
+  margin: 12px 0;
+}
+.phase-table th {
+  background: #111;
+  color: #fff;
+  padding: 8px 10px;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.phase-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: top;
+}
+.phase-table tr:last-child td { border-bottom: none; }
+.phase-table tr:nth-child(even) td { background: #f8f8f8; }
+
+/* ── HIGHLIGHT BOXES ── */
+.highlight-box {
+  border-left: 3px solid #111;
+  padding: 12px 16px;
+  background: #f8f8f8;
+  margin: 12px 0;
+  font-size: 10.5pt;
+}
+.highlight-box strong {
+  font-family: system-ui, sans-serif;
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ── EXHIBIT ── */
+.exhibit-header {
+  background: #111;
+  color: #fff;
+  padding: 12px 18px;
+  font-family: system-ui, sans-serif;
+  font-size: 10pt;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 32px 0 0;
+}
+.exhibit-body {
+  border: 1px solid #111;
+  border-top: none;
+  padding: 20px 24px;
+}
+
+/* ── SIGNATURE BLOCK ── */
+.sig-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 32px;
+}
+.sig-block { }
+.sig-party-name {
+  font-family: system-ui, sans-serif;
+  font-size: 9pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 32px;
+}
+.sig-line {
+  border-top: 1px solid #111;
+  padding-top: 6px;
+  font-size: 10pt;
+}
+.sig-date-line {
+  border-top: 1px solid #555;
+  padding-top: 6px;
+  font-size: 10pt;
+  color: #555;
+  margin-top: 20px;
+}
+
+/* ── FOOTER ── */
+.doc-footer {
+  margin-top: 40px;
+  padding-top: 12px;
+  border-top: 1px solid #ddd;
+  font-family: system-ui, sans-serif;
+  font-size: 8pt;
+  color: #888;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+/* ── VARIABLE HINTS (screen only) ── */
+.var {
+  color: #b45309;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR (no-print) -->
+<div class="top-bar no-print">
+  <div class="top-bar-left">
+    <span class="top-bar-label">NFE LLC</span>
+    <span class="top-bar-sub">Retainer Agreement Template v1.0 — Fill [VARIABLES] before sending</span>
+  </div>
+  <div class="top-bar-actions">
+    <button class="btn-bar btn-copy" onclick="navigator.clipboard.writeText(document.querySelector('.doc-ref-num').textContent); this.textContent='Copied!'; setTimeout(()=>this.textContent='Copy Ref #',1500)">Copy Ref #</button>
+    <button class="btn-bar btn-print" onclick="window.print()">Print / Save PDF</button>
+  </div>
+</div>
+
+<!-- PAGE -->
+<div class="page-wrapper">
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="doc-header">
+    <div class="nfe-brand">
+      <div class="nfe-name">NFE LLC</div>
+      <div class="nfe-full">Necaise Family Enterprises LLC</div>
+      <div class="nfe-contact">Boerne, Texas · david@trustedservicessd.com</div>
+    </div>
+    <div class="doc-ref">
+      <span class="doc-ref-num"><span class="var">[ENGAGEMENT_REF]</span></span>
+      Date: <span class="var">[ENGAGEMENT_DATE]</span>
+    </div>
+  </div>
+
+  <!-- TITLE -->
+  <div class="doc-title">
+    <h1>AI Automation Consulting Retainer Agreement</h1>
+    <div class="subtitle">Engagement: <span class="var">[ENGAGEMENT_TITLE]</span></div>
+  </div>
+
+  <!-- PARTIES -->
+  <p style="font-size:10.5pt;margin-bottom:14px;">
+    This Retainer Agreement ("Agreement") is entered into as of <span class="var">[DATE]</span> between:
+  </p>
+
+  <div class="parties-block">
+    <div class="party">
+      <div class="party-role">Consultant</div>
+      <div class="party-name">Necaise Family Enterprises LLC ("NFE LLC")</div>
+      <div class="party-detail">
+        A Texas limited liability company<br>
+        Managing Member: David Necaise<br>
+        Email: david@trustedservicessd.com
+      </div>
+    </div>
+    <hr class="parties-divider">
+    <div class="party">
+      <div class="party-role">Client</div>
+      <div class="party-name"><span class="var">[CLIENT_LEGAL_NAME]</span> ("<span class="var">[CLIENT_SHORT]</span>")</div>
+      <div class="party-detail">
+        A <span class="var">[CLIENT_ENTITY_TYPE]</span> located at <span class="var">[CLIENT_ADDRESS]</span><br>
+        Primary Contact: <span class="var">[CLIENT_CONTACT_NAME]</span><br>
+        Email: <span class="var">[CLIENT_CONTACT_EMAIL]</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 1 — SCOPE -->
+  <div class="section">
+    <div class="section-title">1. Scope of Services</div>
+    <p>NFE LLC agrees to provide AI automation consulting services as described in Exhibit A (Scope of Work), attached hereto and incorporated by reference.</p>
+    <p>Services may include but are not limited to:</p>
+    <ul>
+      <li>AI system design, deployment, and configuration</li>
+      <li>Digital footprint intelligence and gap analysis</li>
+      <li>Workflow automation and integration</li>
+      <li>Ongoing system monitoring and optimization</li>
+      <li>Training and documentation as specified in Exhibit A</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 2 — STRUCTURE -->
+  <div class="section">
+    <div class="section-title">2. Engagement Structure</div>
+    <p>This engagement is structured as follows:</p>
+    <table class="phase-table">
+      <thead>
+        <tr>
+          <th>Phase</th>
+          <th>Deliverable</th>
+          <th>Fee</th>
+          <th>Timeline</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="var">[PHASE_1_NAME]</span></td>
+          <td><span class="var">[PHASE_1_DELIVERABLE]</span></td>
+          <td>$<span class="var">[PHASE_1_FEE]</span></td>
+          <td><span class="var">[PHASE_1_TIMELINE]</span></td>
+        </tr>
+        <tr>
+          <td><span class="var">[PHASE_2_NAME]</span></td>
+          <td><span class="var">[PHASE_2_DELIVERABLE]</span></td>
+          <td>$<span class="var">[PHASE_2_FEE]</span></td>
+          <td><span class="var">[PHASE_2_TIMELINE]</span></td>
+        </tr>
+        <tr>
+          <td><span class="var">[PHASE_3_NAME]</span></td>
+          <td><span class="var">[PHASE_3_DELIVERABLE]</span></td>
+          <td>$<span class="var">[PHASE_3_FEE]</span></td>
+          <td><span class="var">[PHASE_3_TIMELINE]</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="highlight-box">
+      <strong>Monthly Retainer (if applicable)</strong>
+      $<span class="var">[MONTHLY_RETAINER]</span>/month · Start Date: <span class="var">[RETAINER_START_DATE]</span> · Billing: <span class="var">[BILLING_CYCLE]</span>
+    </div>
+  </div>
+
+  <!-- SECTION 3 — PAYMENT -->
+  <div class="section">
+    <div class="section-title">3. Payment Terms</div>
+    <ul>
+      <li><strong>3.1 Initial Payment:</strong> $<span class="var">[INITIAL_PAYMENT]</span> due upon execution of this Agreement.</li>
+      <li><strong>3.2 Monthly Retainer:</strong> Due on the <span class="var">[BILLING_DAY]</span> of each month.</li>
+      <li><strong>3.3 Project Fees:</strong> Due within <span class="var">[PAYMENT_TERMS]</span> days of invoice.</li>
+      <li><strong>3.4 Late Payments:</strong> Accounts past due 15 days accrue interest at 1.5% per month.</li>
+      <li><strong>3.5 Payment Methods:</strong> ACH, credit card (via Stripe), or other method mutually agreed upon.</li>
+      <li><strong>3.6 FootprintIQ Credit:</strong> Any FootprintIQ Brief fee paid prior to this Agreement ($<span class="var">[BRIEF_CREDIT]</span>) is credited in full toward <span class="var">[PHASE_1_NAME]</span>.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 4 — TERM -->
+  <div class="section">
+    <div class="section-title">4. Term and Termination</div>
+    <ul>
+      <li><strong>4.1 Initial Term:</strong> This Agreement commences on <span class="var">[START_DATE]</span> and continues for an initial period of <span class="var">[INITIAL_TERM]</span>.</li>
+      <li><strong>4.2 Renewal:</strong> Following the initial term, this Agreement renews month-to-month unless terminated.</li>
+      <li><strong>4.3 Termination by Client:</strong> Client may terminate with <span class="var">[CLIENT_NOTICE]</span> days written notice after the initial term.</li>
+      <li><strong>4.4 Termination by NFE LLC:</strong> NFE LLC may terminate with <span class="var">[NFE_NOTICE]</span> days written notice.</li>
+      <li><strong>4.5 Effect of Termination:</strong> Client owes all fees through the termination date. No refunds on completed work.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 5 — CONFIDENTIALITY -->
+  <div class="section">
+    <div class="section-title">5. Confidentiality</div>
+    <p>Both parties agree to maintain in strict confidence all proprietary information, business data, client lists, trade secrets, and technical information disclosed during this engagement. This obligation survives termination.</p>
+  </div>
+
+  <!-- SECTION 6 — IP -->
+  <div class="section">
+    <div class="section-title">6. Intellectual Property</div>
+    <ul>
+      <li><strong>6.1 Client Materials:</strong> All pre-existing client data and materials remain the property of Client.</li>
+      <li><strong>6.2 NFE LLC Tools:</strong> NFE LLC retains ownership of all proprietary methodologies, frameworks, templates, and tools used in delivery.</li>
+      <li><strong>6.3 Deliverables:</strong> Upon full payment, Client receives a non-exclusive license to use all custom deliverables built specifically for Client under this Agreement.</li>
+      <li><strong>6.4 AI Systems:</strong> Deployed AI systems, prompts, and configurations built specifically for Client are licensed to Client for their internal use.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 7 — CONTRACTOR -->
+  <div class="section">
+    <div class="section-title">7. Independent Contractor</div>
+    <p>NFE LLC is an independent contractor. Nothing in this Agreement creates an employment, partnership, or joint venture relationship. NFE LLC is responsible for all taxes on compensation received under this Agreement.</p>
+  </div>
+
+  <!-- SECTION 8 — LIABILITY -->
+  <div class="section">
+    <div class="section-title">8. Limitation of Liability</div>
+    <p>NFE LLC's total liability under this Agreement shall not exceed the total fees paid by Client in the three months preceding the claim. NFE LLC is not liable for indirect, incidental, or consequential damages.</p>
+  </div>
+
+  <!-- SECTION 9 — GENERAL -->
+  <div class="section">
+    <div class="section-title">9. General Provisions</div>
+    <ul>
+      <li><strong>9.1 Governing Law:</strong> This Agreement is governed by the laws of the State of Texas.</li>
+      <li><strong>9.2 Entire Agreement:</strong> This Agreement, including Exhibit A, constitutes the entire agreement between the parties.</li>
+      <li><strong>9.3 Amendments:</strong> Any changes must be in writing and signed by both parties.</li>
+      <li><strong>9.4 Notices:</strong> Notices shall be sent to the email addresses listed above.</li>
+    </ul>
+  </div>
+
+  <!-- EXHIBIT A -->
+  <div class="page-break"></div>
+  <div class="exhibit-header">Exhibit A — Scope of Work</div>
+  <div class="exhibit-body">
+    <p style="font-family:system-ui,sans-serif;font-size:9.5pt;margin-bottom:14px;">
+      <strong>Client:</strong> <span class="var">[CLIENT_LEGAL_NAME]</span> &nbsp;|&nbsp;
+      <strong>Engagement:</strong> <span class="var">[ENGAGEMENT_TITLE]</span> &nbsp;|&nbsp;
+      <strong>Reference:</strong> <span class="var">[ENGAGEMENT_REF]</span>
+    </p>
+
+    <div class="section">
+      <div class="section-title">Phase 1: <span class="var">[PHASE_1_NAME]</span></div>
+      <p style="font-family:system-ui,sans-serif;font-size:9pt;color:#555;margin-bottom:6px;">Timeline: <span class="var">[PHASE_1_TIMELINE]</span> &nbsp;|&nbsp; Fee: $<span class="var">[PHASE_1_FEE]</span></p>
+      <ul>
+        <li><span class="var">[DELIVERABLE_1]</span></li>
+        <li><span class="var">[DELIVERABLE_2]</span></li>
+        <li><span class="var">[DELIVERABLE_3]</span></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Phase 2: <span class="var">[PHASE_2_NAME]</span></div>
+      <p style="font-family:system-ui,sans-serif;font-size:9pt;color:#555;margin-bottom:6px;">Timeline: <span class="var">[PHASE_2_TIMELINE]</span> &nbsp;|&nbsp; Fee: $<span class="var">[PHASE_2_FEE]</span></p>
+      <ul>
+        <li><span class="var">[DELIVERABLE_4]</span></li>
+        <li><span class="var">[DELIVERABLE_5]</span></li>
+        <li><span class="var">[DELIVERABLE_6]</span></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Success Metrics</div>
+      <ul>
+        <li><span class="var">[METRIC_1]</span></li>
+        <li><span class="var">[METRIC_2]</span></li>
+        <li><span class="var">[METRIC_3]</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SIGNATURE BLOCK -->
+  <div class="sig-grid">
+    <div class="sig-block">
+      <div class="sig-party-name">NFE LLC — Necaise Family Enterprises LLC</div>
+      <div class="sig-line">David Necaise, Managing Member</div>
+      <div class="sig-date-line">Date: ___________________________</div>
+    </div>
+    <div class="sig-block">
+      <div class="sig-party-name"><span class="var">[CLIENT_LEGAL_NAME]</span></div>
+      <div class="sig-line"><span class="var">[CLIENT_SIGNER_NAME]</span>, <span class="var">[CLIENT_SIGNER_TITLE]</span></div>
+      <div class="sig-date-line">Date: ___________________________</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    NFE LLC Retainer Agreement &nbsp;|&nbsp; <span class="var">[ENGAGEMENT_REF]</span> &nbsp;|&nbsp; Confidential
+  </div>
+
+</div>
+</div>
+
+</body>
+</html>

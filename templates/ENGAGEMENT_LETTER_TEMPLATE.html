@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NFE LLC — Engagement Letter Template</title>
+<style>
+/* ── PRINT ── */
+@media print {
+  .no-print { display: none !important; }
+  body { margin: 0; }
+  .page { box-shadow: none; border: none; padding: 1in 1.1in; max-width: 100%; }
+  a { color: #111; text-decoration: none; }
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #e8e8e8;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 12pt;
+  color: #111;
+  line-height: 1.7;
+}
+
+/* ── TOP BAR ── */
+.top-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: #0a0f1e;
+  color: #f1f5f9;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+  font-family: system-ui, sans-serif;
+  font-size: 13px;
+}
+.top-bar-label { font-weight: 600; color: #f59e0b; }
+.top-bar-sub { color: #94a3b8; font-size: 11px; margin-left: 10px; }
+.btn-bar {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  font-family: system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #f59e0b;
+  color: #0a0f1e;
+}
+.btn-bar:hover { opacity: 0.85; }
+
+/* ── PAGE ── */
+.page-wrapper { padding: 80px 20px 40px; }
+.page {
+  background: #fff;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 64px 80px;
+  box-shadow: 0 4px 40px rgba(0,0,0,0.15);
+  border: 1px solid #ddd;
+}
+
+/* ── LETTERHEAD ── */
+.letterhead {
+  border-bottom: 2px solid #111;
+  padding-bottom: 16px;
+  margin-bottom: 32px;
+}
+.lh-name {
+  font-family: system-ui, sans-serif;
+  font-size: 15pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #111;
+}
+.lh-full {
+  font-family: system-ui, sans-serif;
+  font-size: 9pt;
+  color: #555;
+  margin-top: 2px;
+}
+.lh-contact {
+  font-family: system-ui, sans-serif;
+  font-size: 9pt;
+  color: #555;
+  margin-top: 6px;
+}
+
+/* ── DATE / SALUTATION ── */
+.doc-date { font-size: 10.5pt; color: #555; margin-bottom: 20px; }
+.salutation { font-size: 11pt; margin-bottom: 20px; }
+.intro-para { font-size: 10.5pt; margin-bottom: 24px; }
+
+/* ── SECTION BLOCKS ── */
+.eng-section { margin-bottom: 22px; }
+.eng-label {
+  font-family: system-ui, sans-serif;
+  font-size: 8.5pt;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #111;
+  margin-bottom: 8px;
+}
+.eng-content { font-size: 10.5pt; color: #222; }
+.eng-content ul { margin: 6px 0 0 18px; }
+.eng-content ul li { margin-bottom: 4px; }
+.eng-highlight {
+  background: #f9f9f9;
+  border-left: 3px solid #111;
+  padding: 12px 16px;
+  font-size: 10.5pt;
+  margin-top: 10px;
+}
+.eng-highlight strong {
+  font-family: system-ui, sans-serif;
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ── NEXT STEP BOX ── */
+.next-step-box {
+  border: 1px solid #111;
+  border-radius: 4px;
+  padding: 16px 20px;
+  background: #f9f9f9;
+  margin-bottom: 28px;
+}
+.next-step-label {
+  font-family: system-ui, sans-serif;
+  font-size: 8.5pt;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 6px;
+}
+.next-step-content { font-size: 10.5pt; color: #111; }
+
+/* ── CLOSING ── */
+.closing { margin-bottom: 32px; font-size: 10.5pt; }
+.sign-name { font-size: 12pt; font-weight: 700; margin-top: 32px; }
+.sign-title { font-size: 10pt; color: #555; margin-top: 2px; }
+.sign-contact { font-size: 9.5pt; color: #555; margin-top: 4px; }
+
+/* ── ACCEPTANCE LINE ── */
+.acceptance {
+  margin-top: 36px;
+  padding-top: 16px;
+  border-top: 1px dashed #bbb;
+  font-family: system-ui, sans-serif;
+  font-size: 8.5pt;
+  color: #888;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+/* ── FOOTER ── */
+.doc-footer {
+  margin-top: 32px;
+  padding-top: 12px;
+  border-top: 1px solid #e5e5e5;
+  font-family: system-ui, sans-serif;
+  font-size: 8pt;
+  color: #aaa;
+  text-align: center;
+}
+
+/* ── VAR HINTS ── */
+.var { color: #b45309; font-style: italic; }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar no-print">
+  <div style="display:flex;align-items:center;">
+    <span class="top-bar-label">NFE LLC</span>
+    <span class="top-bar-sub">Engagement Letter Template v1.0 — Fill [VARIABLES] before sending</span>
+  </div>
+  <button class="btn-bar" onclick="window.print()">Print / Save PDF</button>
+</div>
+
+<!-- PAGE -->
+<div class="page-wrapper">
+<div class="page">
+
+  <!-- LETTERHEAD -->
+  <div class="letterhead">
+    <div class="lh-name">NFE LLC</div>
+    <div class="lh-full">Necaise Family Enterprises LLC</div>
+    <div class="lh-contact">Boerne, Texas · david@trustedservicessd.com · <a href="https://nfe-david.surge.sh" style="color:#555;">nfe-david.surge.sh</a></div>
+  </div>
+
+  <!-- DATE -->
+  <div class="doc-date"><span class="var">[DATE]</span></div>
+
+  <!-- SALUTATION -->
+  <div class="salutation">Dear <span class="var">[CLIENT_NAME]</span>,</div>
+
+  <!-- INTRO -->
+  <div class="intro-para">
+    Thank you for engaging NFE LLC for <span class="var">[ENGAGEMENT_TITLE]</span>. This letter confirms the scope and terms of our work together.
+  </div>
+
+  <!-- WHAT WE'LL DELIVER -->
+  <div class="eng-section">
+    <div class="eng-label">What We'll Deliver</div>
+    <div class="eng-content">
+      <ul>
+        <li><span class="var">[DELIVERABLE_1]</span></li>
+        <li><span class="var">[DELIVERABLE_2]</span></li>
+        <li><span class="var">[DELIVERABLE_3]</span></li>
+      </ul>
+      <div class="eng-highlight">
+        <strong>Timeline</strong>
+        <span class="var">[TIMELINE]</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- INVESTMENT -->
+  <div class="eng-section">
+    <div class="eng-label">Investment</div>
+    <div class="eng-content">
+      <div class="eng-highlight">
+        <strong><span class="var">[FEE_DESCRIPTION]</span></strong>
+        <strong style="font-size:13pt;display:block;margin-top:2px;">$<span class="var">[AMOUNT]</span></strong>
+      </div>
+      <p style="margin-top:12px;font-size:10pt;color:#555;"><span class="var">[PAYMENT_TERMS]</span></p>
+      <p style="margin-top:6px;font-size:10pt;color:#555;font-style:italic;"><span class="var">[CREDIT_NOTE]</span></p>
+    </div>
+  </div>
+
+  <!-- NEXT STEP -->
+  <div class="next-step-box">
+    <div class="next-step-label">Next Step</div>
+    <div class="next-step-content"><span class="var">[NEXT_STEP_INSTRUCTION]</span></div>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="closing">
+    We're genuinely excited to work with you and appreciate the trust you're placing in NFE LLC. If you have any questions before we get started, reach out directly — I'm usually quick.
+  </div>
+
+  <!-- SIGNATURE -->
+  <div class="sign-name">David Necaise</div>
+  <div class="sign-title">Managing Member, NFE LLC</div>
+  <div class="sign-contact">
+    david@trustedservicessd.com<br>
+    <a href="https://calendar.app.google/7DjbWAb9omg1mzL49" style="color:#555;">Schedule a call →</a>
+  </div>
+
+  <!-- ACCEPTANCE -->
+  <div class="acceptance">
+    — Client signature or email reply constitutes acceptance of the terms above —
+  </div>
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    NFE LLC · Necaise Family Enterprises LLC · Boerne, Texas · Engagement Letter v1.0
+  </div>
+
+</div>
+</div>
+
+</body>
+</html>

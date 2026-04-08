@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<!--
+════════════════════════════════════════════════════════════════════════
+NFE LLC — FOOTPRINTIQ FULL BRIEF TEMPLATE v1.0
+════════════════════════════════════════════════════════════════════════
+Master template for all paid FootprintIQ briefs ($1,500).
+Replace every [VARIABLE] before deploying to Surge.
+Surge URL format: nfe-[CLIENT_SHORT]-brief.surge.sh
+
+CLIENT VARIABLES (replace all before deploy):
+──────────────────────────────────────────────
+[CLIENT_NAME]          Full practice/company name
+[CLIENT_SHORT]         Short name / abbreviation (e.g. GSD)
+[CLIENT_ADDRESS]       Full address string
+[CLIENT_OWNER]         Owner name + title (e.g. Dr. Jane Smith, DDS)
+[CLIENT_INDUSTRY]      Industry description (e.g. Dental / Healthcare)
+[CLIENT_DATE]          Brief date (e.g. April 2026)
+[CLIENT_PHONE]         Phone number
+[CLIENT_EMAIL]         Contact email
+[CLIENT_ENTITY_TYPE]   Entity type (e.g. Single-location, owner-operated)
+[CLIENT_STAFF]         Staff count
+[CLIENT_HOURS]         Operating hours
+[CLIENT_SCHEDULE]      Schedule model description
+[CLIENT_SERVICES_GEN]  General services
+[CLIENT_SERVICES_HV]   High-value services
+[CLIENT_REVIEWS_1]     Primary review source + score (e.g. 4.9 stars · 97 reviews)
+[CLIENT_REVIEWS_2]     Secondary review source + score
+[CLIENT_WEBSITE]       Website platform detected
+[CLIENT_BOOKING]       Booking system status
+[CLIENT_AI_SIGNAL]     AI signal / interest indicator
+[CLIENT_RELATIONSHIP]  David's relationship to this prospect
+[CLIENT_PATIENTS]      Estimated patient/customer base
+[CLIENT_APPOINTMENTS]  Estimated monthly appointments
+[CLIENT_AVG_VALUE]     Average appointment/transaction value
+[CLIENT_NEW_VALUE]     Average new customer value
+
+FIT SCORE VARIABLES:
+[FIT_SCORE_COMPOSITE]  e.g. 8.25/10
+[FIT_BUDGET]           Budget score e.g. 8/10
+[FIT_BUDGET_RATIO]     Budget narrative
+[FIT_PAIN]             Pain score e.g. 9/10
+[FIT_PAIN_RATIO]       Pain narrative
+[FIT_RELATIONSHIP]     Relationship score e.g. 9/10
+[FIT_RELATIONSHIP_RATIO] Relationship narrative
+[FIT_SPEED]            Speed-to-close score e.g. 7/10
+[FIT_SPEED_RATIO]      Speed narrative
+[VERDICT]              Fit verdict paragraph
+[STRATEGIC_NOTE]       Strategic observation paragraph
+
+REVENUE LEAKAGE:
+[LEAK_A_LABEL]         Leak A name (e.g. No Online Booking)
+[LEAK_A_ASSUMPTION_1]  Assumption line 1
+[LEAK_A_ASSUMPTION_2]  Assumption line 2
+[LEAK_A_CALC]          Calculation narrative
+[LEAK_A_MONTHLY]       e.g. $4,500–$9,000
+[LEAK_A_ANNUAL]        Annual range
+[LEAK_A_NOTE]          Confidence / caveat note
+[LEAK_B_LABEL]         Leak B name
+[LEAK_B_ASSUMPTION_1]  Assumption line 1
+[LEAK_B_ASSUMPTION_2]  Assumption line 2
+[LEAK_B_CALC]          Calculation narrative
+[LEAK_B_MONTHLY]       Monthly range
+[LEAK_B_ANNUAL]        Annual range
+[LEAK_B_NOTE]          Note
+[LEAK_C_LABEL]         Leak C name
+[LEAK_C_ASSUMPTION_1]  Assumption line 1
+[LEAK_C_ASSUMPTION_2]  Assumption line 2
+[LEAK_C_CALC]          Calculation narrative
+[LEAK_C_MONTHLY_LOW]   Monthly low
+[LEAK_C_MONTHLY_HIGH]  Monthly high
+[LEAK_C_ANNUAL]        Annual range
+[LEAK_C_NOTE]          Note
+[CONSERVATIVE_TOTAL]   e.g. $16,860/mo
+[ANNUAL_TOTAL]         e.g. $202,320/yr
+[FULL_OPPORTUNITY]     e.g. $526,320/yr at ceiling
+
+PAIN SIGNAL MAP (7 rows):
+[PAIN_N_GAP]           Gap name (N = 1–7)
+[PAIN_N_CURRENT]       Current state
+[PAIN_N_SOLUTION]      Proposed solution
+[PAIN_N_IMPACT]        Revenue/ops impact
+
+VENDOR STACK (5 rows):
+[VENDOR_N_NAME]        Vendor name (N = 1–5)
+[VENDOR_N_CATEGORY]    Category
+[VENDOR_N_COST]        Estimated cost
+[VENDOR_N_FLAG]        Flag class: flag-enhance / flag-replace / flag-invest / flag-add
+[VENDOR_N_FLAG_TEXT]   Flag label: ENHANCE / REPLACE / INVEST / ADD
+[VENDOR_SUMMARY]       Vendor stack summary paragraph
+
+CONVERSATION OPENERS (3):
+[OPENER_N_NAME]        Opener name
+[OPENER_N_WHEN]        When to use
+[OPENER_N_WHY]         Why it works
+[OPENER_N_SCRIPT]      The script (verbatim)
+
+DISCOVERY QUESTIONS (10):
+[QN_TOPIC]             Topic label
+[QN_QUESTION]          The question verbatim
+[QN_WHY]               Why we're asking
+[QN_IF_A]              If A (positive/engaged) path
+[QN_IF_B]              If B (negative/resistant) path
+
+PIVOT + SEND:
+[PIVOT_LINE]           The pivot line script
+[THE_SEND]             "The ask" copy block
+[TEASER_SURGE_URL]     Client teaser URL
+
+PRE-FILLED CONSTANTS (do not change):
+  Resume: https://nfe-david.surge.sh
+  Calendar: https://calendar.app.google/7DjbWAb9omg1mzL49
+  Email: david@trustedservicessd.com
+
+DEPLOY COMMAND:
+  surge . nfe-[CLIENT_SHORT]-brief.surge.sh
+════════════════════════════════════════════════════════════════════════
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[CLIENT_NAME] FootprintIQ Full Brief | NFE LLC — CONFIDENTIAL</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:     #0a0f1e;
+      --card:   #111827;
+      --card2:  #0d1420;
+      --amber:  #f59e0b;
+      --amberd: #d97706;
+      --text:   #f1f5f9;
+      --muted:  #94a3b8;
+      --border: #1e293b;
+      --green:  #86efac;
+      --greenb: #14532d;
+      --red:    #fca5a5;
+      --redb:   #2e1a1a;
+      --blue:   #60a5fa;
+      --blueb:  #1e3a5f;
+      --purple: #a78bfa;
+      --purpleb:#1f1635;
+    }
+    body { background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; }
+
+    /* ── STICKY HEADER ── */
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--bg); border-bottom: 1px solid var(--border);
+      padding: 12px 28px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    }
+    .sh-left  { font-size: 1rem; font-weight: 700; color: var(--amber); }
+    .sh-center { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; color: var(--text); text-transform: uppercase; }
+    .sh-right  { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.06em; }
+
+    /* ── CLASSIFIED BANNER ── */
+    .classified-bar {
+      background: var(--amber); color: #0a0f1e;
+      font-weight: 700; text-align: center; padding: 9px 16px;
+      font-size: 0.82rem; letter-spacing: 0.05em;
+    }
+
+    /* ── LAYOUT ── */
+    .wrap { max-width: 960px; margin: 0 auto; padding: 48px 20px 80px; display: flex; flex-direction: column; gap: 36px; }
+
+    /* ── HERO ── */
+    .hero { border-left: 4px solid var(--amber); padding: 36px 40px; background: var(--card); border-radius: 8px; }
+    .hero-eye { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); margin-bottom: 14px; }
+    .hero h1 { font-size: 2.2rem; font-weight: 800; color: var(--text); line-height: 1.15; letter-spacing: -0.025em; margin-bottom: 8px; }
+    .hero h2 { font-size: 1.1rem; font-weight: 400; color: var(--muted); margin-bottom: 6px; }
+    .hero-sub { font-size: 0.82rem; color: var(--muted); margin-bottom: 20px; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+    .pill { display: inline-block; border: 1px solid var(--amber); color: var(--amber); border-radius: 20px; padding: 4px 14px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; }
+    .quick-nav { display: flex; flex-wrap: wrap; gap: 6px; border-top: 1px solid var(--border); padding-top: 16px; }
+    .quick-nav a { font-size: 0.75rem; color: var(--muted); text-decoration: none; border: 1px solid var(--border); border-radius: 4px; padding: 3px 10px; transition: color 0.1s, border-color 0.1s; }
+    .quick-nav a:hover { color: var(--amber); border-color: var(--amber); }
+    .qn-label { font-size: 0.72rem; color: var(--muted); margin-right: 4px; align-self: center; }
+
+    /* ── SECTION HEADER ── */
+    .sec-wrap { display: flex; flex-direction: column; gap: 20px; }
+    .sec-hdr { border-left: 3px solid var(--amber); padding-left: 16px; }
+    .sec-eye { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); margin-bottom: 4px; }
+    .sec-title { font-size: 1.3rem; font-weight: 700; color: var(--text); }
+
+    /* ── DATA TABLE ── */
+    .data-table { width: 100%; border-collapse: collapse; }
+    .data-table td { padding: 10px 14px; font-size: 0.875rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .data-table td:first-child { color: var(--muted); width: 38%; font-size: 0.82rem; }
+    .data-table td:last-child  { color: var(--text); font-weight: 500; }
+    .data-table tr:last-child td { border-bottom: none; }
+
+    /* ── LEAK CARDS ── */
+    .leak-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .leak-card { background: var(--card); border-left: 3px solid var(--amber); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .leak-title { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); }
+    .leak-assume { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
+    .leak-calc { font-size: 0.875rem; color: var(--text); line-height: 1.5; }
+    .leak-monthly { font-size: 1.8rem; font-weight: 700; color: var(--amber); line-height: 1; }
+    .leak-annual { font-size: 0.78rem; color: var(--muted); margin-top: -6px; }
+    .leak-note { font-size: 0.75rem; color: var(--muted); font-style: italic; line-height: 1.55; border-top: 1px solid var(--border); padding-top: 8px; }
+    .summary-row { background: var(--card); border: 1px solid var(--amber); border-radius: 8px; padding: 20px; display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; text-align: center; }
+    .sum-cell .sum-label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .sum-cell .sum-val { font-size: 1.4rem; font-weight: 700; color: var(--amber); }
+    .sum-cell.big .sum-val { font-size: 1.65rem; }
+    .sum-ceil { margin-top: 12px; font-size: 0.78rem; color: var(--muted); text-align: center; }
+
+    /* ── PAIN TABLE ── */
+    .pain-table { width: 100%; border-collapse: collapse; }
+    .pain-table th { background: var(--border); color: var(--amber); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 11px 14px; text-align: left; }
+    .pain-table td { padding: 13px 14px; font-size: 0.82rem; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.6; color: var(--muted); }
+    .pain-table td:first-child { color: var(--text); font-weight: 600; }
+    .pain-table td:last-child { color: var(--amber); font-weight: 600; }
+    .pain-table tr:nth-child(odd) td { background: var(--card); }
+    .pain-table tr:nth-child(even) td { background: var(--card2); }
+
+    /* ── VENDOR TABLE ── */
+    .vendor-table { width: 100%; border-collapse: collapse; }
+    .vendor-table th { background: var(--border); color: var(--amber); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 11px 14px; text-align: left; }
+    .vendor-table td { padding: 13px 14px; font-size: 0.82rem; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.6; color: var(--muted); }
+    .vendor-table tr:nth-child(odd)  td { background: var(--card); }
+    .vendor-table tr:nth-child(even) td { background: var(--card2); }
+    .flag { display: inline-block; border-radius: 4px; padding: 2px 8px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; }
+    .flag-enhance  { background: var(--greenb);  color: var(--green); }
+    .flag-replace  { background: var(--redb);    color: var(--red); }
+    .flag-invest   { background: var(--blueb);   color: var(--blue); }
+    .flag-add      { background: #2e2a0a;        color: #fde68a; }
+    .vendor-summary { background: var(--card); border-left: 3px solid var(--amber); border-radius: 6px; padding: 16px 20px; font-size: 0.85rem; line-height: 1.75; color: var(--muted); }
+    .vendor-summary strong { color: var(--text); }
+
+    /* ── OPENER CARDS ── */
+    .opener-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 22px; }
+    .opener-num { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+    blockquote.script { border-left: 3px solid var(--amber); background: var(--card2); padding: 14px 18px; border-radius: 0 6px 6px 0; font-size: 0.9rem; font-style: italic; color: var(--text); line-height: 1.75; margin-bottom: 14px; }
+    .why-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); margin-bottom: 4px; }
+    .why-text { font-size: 0.82rem; color: var(--muted); line-height: 1.6; margin-bottom: 10px; }
+    .use-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); margin-bottom: 4px; }
+    .use-text  { font-size: 0.82rem; color: var(--text); line-height: 1.6; }
+
+    /* ── FIT SCORE ── */
+    .fit-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+    .fit-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 22px; }
+    .fit-dim { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    .fit-score { font-size: 3rem; font-weight: 700; color: var(--amber); line-height: 1; margin-bottom: 10px; }
+    .fit-score .denom { font-size: 1.2rem; font-weight: 400; color: var(--muted); }
+    .fit-ratio { font-size: 0.85rem; color: var(--text); line-height: 1.65; }
+    .composite-box { background: var(--amber); border-radius: 8px; padding: 28px; text-align: center; }
+    .composite-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #0a0f1e; margin-bottom: 8px; opacity: 0.7; }
+    .composite-val { font-size: 3rem; font-weight: 700; color: #0a0f1e; line-height: 1; }
+    .verdict-box { background: var(--card); border-left: 3px solid var(--amber); border-radius: 6px; padding: 18px 22px; font-size: 0.875rem; line-height: 1.75; color: var(--muted); }
+    .verdict-box strong { color: var(--text); }
+    .strategic-box { background: var(--card2); border-left: 3px solid var(--blue); border-radius: 6px; padding: 18px 22px; font-size: 0.875rem; line-height: 1.75; color: var(--muted); }
+    .strategic-box strong { color: var(--text); }
+
+    /* ── DISCOVERY Qs ── */
+    .q-intro { font-size: 0.875rem; color: var(--muted); line-height: 1.7; padding: 16px 20px; background: var(--card); border-radius: 6px; border-left: 3px solid var(--border); }
+    .q-card { background: var(--card); border-radius: 8px; padding: 22px; border-left: 3px solid var(--amber); display: flex; flex-direction: column; gap: 14px; }
+    .q-header { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); }
+    .q-text { font-size: 1rem; font-style: italic; color: var(--text); font-weight: 500; line-height: 1.6; background: var(--card2); border-left: 3px solid var(--amber); padding: 14px 18px; border-radius: 0 6px 6px 0; }
+    .q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .q-why-col { display: flex; flex-direction: column; gap: 6px; }
+    .q-if-col  { display: flex; flex-direction: column; gap: 10px; }
+    .q-why-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); }
+    .q-why-body  { font-size: 0.8rem; color: var(--muted); line-height: 1.65; }
+    .q-if-a, .q-if-b { display: flex; flex-direction: column; gap: 4px; }
+    .q-if-a .if-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #4ade80; }
+    .q-if-b .if-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); }
+    .q-if-a .if-body, .q-if-b .if-body { font-size: 0.8rem; color: var(--text); line-height: 1.6; }
+    .pivot-box { background: var(--amber); border-radius: 8px; padding: 24px 28px; }
+    .pivot-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #0a0f1e; opacity: 0.7; margin-bottom: 10px; }
+    .pivot-text  { font-size: 1rem; font-weight: 600; color: #0a0f1e; line-height: 1.7; }
+    .send-box { background: var(--card); border: 1px solid var(--amber); border-radius: 8px; padding: 22px 26px; }
+    .send-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+    .send-text { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 14px; }
+    .send-url { font-family: 'Courier New', monospace; font-size: 0.9rem; color: var(--amber); font-weight: 600; }
+
+    /* ── ENGAGEMENT PATH ── */
+    .path-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
+    .path-step { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 18px; }
+    .path-num  { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); margin-bottom: 6px; }
+    .path-title{ font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.3; }
+    .path-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.5; margin-bottom: 10px; }
+    .path-badge { display: inline-block; border-radius: 12px; padding: 2px 10px; font-size: 0.7rem; font-weight: 600; }
+    .badge-done   { background: var(--greenb); color: var(--green); }
+    .badge-next   { background: rgba(245,158,11,0.15); color: var(--amber); border: 1px solid var(--amber); }
+    .badge-future { background: var(--border); color: var(--muted); }
+
+    /* ── FOOTER ── */
+    .page-footer { background: var(--card); border-top: 1px solid var(--border); padding: 28px 32px; text-align: center; display: flex; flex-direction: column; gap: 6px; }
+    .pf-main    { font-size: 0.85rem; color: var(--muted); }
+    .pf-tagline { font-size: 0.88rem; color: var(--amber); font-style: italic; }
+    .pf-legal   { font-size: 0.72rem; color: #334155; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 720px) {
+      .site-header { padding: 10px 14px; }
+      .sh-center { display: none; }
+      .wrap { padding: 24px 12px 60px; }
+      .hero { padding: 24px 18px; }
+      .hero h1 { font-size: 1.55rem; }
+      .leak-grid { grid-template-columns: 1fr; }
+      .summary-row { grid-template-columns: repeat(2,1fr); }
+      .fit-grid { grid-template-columns: 1fr; }
+      .path-grid { grid-template-columns: repeat(2,1fr); }
+      .q-grid { grid-template-columns: 1fr; }
+      .pain-table, .vendor-table { font-size: 0.78rem; }
+    }
+    @media (max-width: 480px) {
+      .summary-row { grid-template-columns: 1fr; }
+      .path-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- STICKY HEADER -->
+<header class="site-header">
+  <span class="sh-left">NFE LLC</span>
+  <span class="sh-center">FootprintIQ Full Brief — CONFIDENTIAL</span>
+  <span class="sh-right">[CLIENT_SHORT] · [CLIENT_DATE]</span>
+</header>
+
+<!-- CLASSIFIED BANNER -->
+<div class="classified-bar">⚠ PAID ENGAGEMENT DOCUMENT — CONFIDENTIAL — NOT FOR DISTRIBUTION</div>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eye">FootprintIQ Intelligence Brief — Tier 1 Quick Strike</div>
+    <h1>[CLIENT_NAME]</h1>
+    <h2>Complete Intelligence Package · [CLIENT_OWNER]</h2>
+    <p class="hero-sub">[CLIENT_ADDRESS] · [CLIENT_DATE]</p>
+    <div class="pill-row">
+      <span class="pill">Fit Score: [FIT_SCORE_COMPOSITE]</span>
+      <span class="pill">Leakage: [CONSERVATIVE_TOTAL]/mo</span>
+      <span class="pill">Close: [CLOSE_TIMELINE]</span>
+    </div>
+    <div class="quick-nav">
+      <span class="qn-label">Jump to:</span>
+      <a href="#snapshot">Snapshot</a>
+      <a href="#revenue">Revenue</a>
+      <a href="#pain">Pain Map</a>
+      <a href="#vendors">Vendors</a>
+      <a href="#openers">Openers</a>
+      <a href="#fitscore">Fit Score</a>
+      <a href="#discovery">Discovery Qs</a>
+    </div>
+  </div>
+
+  <!-- SECTION 1: SNAPSHOT -->
+  <div class="sec-wrap" id="snapshot">
+    <div class="sec-hdr">
+      <div class="sec-eye">Section 01</div>
+      <div class="sec-title">Practice Snapshot</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;">
+      <table class="data-table">
+        <tr><td>Name</td><td>[CLIENT_NAME]</td></tr>
+        <tr><td>Owner</td><td>[CLIENT_OWNER]</td></tr>
+        <tr><td>Location</td><td>[CLIENT_ADDRESS]</td></tr>
+        <tr><td>Phone</td><td>[CLIENT_PHONE]</td></tr>
+        <tr><td>Email</td><td>[CLIENT_EMAIL]</td></tr>
+        <tr><td>Entity Type</td><td>[CLIENT_ENTITY_TYPE]</td></tr>
+        <tr><td>Staff</td><td>[CLIENT_STAFF]</td></tr>
+        <tr><td>Operating Hours</td><td>[CLIENT_HOURS]</td></tr>
+        <tr><td>Schedule Model</td><td>[CLIENT_SCHEDULE]</td></tr>
+        <tr><td>Services — General</td><td>[CLIENT_SERVICES_GEN]</td></tr>
+        <tr><td>Services — High Value</td><td>[CLIENT_SERVICES_HV]</td></tr>
+        <tr><td>Primary Reviews</td><td>[CLIENT_REVIEWS_1]</td></tr>
+        <tr><td>Secondary Reviews</td><td>[CLIENT_REVIEWS_2]</td></tr>
+        <tr><td>Website Platform</td><td>[CLIENT_WEBSITE]</td></tr>
+        <tr><td>Online Booking</td><td>[CLIENT_BOOKING]</td></tr>
+        <tr><td>AI Signal</td><td>[CLIENT_AI_SIGNAL]</td></tr>
+        <tr><td>Relationship to NFE</td><td>[CLIENT_RELATIONSHIP]</td></tr>
+        <tr><td>Est. Customer Base</td><td>[CLIENT_PATIENTS]</td></tr>
+        <tr><td>Est. Monthly Appointments</td><td>[CLIENT_APPOINTMENTS]</td></tr>
+        <tr><td>Avg Transaction Value</td><td>[CLIENT_AVG_VALUE]</td></tr>
+        <tr><td>Avg New Customer Value</td><td>[CLIENT_NEW_VALUE]</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- SECTION 2: REVENUE LEAKAGE -->
+  <div class="sec-wrap" id="revenue">
+    <div class="sec-hdr">
+      <div class="sec-eye">Section 02</div>
+      <div class="sec-title">Revenue Leakage Calculator</div>
+    </div>
+    <div class="leak-grid">
+      <!-- LEAK A -->
+      <div class="leak-card">
+        <div class="leak-title">Leak A — [LEAK_A_LABEL]</div>
+        <div class="leak-assume">
+          ↳ [LEAK_A_ASSUMPTION_1]<br>
+          ↳ [LEAK_A_ASSUMPTION_2]
+        </div>
+        <div class="leak-calc">[LEAK_A_CALC]</div>
+        <div>
+          <div class="leak-monthly">[LEAK_A_MONTHLY]</div>
+          <div class="leak-annual">[LEAK_A_ANNUAL] annually</div>
+        </div>
+        <div class="leak-note">[LEAK_A_NOTE]</div>
+      </div>
+      <!-- LEAK B -->
+      <div class="leak-card">
+        <div class="leak-title">Leak B — [LEAK_B_LABEL]</div>
+        <div class="leak-assume">
+          ↳ [LEAK_B_ASSUMPTION_1]<br>
+          ↳ [LEAK_B_ASSUMPTION_2]
+        </div>
+        <div class="leak-calc">[LEAK_B_CALC]</div>
+        <div>
+          <div class="leak-monthly">[LEAK_B_MONTHLY]</div>
+          <div class="leak-annual">[LEAK_B_ANNUAL] annually</div>
+        </div>
+        <div class="leak-note">[LEAK_B_NOTE]</div>
+      </div>
+      <!-- LEAK C -->
+      <div class="leak-card">
+        <div class="leak-title">Leak C — [LEAK_C_LABEL]</div>
+        <div class="leak-assume">
+          ↳ [LEAK_C_ASSUMPTION_1]<br>
+          ↳ [LEAK_C_ASSUMPTION_2]
+        </div>
+        <div class="leak-calc">[LEAK_C_CALC]</div>
+        <div>
+          <div class="leak-monthly">[LEAK_C_MONTHLY_LOW]–[LEAK_C_MONTHLY_HIGH]</div>
+          <div class="leak-annual">[LEAK_C_ANNUAL] annually</div>
+        </div>
+        <div class="leak-note">[LEAK_C_NOTE]</div>
+      </div>
+    </div>
+    <!-- SUMMARY ROW -->
+    <div class="summary-row">
+      <div class="sum-cell">
+        <div class="sum-label">Conservative Total</div>
+        <div class="sum-val">[CONSERVATIVE_TOTAL]</div>
+      </div>
+      <div class="sum-cell">
+        <div class="sum-label">Conservative Annual</div>
+        <div class="sum-val">[ANNUAL_TOTAL]</div>
+      </div>
+      <div class="sum-cell big">
+        <div class="sum-label">Full Opportunity</div>
+        <div class="sum-val">[FULL_OPPORTUNITY]</div>
+      </div>
+      <div class="sum-cell">
+        <div class="sum-label">Leaks Identified</div>
+        <div class="sum-val">3</div>
+      </div>
+    </div>
+    <p class="sum-ceil" style="font-style:italic;color:var(--muted);font-size:0.78rem;">All figures are revenue recovery estimates based on industry benchmarks and observed gaps. Actual results depend on implementation quality and client market.</p>
+  </div>
+
+  <!-- SECTION 3: PAIN SIGNAL MAP -->
+  <div class="sec-wrap" id="pain">
+    <div class="sec-hdr">
+      <div class="sec-eye">Section 03</div>
+      <div class="sec-title">Pain Signal Map</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;">
+      <table class="pain-table">
+        <thead>
+          <tr>
+            <th>Gap</th>
+            <th>Current State</th>
+            <th>Solution</th>
+            <th>Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>[PAIN_1_GAP]</td><td>[PAIN_1_CURRENT]</td><td>[PAIN_1_SOLUTION]</td><td>[PAIN_1_IMPACT]</td></tr>
+          <tr><td>[PAIN_2_GAP]</td><td>[PAIN_2_CURRENT]</td><td>[PAIN_2_SOLUTION]</td><td>[PAIN_2_IMPACT]</td></tr>
+          <tr><td>[PAIN_3_GAP]</td><td>[PAIN_3_CURRENT]</td><td>[PAIN_3_SOLUTION]</td><td>[PAIN_3_IMPACT]</td></tr>
+          <tr><td>[PAIN_4_GAP]</td><td>[PAIN_4_CURRENT]</td><td>[PAIN_4_SOLUTION]</td><td>[PAIN_4_IMPACT]</td></tr>
+          <tr><td>[PAIN_5_GAP]</td><td>[PAIN_5_CURRENT]</td><td>[PAIN_5_SOLUTION]</td><td>[PAIN_5_IMPACT]</td></tr>
+          <tr><td>[PAIN_6_GAP]</td><td>[PAIN_6_CURRENT]</td><td>[PAIN_6_SOLUTION]</td><td>[PAIN_6_IMPACT]</td></tr>
+          <tr><td>[PAIN_7_GAP]</td><td>[PAIN_7_CURRENT]</td><td>[PAIN_7_SOLUTION]</td><td>[PAIN_7_IMPACT]</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SECTION 4: VENDOR STACK -->
+  <div class="sec-wrap" id="vendors">
+    <div class="sec-hdr">
+      <div class="sec-eye">Section 04</div>
+      <div class="sec-title">Vendor Stack Audit</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;">
+      <table class="vendor-table">
+        <thead>
+          <tr>
+            <th>Vendor / Tool</th>
+            <th>Category</th>
+            <th>Est. Cost</th>
+            <th>NFE Assessment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="color:var(--text);font-weight:600;">[VENDOR_1_NAME]</td>
+            <td>[VENDOR_1_CATEGORY]</td>
+            <td>[VENDOR_1_COST]</td>
+            <td><span class="flag [VENDOR_1_FLAG]">[VENDOR_1_FLAG_TEXT]</span></td>
+          </tr>
+          <tr>
+            <td style="color:var(--text);font-weight:600;">[VENDOR_2_NAME]</td>
+            <td>[VENDOR_2_CATEGORY]</td>
+            <td>[VENDOR_2_COST]</td>
+            <td><span class="flag [VENDOR_2_FLAG]">[VENDOR_2_FLAG_TEXT]</span></td>
+          </tr>
+          <tr>
+            <td style="color:var(--text);font-weight:600;">[VENDOR_3_NAME]</td>
+            <td>[VENDOR_3_CATEGORY]</td>
+            <td>[VENDOR_3_COST]</td>
+            <td><span class="flag [VENDOR_3_FLAG]">[VENDOR_3_FLAG_TEXT]</span></td>
+          </tr>
+          <tr>
+            <td style="color:var(--text);font-weight:600;">[VENDOR_4_NAME]</td>
+            <td>[VENDOR_4_CATEGORY]</td>
+            <td>[VENDOR_4_COST]</td>
+            <td><span class="flag [VENDOR_4_FLAG]">[VENDOR_4_FLAG_TEXT]</span></td>
+          </tr>
+          <tr>
+            <td style="color:var(--text);font-weight:600;">[VENDOR_5_NAME]</td>
+            <td>[VENDOR_5_CATEGORY]</td>
+            <td>[VENDOR_5_COST]</td>
+            <td><span class="flag [VENDOR_5_FLAG]">[VENDOR_5_FLAG_TEXT]</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="vendor-summary">[VENDOR_SUMMARY]</div>
+  </div>
+
+  <!-- SECTION 5: CONVERSATION OPENERS -->
+  <div class="sec-wrap" id="openers">
+    <div class="sec-hdr">
+      <div class="sec-eye">Section 05</div>
+      <div class="sec-title">Conversation Openers</div>
+    </div>
+    <div class="opener-card">
+      <div class="opener-num">Opener 1 — [OPENER_1_NAME]</div>
+      <blockquote class="script">"[OPENER_1_SCRIPT]"</blockquote>
+      <div class="why-label">Why It Works</div>
+      <div class="why-text">[OPENER_1_WHY]</div>
+      <div class="use-label">Use When</div>
+      <div class="use-text">[OPENER_1_WHEN]</div>
+    </div>
+    <div class="opener-card">
+      <div class="opener-num">Opener 2 — [OPENER_2_NAME]</div>
+      <blockquote class="script">"[OPENER_2_SCRIPT]"</blockquote>
+      <div class="why-label">Why It Works</div>
+      <div class="why-text">[OPENER_2_WHY]</div>
+      <div class="use-label">Use When</div>
+      <div class="use-text">[OPENER_2_WHEN]</div>
+    </div>
+    <div class="opener-card">
+      <div class="opener-num">Opener 3 — [OPENER_3_NAME]</div>
+      <blockquote class="script">"[OPENER_3_SCRIPT]"</blockquote>
+      <div class="why-label">Why It Works</div>
+      <div class="why-text">[OPENER_3_WHY]</div>
+      <div class="use-label">Use When</div>
+      <div class="use-text">[OPENER_3_WHEN]</div>
+    </div>
+  </div>
+
+  <!-- SECTION 6: FIT SCORE -->
+  <div class="sec-wrap" id="fitscore">
+    <div class="sec-hdr">
+      <div class="sec-eye">Section 06</div>
+      <div class="sec-title">NFE LLC Fit Score</div>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-card">
+        <div class="fit-dim">Budget Capacity</div>
+        <div class="fit-score">[FIT_BUDGET]<span class="denom">/10</span></div>
+        <div class="fit-ratio">[FIT_BUDGET_RATIO]</div>
+      </div>
+      <div class="fit-card">
+        <div class="fit-dim">Pain Signal Strength</div>
+        <div class="fit-score">[FIT_PAIN]<span class="denom">/10</span></div>
+        <div class="fit-ratio">[FIT_PAIN_RATIO]</div>
+      </div>
+      <div class="fit-card">
+        <div class="fit-dim">Relationship / Access</div>
+        <div class="fit-score">[FIT_RELATIONSHIP]<span class="denom">/10</span></div>
+        <div class="fit-ratio">[FIT_RELATIONSHIP_RATIO]</div>
+      </div>
+      <div class="fit-card">
+        <div class="fit-dim">Speed to Close</div>
+        <div class="fit-score">[FIT_SPEED]<span class="denom">/10</span></div>
+        <div class="fit-ratio">[FIT_SPEED_RATIO]</div>
+      </div>
+    </div>
+    <div class="composite-box">
+      <div class="composite-label">Composite Fit Score</div>
+      <div class="composite-val">[FIT_SCORE_COMPOSITE]</div>
+    </div>
+    <div class="verdict-box">[VERDICT]</div>
+    <div class="strategic-box">[STRATEGIC_NOTE]</div>
+  </div>
+
+  <!-- SECTION 7: DISCOVERY QUESTIONS -->
+  <div class="sec-wrap" id="discovery">
+    <div class="sec-hdr">
+      <div class="sec-eye">Section 07</div>
+      <div class="sec-title">Discovery Questions</div>
+    </div>
+    <div class="q-intro">
+      These 10 questions are designed to surface the specific pain points identified in this brief.
+      Each question has branching paths — <strong style="color:#4ade80;">IF A</strong> = they're engaged and open,
+      <strong style="color:var(--blue);">IF B</strong> = they're resistant or dismissive.
+      Work the IFs, not the answers.
+    </div>
+
+    <!-- Q1 -->
+    <div class="q-card">
+      <div class="q-header">Q1 — [Q1_TOPIC]</div>
+      <div class="q-text">[Q1_QUESTION]</div>
+      <div class="q-grid">
+        <div class="q-why-col">
+          <div class="q-why-label">Why We're Asking</div>
+          <div class="q-why-body">[Q1_WHY]</div>
+        </div>
+        <div class="q-if-col">
+          <div class="q-if-a"><div class="if-label">If A →</div><div class="if-body">[Q1_IF_A]</div></div>
+          <div class="q-if-b"><div class="if-label">If B →</div><div class="if-body">[Q1_IF_B]</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="q-card">
+      <div class="q-header">Q2 — [Q2_TOPIC]</div>
+      <div class="q-text">[Q2_QUESTION]</div>
+      <div class="q-grid">
+        <div class="q-why-col">
+          <div class="q-why-label">Why We're Asking</div>
+          <div class="q-why-body">[Q2_WHY]</div>
+        </div>
+        <div class="q-if-col">
+          <div class="q-if-a"><div class="if-label">If A →</div><div class="if-body">[Q2_IF_A]</div></div>
+          <div class="q-if-b"><div class="if-label">If B →</div><div class="if-body">[Q2_IF_B]</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="q-card">
+      <div class="q-header">Q3 — [Q3_TOPIC]</div>
+      <div class="q-text">[Q3_QUESTION]</div>
+      <div class="q-grid">
+        <div class="q-why-col">
+          <div class="q-why-label">Why We're Asking</div>
+          <div class="q-why-body">[Q3_WHY]</div>
+        </div>
+        <div class="q-if-col">
+          <div class="q-if-a"><div class="if-label">If A →</div><div class="if-body">[Q3_IF_A]</div></div>
+          <div class="q-if-b"><div class="if-label">If B →</div><div class="if-body">[Q3_IF_B]</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="q-card">
+      <div class="q-header">Q4 — [Q4_TOPIC]</div>
+      <div class="q-text">[Q4_QUESTION]</div>
+      <div class="q-grid">
+        <div class="q-why-col">
+          <div class="q-why-label">Why We're Asking</div>
+          <div class="q-why-body">[Q4_WHY]</div>
+        </div>
+        <div class="q-if-col">
+          <div class="q-if-a"><div class="if-label">If A →</div><div class="if-body">[Q4_IF_A]</div></div>
+          <div class="q-if-b"><div class="if-label">If B →</div><div class="if-body">[Q4_IF_B]</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="q-card">
+      <div class="q-header">Q5 — [Q5_TOPIC]</div>
+      <div class="q-text">[Q5_QUESTION]</div>
+      <div class="q-grid">
+        <div class="q-why-col">
+          <div class="q-why-label">Why We're Asking</div>
+          <div class="q-why-body">[Q5_WHY]</div>
+        </div>
+        <div class="q-if-col">
+          <div class="q-if-a"><div class="if-label">If A →</div><div class="if-body">[Q5_IF_A]</div></div>
+          <div class="q-if-b"><div class="if-label">If B →</div><div class="if-body">[Q5_IF_B]</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="q-card">
+      <div class="q-header">Q6 — [Q6_TOPIC]</div>
+      <div class="q-text">[Q6_QUESTION]</div>
+      <div class="q-grid">
+        <div class="q-why-col">
+          <div class="q-why-label">Why We're Asking</div>
+          <div class="q-why-body">[Q6_WHY]</div>
+        </div>
+        <div class="q-if-col">
+          <div class="q-if-a"><div class="if-label">If A →</div><div class="if-body">[Q6_IF_A]</div></div>
+          <div class="q-if-b"><div class="if-label">If B →</div><div class="if-body">[Q6_IF_B]</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="q-card">
+      <div class="q-header">Q7 — [Q7_TOPIC]</div>
+      <div class="q-text">[Q7_QUESTION]</div>
+      <div class="q-grid">
+        <div class="q-why-col">
+          <div class="q-why-label">Why We're Asking</div>
+          <div class="q-why-body">[Q7_WHY]</div>
+        </div>
+        <div class="q-if-col">
+          <div class="q-if-a"><div class="if-label">If A →</div><div class="if-body">[Q7_IF_A]</div></div>
+          <div class="q-if-b"><div class="if-label">If B →</div><div class="if-body">[Q7_IF_B]</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="q-card">
+      <div class="q-header">Q8 — [Q8_TOPIC]</div>
+      <div class="q-text">[Q8_QUESTION]</div>
+      <div class="q-grid">
+        <div class="q-why-col">
+          <div class="q-why-label">Why We're Asking</div>
+          <div class="q-why-body">[Q8_WHY]</div>
+        </div>
+        <div class="q-if-col">
+          <div class="q-if-a"><div class="if-label">If A →</div><div class="if-body">[Q8_IF_A]</div></div>
+          <div class="q-if-b"><div class="if-label">If B →</div><div class="if-body">[Q8_IF_B]</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="q-card">
+      <div class="q-header">Q9 — [Q9_TOPIC]</div>
+      <div class="q-text">[Q9_QUESTION]</div>
+      <div class="q-grid">
+        <div class="q-why-col">
+          <div class="q-why-label">Why We're Asking</div>
+          <div class="q-why-body">[Q9_WHY]</div>
+        </div>
+        <div class="q-if-col">
+          <div class="q-if-a"><div class="if-label">If A →</div><div class="if-body">[Q9_IF_A]</div></div>
+          <div class="q-if-b"><div class="if-label">If B →</div><div class="if-body">[Q9_IF_B]</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q10 -->
+    <div class="q-card">
+      <div class="q-header">Q10 — [Q10_TOPIC]</div>
+      <div class="q-text">[Q10_QUESTION]</div>
+      <div class="q-grid">
+        <div class="q-why-col">
+          <div class="q-why-label">Why We're Asking</div>
+          <div class="q-why-body">[Q10_WHY]</div>
+        </div>
+        <div class="q-if-col">
+          <div class="q-if-a"><div class="if-label">If A →</div><div class="if-body">[Q10_IF_A]</div></div>
+          <div class="q-if-b"><div class="if-label">If B →</div><div class="if-body">[Q10_IF_B]</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PIVOT -->
+    <div class="pivot-box">
+      <div class="pivot-label">The Pivot</div>
+      <div class="pivot-text">[PIVOT_LINE]</div>
+    </div>
+
+    <!-- THE SEND -->
+    <div class="send-box">
+      <div class="send-label">The Send</div>
+      <div class="send-text">[THE_SEND]</div>
+      <div class="send-url">→ [TEASER_SURGE_URL]</div>
+    </div>
+  </div>
+
+  <!-- ENGAGEMENT PATH -->
+  <div class="sec-wrap">
+    <div class="sec-hdr">
+      <div class="sec-eye">Engagement Path</div>
+      <div class="sec-title">Next Steps</div>
+    </div>
+    <div class="path-grid">
+      <div class="path-step">
+        <div class="path-num">Phase 1</div>
+        <div class="path-title">FootprintIQ Brief</div>
+        <div class="path-desc">$1,500 — Intelligence package delivered. Gaps quantified.</div>
+        <span class="path-badge badge-done">✅ DELIVERED</span>
+      </div>
+      <div class="path-step">
+        <div class="path-num">Phase 2</div>
+        <div class="path-title">Discovery Session</div>
+        <div class="path-desc">60-min call — validate findings, confirm priorities, present build plan.</div>
+        <span class="path-badge badge-next">⏳ NEXT</span>
+      </div>
+      <div class="path-step">
+        <div class="path-num">Phase 3</div>
+        <div class="path-title">Retainer + Build</div>
+        <div class="path-desc">NFE LLC engagement — 90-day build sprint. Systems deployed.</div>
+        <span class="path-badge badge-future">PHASE 3</span>
+      </div>
+      <div class="path-step">
+        <div class="path-num">Phase 4</div>
+        <div class="path-title">Ongoing Ops</div>
+        <div class="path-desc">Monthly retainer — monitoring, iteration, expansion.</div>
+        <span class="path-badge badge-future">PHASE 4</span>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /wrap -->
+
+<!-- FOOTER -->
+<footer class="page-footer">
+  <div class="pf-main">Prepared by NFE LLC — Necaise Family Enterprises LLC · david@trustedservicessd.com</div>
+  <div class="pf-tagline">"We find the leaks. We build the fix. We stay until it works."</div>
+  <div class="pf-legal">CONFIDENTIAL — This document contains proprietary NFE LLC intelligence. Not for distribution. © 2026 NFE LLC.</div>
+</footer>
+
+</body>
+</html>

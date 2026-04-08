@@ -1,0 +1,211 @@
+================================================================================
+GSD CONVERSATION GUIDE — DAVID'S FIELD REFERENCE
+Gardner Springs Dentistry · Dr. Brandon Gardner, DDS
+NFE LLC First Dental Engagement — ACTIVE
+================================================================================
+CLASSIFICATION: INTERNAL USE ONLY · NOT FOR CLIENT DISTRIBUTION
+Prepared by: NFE LLC · 2026-04-07
+================================================================================
+
+PURPOSE
+-------
+This is your warm conversation guide for your next direct interaction with
+Dr. Gardner — whether that's a follow-up call, a coffee, or a text thread.
+You are not selling. You are continuing a relationship. The intel in
+GSD_FOOTPRINTIQ_BRIEF.txt is your foundation. This guide is your voice.
+
+================================================================================
+THE OPENER
+================================================================================
+
+Use one of these based on context. Do not combine them.
+
+--- VERSION A: CASUAL (text or informal call) ---
+
+"Hey Dr. G — been doing some homework on your practice since we last talked.
+ Ran some numbers on what practices your size are leaving on the table with
+ the way AI is being adopted right now. Want me to share what I found?
+ Pretty eye-opening."
+
+--- VERSION B: SEMI-FORMAL (scheduled call or in-person) ---
+
+"I wanted to follow up on our last conversation. I did a deep dive into
+ what's happening with dental practices in your market — specifically the
+ ones that are figuring out AI versus the ones that are still waiting.
+ The gap is wider than most people expect, and I think it applies directly
+ to where Gardner Springs is right now. I'd love to walk you through it
+ if you have 20 minutes."
+
+--- VERSION C: COLD RESTART (if significant time has passed) ---
+
+"Hey Dr. Gardner, David here from NFE. I know it's been a minute —
+ I've actually been doing some research on the Boerne/San Antonio dental
+ market and wanted to share something I found about your specific practice
+ setup. Quick question first: is your schedule still the condensed model,
+ Tue–Thu with alternating Mondays and Fridays?"
+
+(The condensed schedule question signals that you've paid attention.
+ It almost always earns a "yes, how did you know that?" — your door is open.)
+
+================================================================================
+DISCOVERY QUESTIONS
+================================================================================
+
+Ask in this order. Do not skip ahead. Each question feeds the next.
+
+--- Q1: SCHEDULE REALITY ---
+"Walk me through a typical week for you — are you hitting full capacity
+ on your procedure days, or are there gaps?"
+
+   LISTEN FOR: no-show patterns, last-minute cancellations, empty afternoon
+   slots. This surfaces Leak A without you naming it.
+
+--- Q2: THE RECALL BACKLOG ---
+"How are you handling patients who haven't been in for 18 months or more?
+ Is your team working that list, or does it mostly sit?"
+
+   LISTEN FOR: "we try but it's manual," "we use [X software]," "we don't
+   really have a system." Any answer here except "it's fully automated"
+   is a revenue leakage signal.
+
+--- Q3: THE BOOKING MOMENT ---
+"When someone calls after hours or fills out a form on your site — what
+ happens? Does it go into a queue, or is there something that handles it
+ immediately?"
+
+   LISTEN FOR: "they call back the next morning," "we use a service,"
+   "it goes to voicemail." After-hours capture failure is your Leak C.
+
+--- Q4: THE REVIEW SITUATION ---
+"How do you feel about where your online reputation is right now?
+ I was looking at your Birdeye profile — you've got solid ratings, but
+ what does the volume look like compared to where you want to be?"
+
+   LISTEN FOR: "I know we should be doing more," "we send review requests
+   sometimes," "I'm not sure who manages that." Birdeye at 5.0 with 176
+   reviews is good but not dominant for a practice with his implant volume.
+
+--- Q5: THE AI QUESTION ---
+"Has anyone pitched you an AI solution in the last few months? I'm curious
+ what you've seen — a lot of it is noise, and I want to know what's actually
+ crossed your desk."
+
+   LISTEN FOR: "we've looked at a few things," "nothing that made sense,"
+   "our consultant handles that." This tells you whether you have a clear
+   field or are competing with someone else's proposal.
+
+================================================================================
+THE PIVOT LINE
+================================================================================
+
+After Discovery Q3 or Q4 — when you've confirmed at least two leakage signals:
+
+"Here's what I'm seeing across practices like yours. The problem isn't
+ the tech — it's the gap between what these tools can do and how they're
+ actually being implemented. Most practices either buy software they don't
+ use, or they hire someone who knows the software but doesn't understand
+ the practice. We sit in the middle. We figure out exactly where the money
+ is leaking, we build the fix, and we run it. You keep doing dentistry."
+
+(Pause. Let it land. Do not add to this immediately.)
+
+================================================================================
+THE ASK
+================================================================================
+
+Do not ask for a sale. Ask for a session.
+
+"I'd like to do a 45-minute working session — I'll show you exactly where
+ the numbers point and what a 90-day engagement would look like for your
+ practice specifically. No deck, no pitch. Just the math and the plan.
+ Does Thursday work, or is there a better day for you?"
+
+   WHY THIS WORKS:
+   - "Working session" implies you're already working, not pitching
+   - "Specifically" signals this isn't a templated proposal
+   - "No deck" lowers resistance from someone who's seen too many pitches
+   - Offering a specific day forces a yes/no/counter, not a defer
+
+================================================================================
+OBJECTION HANDLERS
+================================================================================
+
+--- OBJECTION 1: "We're not really looking to add any new vendors right now." ---
+
+"Totally understand — and to be clear, we're not a vendor. Vendors sell you
+ something and move on. We're structured as a fractional ops partner.
+ We're on the hook for outcomes, not just deliverables. The engagement only
+ makes sense if the numbers work. Let me show you the math first and you
+ can decide if it's worth a closer look."
+
+--- OBJECTION 2: "I already have a marketing company / someone handling this." ---
+
+"That's good — and this might complement what they're doing rather than
+ replace it. What I'm focused on is the operational layer: scheduling
+ efficiency, recall automation, after-hours capture. Most marketing companies
+ aren't touching that. The question is whether the revenue you're leaving
+ on the table is in the marketing layer or the ops layer. Usually it's ops."
+
+--- OBJECTION 3: "What does something like this cost?" ---
+
+"It depends on scope, but to give you a ballpark — engagements like this
+ typically run $2,500–$4,500 a month, structured around a 90-day window.
+ What I can tell you is the practices we've worked with typically recover
+ more than that in the first 60 days just from reducing no-shows and
+ re-activating dormant patients. I'd rather show you the math than quote
+ you a number cold. That's what the working session is for."
+
+================================================================================
+FOLLOW-UP TEXT (IF NO SAME-DAY CLOSE)
+================================================================================
+
+Send within 24 hours of conversation:
+
+---
+
+"Hey Dr. Gardner — appreciate the time today. Pulled together a few
+ numbers on the Boerne market I think you'll find useful.
+ Would it be okay if I sent them over? Quick PDF, nothing to sign."
+
+---
+
+(If he says yes — send GSD_FOOTPRINTIQ_BRIEF.txt summary page only,
+ NOT this document. Prepare a 1-page clean version if needed.)
+
+================================================================================
+THE ONE-LINER
+================================================================================
+
+If someone asks what NFE does, or if you need to reset the frame fast:
+
+"AI poured the foundation. We build the house. Dental practices hire us
+ to close the gap between what AI promises and what actually gets built
+ and run inside their practice."
+
+================================================================================
+NOTES FOR THIS SPECIFIC ENGAGEMENT
+================================================================================
+
+1. DR. GARDNER'S TRUST SIGNAL: His practice moved to a condensed
+   schedule model — that's an operational decision. He thinks about
+   efficiency. Lead with efficiency math, not marketing language.
+
+2. THE IMPLANT ANGLE: His highest-revenue procedures (implants, All-on-4)
+   are relationship-driven, not search-driven. Do not pitch SEO.
+   Pitch the pre-consult nurture sequence and no-show reduction for
+   those specific appointment types.
+
+3. BOERNE MARKET CONTEXT: Boerne/San Antonio suburbs are growing fast.
+   His competition is building capacity. The window for him to establish
+   dominant digital infrastructure in this market is probably 12–18 months
+   before it gets crowded. Frame timing as opportunity, not urgency.
+
+4. DAVID'S RELATIONSHIP WARMTH: Fit score 9/10 on relationship warmth.
+   You already have access. Do not oversell — you risk cooling what's warm.
+   The goal of the next interaction is a scheduled working session.
+   That's it.
+
+================================================================================
+END OF GUIDE
+================================================================================
+NFE LLC · Internal Research · 2026-04-07

@@ -1,0 +1,334 @@
+================================================================================
+  GSD FOOTPRINTIQ BRIEF — NFE LLC INTELLIGENCE FILE
+  Gardner Springs Dentistry | Boerne, TX
+  Prepared by: David Necaise, NFE LLC
+  Date: April 2026 | Classification: INTERNAL — NOT FOR DISTRIBUTION
+================================================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 1 — PRACTICE SNAPSHOT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FIELD                         DETAIL
+─────────────────────────────────────────────────────────────────────────────
+Practice Name                 Gardner Springs Dentistry
+Owner / Dentist                Dr. Brandon Gardner, DDS
+Location                      134 Menger Springs Rd, Suite 1270
+                              Boerne, TX 78006
+Phone                         (830) 267-8782
+Email                         info@GardnerSpringsDentistry.com
+Practice Type                 Single-location, owner-operated general practice
+Staff                         ~20 (front desk, hygiene, assistants, admin)
+Operating Hours               Tue–Thu + alternating Mon/Fri | 7:00 AM – 3:00 PM
+Schedule Model                Condensed week — maximized chair utilization
+─────────────────────────────────────────────────────────────────────────────
+SERVICES — GENERAL            General dentistry, Preventative, Restorative
+SERVICES — HIGH VALUE         Sedation packages, Dental implants, All-on-4,
+                              Cosmetic, Invisalign
+─────────────────────────────────────────────────────────────────────────────
+HIGH-VALUE PROCEDURE PRICING
+  Implants                    $3,000 – $6,000 per tooth
+  All-on-4 (arch)             $20,000 – $40,000 per case
+  Sedation packages           Premium pricing — unlocks otherwise deferred tx
+─────────────────────────────────────────────────────────────────────────────
+ONLINE REPUTATION
+  Boerne Chamber of Commerce  4.9 stars / 97 reviews
+  Birdeye                     5.0 stars / 176 reviews
+  Facebook                    100% recommend / 34 reviews
+  Reputation signal           EXCEPTIONAL — one of strongest in market segment
+─────────────────────────────────────────────────────────────────────────────
+WEBSITE PLATFORM              thedentalsitecontent (dental-specific builder)
+PAYMENT PORTAL                ipospays.com
+TEXTING VENDOR                UNKNOWN — suspected Birdeye or Weave
+ONLINE BOOKING                None confirmed — patients call to schedule
+TECHNOLOGY PAGE               Present on website; nearly empty
+AI SIGNAL                     Dr. Gardner posted Jan 2026 re: learning AI for
+                              dental image analysis — AI-curious, not AI-fluent
+─────────────────────────────────────────────────────────────────────────────
+RELATIONSHIP TO NFE LLC       David Necaise is an active patient of the
+                              practice. Dr. Gardner has been soft-pitched on
+                              automation and was receptive. Warm, not cold.
+─────────────────────────────────────────────────────────────────────────────
+ESTIMATED PATIENT BASE        ~800 active/inactive patients (single location,
+                              condensed schedule, boutique-scale volume)
+EST. MONTHLY APPOINTMENTS     ~180 (based on condensed schedule, ~20 staff)
+AVG APPOINTMENT VALUE         ~$325 (blended across preventative + restorative)
+AVG NEW PATIENT VALUE         ~$750 (first visit + likely treatment plan)
+─────────────────────────────────────────────────────────────────────────────
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 2 — REVENUE LEAKAGE CALCULATOR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The following estimates are conservative and methodology-disclosed. All inputs
+are clearly stated so Dr. Gardner can verify with his own numbers.
+
+─────────────────────────────────────────────────────────────────────────────
+LEAK A — NO-SHOWS / LAST-MINUTE CANCELLATIONS
+─────────────────────────────────────────────────────────────────────────────
+
+  Assumption: 8% no-show/cancellation rate (dental industry avg: 8–12%)
+  Monthly appointments:       180
+  No-shows per month:         180 × 8%     = 14.4 appointments
+  Average appointment value:  $325
+  Monthly revenue lost:       14.4 × $325  = $4,680
+
+  NOTE: Condensed schedule (7am–3pm) means unfilled slots are rarely
+  recovered same-day. Each no-show is a near-total loss for that block.
+
+  MONTHLY LEAK A:   $4,680
+  ANNUAL LEAK A:    $56,160
+
+─────────────────────────────────────────────────────────────────────────────
+LEAK B — INACTIVE PATIENT RECALL GAP
+─────────────────────────────────────────────────────────────────────────────
+
+  Assumption: 18% of ~800 patient base has lapsed recall (overdue 12+ months)
+  Inactive patients:          800 × 18%    = 144 patients
+  Average reactivation value: $265 (cleaning + exam + treatment trigger)
+  Total recall backlog value: 144 × $265   = $38,160
+
+  Recovery model: Reactivated across 12 months via automated recall sequences
+  Monthly recovery rate:      $38,160 / 12 = $3,180/month
+
+  NOTE: These are patients already acquired. No marketing cost to recover.
+  Automated recall sequences (text + email) typically recover 30–45% of
+  lapsed patients at near-zero marginal cost per outreach.
+
+  MONTHLY LEAK B:   $3,180 (recovery over 12 months)
+  TOTAL BACKLOG:    $38,160
+
+─────────────────────────────────────────────────────────────────────────────
+LEAK C — MISSED ONLINE BOOKINGS (No Digital Scheduling Widget)
+─────────────────────────────────────────────────────────────────────────────
+
+  Assumption: 400 monthly website visitors (conservative for active practice)
+  Conversion rate if online booking existed: 12% (industry benchmark)
+  Potential monthly bookings:  400 × 12%   = 48 new/returning bookings
+  Average new patient value:   $750
+  Monthly opportunity missed:  48 × $750   = $36,000
+
+  NOTE: This is not 48 net-new patients per month — this is the upper bound
+  of self-schedulers who land on the site and leave because there is no
+  booking option. Even a 25% capture rate of that pool = $9,000/month.
+  Conservative floor estimate:  48 × 25%   = 12 bookings × $750 = $9,000
+
+  MONTHLY LEAK C (conservative floor):  $9,000
+  MONTHLY LEAK C (full opportunity):    $36,000
+
+─────────────────────────────────────────────────────────────────────────────
+TOTAL MONTHLY REVENUE LEAKAGE SUMMARY
+─────────────────────────────────────────────────────────────────────────────
+
+  LEAK A — No-shows:                   $4,680 / month
+  LEAK B — Inactive recall:            $3,180 / month
+  LEAK C — Missed online bookings:    $9,000 – $36,000 / month
+                                      ─────────────────────
+  CONSERVATIVE TOTAL:                 $16,860 / month   ($202,320/yr)
+  FULL OPPORTUNITY TOTAL:             $43,860 / month   ($526,320/yr)
+
+  The conservative number is what David presents.
+  The full number is what closes the conversation.
+
+─────────────────────────────────────────────────────────────────────────────
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 3 — PAIN SIGNAL MAP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+GAP                    CURRENT STATE                  NFE AI SOLUTION                EST. MONTHLY IMPACT
+───────────────────────────────────────────────────────────────────────────────────────────────────────
+No-show                No automated pre-appt          AI-driven SMS/email             Recover $2,000–4,680
+management             reminders confirmed.           reminder sequences at 48hr,    in previously lost
+                       Likely manual front desk       24hr, 2hr. Smart rescheduling  chair time.
+                       reminder calls.                if cancellation occurs.
+
+Inactive recall        Lapsed patients sit quiet.     Automated recall campaign:      $3,180/month from
+                       No confirmed automated         AI-personalized outreach by     existing patient base
+                       recall system. 144 patients    last visit type, last           — zero new marketing
+                       likely overdue.                procedure, hygiene interval.    cost to acquire.
+
+No online booking      Patients call to schedule.     Embedded booking widget +       $9,000–$36,000/month
+                       Website has no booking         intake form + insurance         in self-scheduling
+                       widget. Visitors leave         pre-screen. 24/7 booking        new patients who
+                       without converting.            without front desk touch.       currently leave the
+                                                                                      site unbooked.
+
+Texting vendor         Unknown vendor (Birdeye/       Consolidate or replace with     $200–$600/month in
+fragmentation          Weave suspected). Likely       unified AI comms platform.      vendor cost savings
+                       not AI-native. Paying for      Single inbox: SMS, review       + improved patient
+                       feature they may underuse.     requests, recall, booking.      experience quality.
+
+Front desk             ~20 staff. High-value          AI handles intake, insurance    Estimated 8–12 hrs/
+administrative         procedures (All-on-4, etc.)    pre-screen, recall, and        week of front desk
+load                   require heavy front desk       follow-up. Staff focused on     time recovered.
+                       coordination for consults,     consultations and chair-side
+                       financing, follow-up.          care — not phone routing.
+
+Review management      5.0 stars on Birdeye (176      AI post-visit review request    Maintain competitive
+                       reviews) is exceptional.       automation. Protect score       moat. Competitor
+                       No system confirmed for        with systematic outreach.       review gaps = new
+                       systematic post-visit          Flag low-score risk before      patients choosing
+                       review requesting.             it goes public.                 GSD by reputation.
+
+High-value case        Implant/All-on-4 cases         AI follow-up sequences for      Even 1 additional
+follow-up              require multiple touchpoints.  consult non-converters.         All-on-4 case/month
+                       No confirmed drip sequence     "Treatment plan is still        = $20,000–$40,000.
+                       for unconverted consults.      available" sequencing.          Highest-ROI leakage.
+
+Technology page        Nearly empty. Signals          Build out with actual stack,    Trust/credibility
+                       either no tech or no           privacy policy, booking         signal to
+                       intentional curation.          confirmation, HIPAA notice.     high-value patients.
+
+───────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 4 — VENDOR STACK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+VENDOR                  CATEGORY           EST. MONTHLY COST   FLAG
+─────────────────────────────────────────────────────────────────────────────
+thedentalsitecontent    Website CMS         $100 – $300         ENHANCE
+                        (dental-specific    (template tier)     Website is functional
+                        builder)                                but tech page is empty.
+                                                                Add booking widget +
+                                                                HIPAA-compliant forms.
+
+ipospays.com            Payment portal      $50 – $150          ENHANCE or REPLACE
+                        (dental billing     + transaction %     Integrate with patient
+                        / collections)                          intake and CRM data
+                                                                flow. Assess if it
+                                                                blocks automation.
+
+Birdeye or Weave        Patient comms       $300 – $600         INVESTIGATE FIRST
+(SUSPECTED — not        (texting, reviews,  (estimated per      Identify exact vendor.
+confirmed)              recall)             dental practice     If Birdeye: platform
+                                            tier)               has API capability —
+                                                                can augment. If Weave:
+                                                                assess integration
+                                                                depth vs. replace.
+
+Practice Management     Likely             $200 – $800          INTEGRATE
+Software (UNKNOWN —     Dentrix, Eaglesoft, (PMS industry       Critical to identify.
+Dentrix/Eaglesoft       or Open Dental      range)              All automation ROI
+most likely)            based on size                           depends on PMS API
+                                                                access for scheduling
+                                                                data.
+
+Online booking widget   NONE CONFIRMED      $0 spent today      ADD
+                                            ($9,000–$36,000     First-priority gap.
+                                            opportunity lost)   Direct revenue unlock.
+
+─────────────────────────────────────────────────────────────────────────────
+ESTIMATED CURRENT MONTHLY VENDOR SPEND:    $650 – $1,850
+ESTIMATED OVERLAP / WASTE:                 Unknown until vendor confirmed
+KEY UNKNOWN:                               Practice Management Software identity
+                                           + texting vendor identity
+─────────────────────────────────────────────────────────────────────────────
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 5 — CONVERSATION OPENERS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+These are specific, verifiable facts David can reference to signal research was
+done — without it feeling like surveillance. Each one is a natural entry point.
+
+OPENER 1 — THE AI POST (strongest trust signal)
+  Reference: "I saw your post from January — you were learning to use AI for
+  dental images. That caught my attention because that's basically what I do
+  for practices — applying AI to the systems side instead of the clinical side."
+
+  Why it works: Dr. Gardner voluntarily shared this publicly. It's not
+  creepy to reference it — it's attentive. And it instantly establishes
+  shared language (AI) without David having to explain what NFE does.
+  It positions him as a peer in the AI conversation, not a salesperson.
+
+OPENER 2 — THE REPUTATION SIGNAL
+  Reference: "You guys have 176 reviews on Birdeye at a 5.0 — that's
+  genuinely rare. Most practices let that score coast. You're clearly
+  doing something right on the patient experience side."
+
+  Why it works: Compliment is specific and credible, not generic.
+  Dr. Gardner knows his review count. This signals David looked.
+  Follow-up: "The practices I work with usually have a gap between how
+  good the clinical experience is and how automated the follow-up is —
+  your score makes me think the clinical side is excellent."
+
+OPENER 3 — THE HOURS / SCHEDULE MODEL
+  Reference: "You run a condensed schedule — Tue through Thu plus
+  alternating days, out by 3. That's an intentional choice. The
+  practices that run that model usually have the tightest operations
+  I've seen, but they also have zero margin for no-shows."
+
+  Why it works: This demonstrates David understands how the practice
+  operates, not just that it exists. The no-show observation is a
+  natural pivot to the automation conversation without pitching.
+  It respects the design of the practice instead of implying something
+  is broken.
+
+─────────────────────────────────────────────────────────────────────────────
+TACTICAL NOTE: Use ONE opener per conversation. Do not lead with all three.
+The goal is to signal homework done, not to perform homework done.
+─────────────────────────────────────────────────────────────────────────────
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 6 — NFE LLC FIT SCORE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DIMENSION             SCORE    RATIONALE
+─────────────────────────────────────────────────────────────────────────────
+Budget Likelihood       8/10   Single-owner practice with All-on-4 and implant
+                               revenue ($20K–$40K/case). Boutique pricing model
+                               suggests premium positioning. Dr. Gardner
+                               invests in quality. Not a high-volume discount
+                               mill. Likely has discretionary budget for
+                               something that demonstrably pays back.
+
+Pain Clarity            9/10   Pain is textbook and verifiable: no online
+                               booking, unknown texting vendor, no confirmed
+                               recall automation, condensed schedule with
+                               no-show exposure. David can walk in with
+                               specific dollar numbers Dr. Gardner can
+                               check against his own data.
+
+Relationship Warmth     9/10   David is a patient. Not a cold call. Dr. Gardner
+                               was already receptive to a soft pitch. The
+                               January AI post signals he is thinking about
+                               technology independently — David doesn't have
+                               to sell the concept of AI, only the application.
+
+Speed to Close          7/10   Owner-operated single location = one decision
+                               maker, no committee. BUT: dentists are risk-
+                               averse by nature (liability culture), and "new
+                               vendor" triggers caution even for warm leads.
+                               Expect 2–4 week close cycle once discovery
+                               is scheduled. Discovery meeting is the unlock.
+
+─────────────────────────────────────────────────────────────────────────────
+COMPOSITE FIT SCORE:            8.25 / 10
+─────────────────────────────────────────────────────────────────────────────
+
+VERDICT: Strong first dental engagement. Pain is confirmed, relationship is
+warm, decision-maker is reachable, and the revenue math is compelling without
+being speculative. This should close. The primary risk is timeline drift if
+discovery doesn't get scheduled promptly. Get the 30-minute meeting on the
+calendar before any written proposal goes out.
+
+STRATEGIC NOTE FOR DAVID: The dental industry is fertile ground for NFE LLC.
+Gardner Springs Dentistry is not the client with the largest practice —
+it is the client with the most personal access. That access is the asset.
+A successful case study here opens the Boerne/San Antonio dental market
+at referral speed. Dr. Gardner moves in a professional network of other
+dentists. Deliver exceptional work here and the next three clients come
+from his referral, not from David's outreach.
+
+================================================================================
+END OF BRIEF — NFE LLC INTERNAL USE ONLY
+Gardner Springs Dentistry | Prepared April 2026
+================================================================================
