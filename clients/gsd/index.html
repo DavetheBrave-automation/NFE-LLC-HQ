@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GSD FootprintIQ Brief | NFE LLC</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #0a0f1e;
+      --card:    #111827;
+      --card2:   #0d1526;
+      --amber:   #f59e0b;
+      --amber-d: #d97706;
+      --text:    #f1f5f9;
+      --muted:   #94a3b8;
+      --border:  #1e293b;
+      --red-card:#1a0f0f;
+      --red-b:   #7f1d1d;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav-brand {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--amber);
+      letter-spacing: 0.04em;
+    }
+    .nav-right {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ── LAYOUT ── */
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--amber);
+      border-radius: 8px;
+      padding: 40px 44px;
+    }
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .hero h2 {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .hero-sub {
+      font-size: 0.82rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+      margin-top: 4px;
+    }
+
+    /* ── SECTION HEADER ── */
+    .sec-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 16px;
+    }
+    .sec-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 18px;
+    }
+
+    /* ── SCORE CARDS ── */
+    .score-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .score-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px 20px;
+      text-align: center;
+    }
+    .score-card-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .score-val {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--amber);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .score-sub {
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── CONTENT CARD ── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px;
+    }
+
+    /* ── BULLET LIST ── */
+    .findings-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .findings-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: #cbd5e1;
+    }
+    .findings-list li::before {
+      content: "▸";
+      color: var(--amber);
+      font-size: 0.9rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ── MISSING CARD ── */
+    .missing-card {
+      background: var(--red-card);
+      border: 1px solid var(--red-b);
+      border-left: 4px solid #ef4444;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .missing-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .missing-list li {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      font-size: 0.9rem;
+      color: #fca5a5;
+    }
+    .missing-list li::before {
+      content: "✕";
+      color: #ef4444;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ── TABLE ── */
+    .rev-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 4px;
+    }
+    .rev-table thead tr {
+      background: var(--amber);
+    }
+    .rev-table thead th {
+      padding: 11px 16px;
+      text-align: left;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #0a0f1e;
+    }
+    .rev-table tbody tr {
+      border-bottom: 1px solid var(--border);
+    }
+    .rev-table tbody tr:last-child {
+      border-bottom: none;
+      background: rgba(245,158,11,0.08);
+    }
+    .rev-table tbody tr:last-child td {
+      font-weight: 700;
+      color: var(--amber);
+    }
+    .rev-table td {
+      padding: 13px 16px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .rev-table td:last-child {
+      font-family: 'Courier New', monospace;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .rev-note {
+      margin-top: 14px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.65;
+      font-style: italic;
+      border-left: 2px solid var(--border);
+      padding-left: 12px;
+    }
+
+    /* ── CTA ── */
+    .cta-card {
+      background: var(--amber);
+      border-radius: 8px;
+      padding: 44px 40px;
+      text-align: center;
+    }
+    .cta-card h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #0a0f1e;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+    .cta-body {
+      font-size: 0.9rem;
+      color: rgba(10,15,30,0.75);
+      line-height: 1.75;
+      max-width: 600px;
+      margin: 0 auto 28px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: #0a0f1e;
+      color: var(--amber);
+      border: 2px solid #0a0f1e;
+      padding: 15px 40px;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: background 0.15s, color 0.15s;
+    }
+    .cta-btn:hover {
+      background: #111827;
+      border-color: #111827;
+    }
+    .cta-sub {
+      margin-top: 14px;
+      font-size: 0.78rem;
+      color: rgba(10,15,30,0.55);
+    }
+
+    /* ── PATH STEPS ── */
+    .path-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .path-step {
+      background: var(--card2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 16px;
+    }
+    .step-num {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 8px;
+    }
+    .step-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .step-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--card);
+      border-top: 1px solid var(--border);
+      padding: 28px 32px;
+      text-align: center;
+    }
+    .footer-name {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .footer-email {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .footer-tagline {
+      font-size: 0.85rem;
+      color: var(--amber);
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    .footer-legal {
+      font-size: 0.72rem;
+      color: #334155;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      nav { padding: 12px 16px; }
+      .wrap { padding: 28px 14px 60px; }
+      .hero { padding: 28px 22px; }
+      .hero h1 { font-size: 1.5rem; }
+      .score-row { grid-template-columns: 1fr; }
+      .path-grid { grid-template-columns: repeat(2, 1fr); }
+      .card { padding: 22px 18px; }
+      .cta-card { padding: 30px 20px; }
+      .cta-card h3 { font-size: 1.15rem; }
+      .missing-card { padding: 22px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <span class="nav-brand">NFE LLC</span>
+    <span class="nav-right">FootprintIQ Intelligence</span>
+  </nav>
+
+  <div class="wrap">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-eyebrow">FootprintIQ Intelligence Summary</div>
+      <h1>We audited Gardner Springs Dentistry before this conversation.</h1>
+      <h2>Here's what 3 hours of structured OSINT found.</h2>
+      <div class="hero-sub">Gardner Springs Dentistry &nbsp;·&nbsp; Boerne, TX &nbsp;·&nbsp; April 2026</div>
+    </div>
+
+    <!-- SCORE ROW -->
+    <div class="score-row">
+      <div class="score-card">
+        <div class="score-card-label">Digital Presence Score</div>
+        <div class="score-val">6.2<span style="font-size:1.1rem;font-weight:400;color:var(--muted)"> / 10</span></div>
+        <div class="score-sub">Strong reputation. Weak digital infrastructure.</div>
+      </div>
+      <div class="score-card">
+        <div class="score-card-label">Automation Gap Score</div>
+        <div class="score-val">8.1<span style="font-size:1.1rem;font-weight:400;color:var(--muted)"> / 10</span></div>
+        <div class="score-sub">Higher = more immediate opportunity</div>
+      </div>
+      <div class="score-card">
+        <div class="score-card-label">Est. Monthly Revenue Leakage</div>
+        <div class="score-val" style="font-size:1.65rem;">$16,860<span style="font-size:1rem;font-weight:400;color:var(--muted)">+</span></div>
+        <div class="score-sub">Conservative. Industry benchmarks applied.</div>
+      </div>
+    </div>
+
+    <!-- CONFIRMED FINDINGS -->
+    <div class="card">
+      <div class="sec-label">Confirmed Findings</div>
+      <div class="sec-title">What We Confirmed</div>
+      <ul class="findings-list">
+        <li>No real-time online scheduling — appointment requests go to a web form with no availability calendar. Patients who want to book after hours leave without converting.</li>
+        <li>Patient intake is 100% paper PDF — no digital intake platform, no e-signature, no pre-visit automation. Every new patient packet is processed manually by staff.</li>
+        <li>Gardner Springs is absent from the Google local 3-pack for both "dentist Boerne TX" and "dental implants Boerne TX" — the two highest-intent searches in your market.</li>
+        <li>Zero active paid social advertising across Facebook and Instagram. Competitors aren't running ads either. First-mover window is open right now.</li>
+        <li>Google review velocity has slowed — most recent review approximately 10 months ago. No automated post-visit review request system detected in the tech stack.</li>
+      </ul>
+    </div>
+
+    <!-- WHAT WE DIDN'T FIND -->
+    <div class="missing-card">
+      <div class="sec-label" style="color:#f87171;">What We Didn't Find</div>
+      <div class="sec-title">We Looked For These. They Weren't There.</div>
+      <ul class="missing-list">
+        <li>Patient communication or texting platform (no vendor detected in tech stack scan)</li>
+        <li>AI-powered scheduling or intake system</li>
+        <li>Reputation management platform (Birdeye, Podium, or equivalent)</li>
+        <li>Online booking widget or real-time availability calendar</li>
+        <li>Post-visit follow-up or treatment plan nurture sequence for high-value cases</li>
+      </ul>
+    </div>
+
+    <!-- REVENUE TABLE -->
+    <div class="card">
+      <div class="sec-label">Revenue Impact</div>
+      <div class="sec-title">Conservative Revenue Leakage Estimate</div>
+      <table class="rev-table">
+        <thead>
+          <tr>
+            <th>Gap</th>
+            <th>Monthly Estimate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>No-show / cancellation losses</td>
+            <td>$4,680</td>
+          </tr>
+          <tr>
+            <td>Inactive patient recall gap</td>
+            <td>$3,180</td>
+          </tr>
+          <tr>
+            <td>Missed online booking conversions</td>
+            <td>$9,000+</td>
+          </tr>
+          <tr>
+            <td>TOTAL CONSERVATIVE ESTIMATE</td>
+            <td>$16,860/mo — $202,320/yr</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="rev-note">Based on published dental industry benchmarks applied to your practice profile. Full brief contains your practice-specific model with your actual appointment volume.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-card">
+      <h3>The Full FootprintIQ Brief Goes 10× Deeper.</h3>
+      <p class="cta-body">The complete intelligence file includes: your full vendor stack audit with replacement costs, a practice-specific revenue leakage model, a 7-gap pain signal map with monthly dollar impact per gap, 3 conversation-ready talking points, the discovery question set that unlocks your Phase 1 roadmap, and an NFE LLC fit score across 4 dimensions. Delivered as a live URL within 24 hours of engagement.</p>
+      <a class="cta-btn" href="mailto:david@trustedservicessd.com?subject=FootprintIQ%20Brief%20-%20Gardner%20Springs%20Dentistry&body=Hi%20David%2C%20I%27d%20like%20to%20engage%20the%20full%20FootprintIQ%20Brief%20for%20Gardner%20Springs%20Dentistry.">Engage FootprintIQ Brief — $1,500</a>
+      <p class="cta-sub">One-time. Credited in full toward any NFE LLC retainer engagement.</p>
+    </div>
+
+    <!-- ENGAGEMENT PATH -->
+    <div class="card">
+      <div class="sec-label">The Roadmap</div>
+      <div class="sec-title">The Engagement Path</div>
+      <div class="path-grid">
+        <div class="path-step">
+          <div class="step-num">Step 1</div>
+          <div class="step-title">FootprintIQ Brief — $1,500</div>
+          <div class="step-desc">Full intelligence file delivered as live URL in 24hrs</div>
+        </div>
+        <div class="path-step">
+          <div class="step-num">Step 2</div>
+          <div class="step-title">Critical Fix Sprint — $3,500</div>
+          <div class="step-desc">Top 3–5 gaps implemented. Quick wins build trust.</div>
+        </div>
+        <div class="path-step">
+          <div class="step-num">Step 3</div>
+          <div class="step-title">ICM Retainer — $2,500/mo</div>
+          <div class="step-desc">AI systems deployed. The machine learns your business.</div>
+        </div>
+        <div class="path-step">
+          <div class="step-num">Step 4</div>
+          <div class="step-title">Ongoing Partner</div>
+          <div class="step-desc">Embedded AI that runs on autopilot. Switching costs skyrocket.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-name">NFE LLC | Necaise Family Enterprises LLC</div>
+    <div class="footer-email">david@trustedservicessd.com</div>
+    <div class="footer-tagline">"AI poured the foundation. NFE LLC builds the house."</div>
+    <div class="footer-legal">© 2026 NFE LLC. Internal intelligence summary. Not for distribution.</div>
+  </footer>
+
+</body>
+</html>

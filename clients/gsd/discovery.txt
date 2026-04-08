@@ -1,0 +1,316 @@
+================================================================================
+GSD DISCOVERY SESSION — QUESTION GUIDE
+Gardner Springs Dentistry · Dr. Brandon Gardner, DDS
+45-Minute Session Framework | NFE LLC Internal Use Only
+================================================================================
+Prepared by: NFE LLC · April 2026
+Research basis: Full OSINT sweep — confirmed findings in GSD_FOOTPRINTIQ_BRIEF.txt
+Live teaser URL: https://davethebrave-automation.github.io/NFE-LLC-HQ/clients/gsd/
+================================================================================
+
+PURPOSE
+-------
+This is the structured question guide for David's 45-minute discovery session
+with Dr. Gardner. Every question is engineered from what the OSINT confirmed
+AND what it couldn't answer. Questions flow naturally — do not skip ahead.
+Each answer feeds the next question.
+
+================================================================================
+
+Q1 — REMINDER SYSTEM
+
+QUESTION:
+"What does your reminder and follow-up process look like right now —
+is that something your team handles manually or do you have a system running it?"
+
+WHY WE'RE ASKING:
+Biggest unknown in the entire research file. No texting platform was detected
+anywhere in the tech stack scan — no Birdeye, Weave, NexHealth, RevenueWell,
+Podium, Lighthouse 360, Solutionreach, or Demandforce found in page source.
+Need to confirm whether (a) a vendor exists that we simply couldn't detect,
+or (b) it's genuinely manual. This is the primary replacement or enhancement
+opportunity depending on the answer.
+
+IF A — Has a vendor:
+→ Get the name. Ask what it does and doesn't do. Ask if the contract is annual.
+→ Position as: "There's a newer generation of this that does X, Y, Z.
+   Let's figure out if what you have is doing all of that."
+→ Enhancement play — supplement don't replace, lower friction.
+
+IF B — Manual only:
+→ Zero switching friction. No contract to break. No vendor loyalty.
+→ Automated reminders is Deliverable 1 in Phase 1. Immediate close.
+→ "This is the fastest win we can build. It's running in two weeks."
+
+---
+
+Q2 — NO-SHOW PAIN
+
+QUESTION:
+"How big of an issue are no-shows for you — and with your condensed schedule,
+what actually happens when someone cancels last minute?"
+
+WHY WE'RE ASKING:
+Validates the $4,680/month leak estimate. The condensed 7am–3pm schedule means
+unfilled slots almost never recover same-day — each no-show is a near-total
+block loss. This is emotional pain, not just financial. Dr. Gardner feels this.
+The question is how consciously.
+
+IF A — High pain, vocal about it:
+→ No-show prevention system leads the Phase 1 pitch.
+→ "We can cut this in half in the first 30 days."
+→ Automated 48hr / 24hr / 2hr reminder sequence + smart rescheduling.
+
+IF B — "It's not that bad" or minimizes it:
+→ "That's actually interesting — most practices running a condensed schedule
+   feel this acutely. Let me show you what the data says about your specific
+   appointment volume. It might be more than it feels like."
+→ Run the math live: 8% no-show × 180 appts × $325 = $4,680/month.
+
+---
+
+Q3 — PATIENT INTAKE
+
+QUESTION:
+"When a new patient books — what does that process look like for them
+and for your front desk before they walk in the door?"
+
+WHY WE'RE ASKING:
+Confirms the paper PDF intake finding from the OSINT. Website has a downloadable
+"NP-PAPERWORK" PDF — no Yapi, Modento, mConsent, or any digital intake platform
+was detected. Quantifies front desk labor cost. Paper intake = 10–15 min of staff
+processing per new patient before the appointment even starts.
+
+IF A — All paper:
+→ Digital intake is the fastest visible demo win. Buildable in Phase 1 week 1.
+→ Show them what Yapi or mConsent looks like. "Patient fills this out on their
+   phone before they arrive. Staff gets it formatted and ready. Zero paper."
+→ Frame it as staff time recovered, not just tech upgrade.
+
+IF B — Partially digital (some system exists):
+→ "What platform is that? And what does it handle — just the forms,
+   or does it connect to your scheduling software?"
+→ Identify the gap, integrate rather than replace. Lower friction to engage.
+
+---
+
+Q4 — PRACTICE MANAGEMENT SOFTWARE
+
+QUESTION:
+"What's your main scheduling and charting software —
+Dentrix, Eaglesoft, Open Dental, or something else?"
+
+WHY WE'RE ASKING:
+THE most critical technical unknown. All automation ROI depends on PMS API access.
+Cannot scope Phase 1 without this answer. Everything — recall automation,
+no-show prevention, digital intake, booking widget integration — runs through
+the PMS. This is the foundation question.
+
+IF A — Dentrix:
+→ Well-documented API. Broad integration ecosystem.
+→ NexHealth, Yapi, Weave all integrate cleanly.
+→ Cleanest build path. Flag for David post-session.
+
+IF B — Eaglesoft:
+→ Patterson ecosystem. Slightly more complex but fully doable.
+→ Integration layer adds a step but not a blocker.
+→ Flag for research before final Phase 1 scope.
+
+IF C — Open Dental:
+→ Open source. Most flexible. Easiest to build custom integrations on.
+→ Strong API. Community of integrations already exists.
+→ Best technical case for custom NFE LLC automation.
+
+IF D — Other (Curve, Denticon, cloud-based, etc.):
+→ "I'll need to look into that before I can scope exactly how the
+   automation connects. Give me a day — I'll come back with a specific plan."
+→ Do not scope Phase 1 on the call. Research first.
+
+---
+
+Q5 — INACTIVE RECALL
+
+QUESTION:
+"Do you have a sense of how many patients from the last 2–3 years
+have just gone quiet — and is there a process for reaching back out to them?"
+
+WHY WE'RE ASKING:
+Validates the 144-patient inactive estimate and $3,180/month recovery calculation.
+The key insight: these patients are already acquired. Zero new marketing spend to
+reach them. They chose this practice once. Recall automation is the highest-ROI
+automation in the practice — recover revenue from people who already trust the brand.
+
+IF A — No recall process:
+→ Reactivation campaign is the highest-ROI quick win.
+→ Propose as a standalone deliverable even before the full retainer.
+→ "We build a three-touch sequence over 30 days. Text, email, final call.
+   You'll see patients booking in the first week."
+
+IF B — Manual recall attempt:
+→ "How often does that actually happen? What's the response rate?"
+→ Manual recall at scale doesn't work — people don't respond to generic
+   "we miss you" blasts from front desk staff.
+→ "AI-personalized by last visit type and procedure creates 3–4× better
+   response rates. Let me show you what that looks like."
+
+---
+
+Q6 — ONLINE BOOKING
+
+QUESTION:
+"Do patients ever ask about booking online, or does everything come through the phone?"
+
+WHY WE'RE ASKING:
+Confirms the no-booking-widget gap. The OSINT found contact form only — no
+real-time calendar, no third-party scheduler. The question approach matters:
+if patients ask → pain is confirmed and Dr. Gardner is already aware of it.
+If patients don't ask → "Silent exit is actually worse. They're leaving
+without asking. You never know what you lost."
+
+IF A — Patients ask for it:
+→ Pain confirmed by the market, not just the research.
+→ Online booking widget leads Phase 1. Easy close.
+→ "This is the most immediate revenue unlock. Every visitor who can't book
+   after hours is a lost appointment."
+
+IF B — No complaints, everything comes through the phone:
+→ "That's actually the problem — they're leaving without asking.
+   Your website gets visitors who never convert because there's no
+   booking option. They just leave. Silently."
+→ Show the Leak C math: 400 visitors × 12% conversion × $750 = $36,000/mo opportunity.
+
+---
+
+Q7 — GROWTH ORIENTATION
+
+QUESTION:
+"Right now is the focus more on growing the patient base
+or optimizing what you already have?"
+
+WHY WE'RE ASKING:
+Determines which product stack to pitch first. Also opens the Google local
+3-pack gap conversation — GSD is absent from both "dentist Boerne TX" and
+"dental implants Boerne TX," the two highest-intent searches in the market.
+Same products, different frame depending on the answer.
+
+IF A — Growth focused:
+→ Local SEO + Google review velocity + paid social first-mover window + booking widget = acquisition stack.
+→ "You're invisible in local search right now for your two highest-value service lines.
+   That's the acquisition bottleneck. We can fix it."
+→ Lead with the 3-pack gap and the 845-review competitor advantage.
+
+IF B — Optimize what we have:
+→ Recall + no-shows + digital intake + intake efficiency = retention stack.
+→ "Then the fastest wins are all inside your existing patient base.
+   144 patients who've already chosen you and gone quiet. That's recoverable revenue."
+→ Same systems, different entry point into the pitch.
+
+---
+
+Q8 — REVIEW MANAGEMENT
+
+QUESTION:
+"Your online reputation is genuinely exceptional — 176 reviews at a 5.0 on Birdeye.
+Is that something you're actively managing or did it build organically?"
+
+WHY WE'RE ASKING:
+Opens the automated review request conversation. Also reveals a critical detail:
+Google shows 150 reviews. Birdeye shows 176. That 26-review gap means some
+reviews are going to Birdeye instead of Google. Birdeye reviews don't move
+Google local pack rankings. Google reviews do. The SEO gap may partly be a
+platform-split issue, not just volume.
+
+IF A — Organic, no active system:
+→ "The risk is it stays that way until one bad week. And here's what most
+   practices miss: Google reviews are what drive local pack ranking.
+   Birdeye reviews don't move that needle. If 15% of your reviews are
+   landing on Birdeye instead of Google, you're leaving SEO juice on the table."
+→ Automated post-visit review request → Google specifically → fixes both.
+
+IF B — Managed by a vendor or in-house:
+→ "Who handles that? Is it bundled with your texting system?"
+→ Get the vendor name. Cross-reference with Q1 answer.
+→ If same vendor → potential for consolidated platform play.
+→ If separate vendor → fragmentation argument.
+
+---
+
+Q9 — HIGH-VALUE CASE CONVERSION
+
+QUESTION:
+"For your implant and All-on-4 consultations — roughly what percentage
+actually move forward with treatment, and what happens to the ones that don't?"
+
+WHY WE'RE ASKING:
+This is the highest-dollar gap in the entire practice. One lost All-on-4 case
+= $20,000–$40,000. The OSINT found no post-visit follow-up or treatment plan
+nurture sequence. An AI-powered follow-up sequence for unconverted implant/All-on-4
+consults is the single highest-ROI automation in the entire engagement.
+Even a 10% lift in conversion on 2 cases/month = $4K–$8K recovered.
+
+IF A — Low conversion, no follow-up process:
+→ Treatment plan nurture sequence becomes the flagship Phase 1 deliverable.
+→ "This is where the money actually is. Not the booking widget, not the recall.
+   One recovered All-on-4 case pays for the entire first year of NFE LLC."
+→ This closes the engagement faster than any other finding.
+
+IF B — High conversion, already handling it well:
+→ "Even protecting that pipeline is worth systemizing. One unconverted case
+   is $20,000–$40,000 walking out. If you do 10 consults a month and lose
+   even one that was recoverable — that's the ROI on this entire engagement."
+→ Frame as defensive automation, not gap-filling.
+
+---
+
+Q10 — AI VISION
+
+QUESTION:
+"You posted in January about learning to use AI for dental images —
+how far are you thinking about AI for the practice overall?
+Is this something you're actively looking to move on or still in the exploring phase?"
+
+WHY WE'RE ASKING:
+Calibrates readiness to buy. The January post signals genuine curiosity — he's
+thinking about this independently, which means David doesn't have to sell the
+concept of AI. Only the application. This question separates "interested"
+from "ready to move." It determines whether you close on the call or on the follow-up.
+
+IF A — Ready to move, actively looking:
+→ "Perfect. I want to show you three specific systems I'd build for you in the
+   first 90 days that would pay for themselves in the first 30.
+   Can we get 45 minutes on the calendar this week?"
+→ This is the close. Lock the discovery session before you hang up.
+
+IF B — Still exploring, not ready:
+→ "Then the smartest first step is letting the data tell you where to focus.
+   That's exactly what the FootprintIQ Brief does — it takes the guesswork
+   out. Instead of trying to figure out what AI could do for your practice,
+   you get a specific map of where the money is and what to build first."
+→ Soft close to the $1,500 brief. Safer first step for a cautious buyer.
+
+================================================================================
+PIVOT LINE
+(Deliver after Q8–Q10. Read the room. Use when energy is right.)
+================================================================================
+
+"Based on what I've already seen — before this conversation — there are
+at least three specific systems I'd build for you in the first 90 days
+that would pay for themselves in the first 30. I want to show you exactly
+what those are. Can we get 45 minutes on the calendar this week?"
+
+================================================================================
+THE SEND
+(After they say yes to the meeting — or as the follow-up trigger)
+================================================================================
+
+"I'll send you a summary of what we found before we meet so you can see
+the data before we even sit down. Takes about 3 minutes to read.
+You'll know immediately if this is worth your time."
+
+→ SEND THIS URL:
+  https://davethebrave-automation.github.io/NFE-LLC-HQ/clients/gsd/
+
+================================================================================
+END OF DISCOVERY GUIDE
+================================================================================
+NFE LLC · Internal Use Only · April 2026
