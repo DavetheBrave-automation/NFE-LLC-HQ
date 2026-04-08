@@ -1,9 +1,53 @@
+<!--
+NFE LLC TEASER TEMPLATE v1.0
+================================
+USAGE: Copy this file. Find-replace all [VARIABLES].
+Deploy to: footprintiq-[clientshort].surge.sh
+
+REQUIRED VARIABLES TO FILL BEFORE DEPLOY:
+  [CLIENT_NAME]              — full practice/business name
+  [CLIENT_SHORT]             — short code (e.g. GSD)
+  [CLIENT_LOCATION]          — City, State
+  [CLIENT_INDUSTRY]          — industry type
+  [CLIENT_DATE]              — Month YYYY
+  [DIGITAL_PRESENCE_SCORE]   — X.X / 10
+  [AUTOMATION_GAP_SCORE]     — X.X / 10
+  [REVENUE_LEAKAGE_EST]      — $XX,XXX+
+  [FINDING_1]                — confirmed finding, 1 sentence
+  [FINDING_2]
+  [FINDING_3]
+  [FINDING_4]
+  [FINDING_5]
+  [GAP_1]                    — thing not found, 1 line
+  [GAP_2]
+  [GAP_3]
+  [GAP_4]
+  [GAP_5]
+  [LEAK_A_NAME]              — leak source label
+  [LEAK_A_AMOUNT]            — e.g. $4,680
+  [LEAK_B_NAME]
+  [LEAK_B_AMOUNT]
+  [LEAK_C_NAME]
+  [LEAK_C_AMOUNT]
+  [CONSERVATIVE_TOTAL]       — e.g. $16,860/mo
+  [ANNUAL_TOTAL]             — e.g. $202,320/yr
+  [SURGE_TEASER_URL]         — footprintiq-[clientshort].surge.sh
+
+PRE-FILLED (do not change):
+  [RESUME_SURGE_URL]  = https://nfe-david.surge.sh
+  [CALENDAR_URL]      = https://calendar.app.google/7DjbWAb9omg1mzL49
+  [DAVID_EMAIL]       = david@trustedservicessd.com
+
+DEPLOY COMMAND:
+  surge . footprintiq-[clientshort].surge.sh
+================================
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GSD FootprintIQ Brief | NFE LLC</title>
+  <title>[CLIENT_NAME] FootprintIQ Brief | NFE LLC</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -40,18 +84,8 @@
       top: 0;
       z-index: 10;
     }
-    .nav-brand {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--amber);
-      letter-spacing: 0.04em;
-    }
-    .nav-right {
-      font-size: 0.78rem;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
+    .nav-brand { font-size: 1rem; font-weight: 700; color: var(--amber); letter-spacing: 0.04em; }
+    .nav-right  { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
 
     /* ── LAYOUT ── */
     .wrap {
@@ -71,301 +105,60 @@
       border-radius: 8px;
       padding: 40px 44px;
     }
-    .hero-eyebrow {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--amber);
-      margin-bottom: 14px;
-    }
-    .hero h1 {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--text);
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      margin-bottom: 10px;
-    }
-    .hero h2 {
-      font-size: 1.1rem;
-      font-weight: 400;
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-    .hero-sub {
-      font-size: 0.82rem;
-      color: var(--muted);
-      letter-spacing: 0.04em;
-      border-top: 1px solid var(--border);
-      padding-top: 14px;
-      margin-top: 4px;
-    }
+    .hero-eyebrow { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); margin-bottom: 14px; }
+    .hero h1 { font-size: 2rem; font-weight: 800; color: var(--text); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 10px; }
+    .hero h2 { font-size: 1.1rem; font-weight: 400; color: var(--muted); margin-bottom: 16px; }
+    .hero-sub { font-size: 0.82rem; color: var(--muted); letter-spacing: 0.04em; border-top: 1px solid var(--border); padding-top: 14px; margin-top: 4px; }
 
     /* ── SECTION HEADER ── */
-    .sec-label {
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--amber);
-      margin-bottom: 16px;
-    }
-    .sec-title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 18px;
-    }
+    .sec-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber); margin-bottom: 16px; }
+    .sec-title { font-size: 1.15rem; font-weight: 700; color: var(--text); margin-bottom: 18px; }
 
     /* ── SCORE CARDS ── */
-    .score-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-    .score-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 24px 20px;
-      text-align: center;
-    }
-    .score-card-label {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-    .score-val {
-      font-size: 2.2rem;
-      font-weight: 900;
-      color: var(--amber);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    .score-sub {
-      font-size: 0.75rem;
-      color: var(--muted);
-      line-height: 1.5;
-    }
+    .score-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .score-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 24px 20px; text-align: center; }
+    .score-card-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+    .score-val { font-size: 2.2rem; font-weight: 900; color: var(--amber); line-height: 1; margin-bottom: 8px; }
+    .score-sub { font-size: 0.75rem; color: var(--muted); line-height: 1.5; }
 
     /* ── CONTENT CARD ── */
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 32px;
-    }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 32px; }
 
     /* ── BULLET LIST ── */
-    .findings-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .findings-list li {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      font-size: 0.9rem;
-      line-height: 1.7;
-      color: #cbd5e1;
-    }
-    .findings-list li::before {
-      content: "▸";
-      color: var(--amber);
-      font-size: 0.9rem;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
+    .findings-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .findings-list li { display: flex; gap: 14px; align-items: flex-start; font-size: 0.9rem; line-height: 1.7; color: #cbd5e1; }
+    .findings-list li::before { content: "▸"; color: var(--amber); font-size: 0.9rem; flex-shrink: 0; margin-top: 2px; }
 
     /* ── MISSING CARD ── */
-    .missing-card {
-      background: var(--red-card);
-      border: 1px solid var(--red-b);
-      border-left: 4px solid #ef4444;
-      border-radius: 8px;
-      padding: 28px 32px;
-    }
-    .missing-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 4px;
-    }
-    .missing-list li {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      font-size: 0.9rem;
-      color: #fca5a5;
-    }
-    .missing-list li::before {
-      content: "✕";
-      color: #ef4444;
-      font-weight: 700;
-      flex-shrink: 0;
-    }
+    .missing-card { background: var(--red-card); border: 1px solid var(--red-b); border-left: 4px solid #ef4444; border-radius: 8px; padding: 28px 32px; }
+    .missing-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-top: 4px; }
+    .missing-list li { display: flex; gap: 12px; align-items: center; font-size: 0.9rem; color: #fca5a5; }
+    .missing-list li::before { content: "✕"; color: #ef4444; font-weight: 700; flex-shrink: 0; }
 
     /* ── TABLE ── */
-    .rev-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 4px;
-    }
-    .rev-table thead tr {
-      background: var(--amber);
-    }
-    .rev-table thead th {
-      padding: 11px 16px;
-      text-align: left;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #0a0f1e;
-    }
-    .rev-table tbody tr {
-      border-bottom: 1px solid var(--border);
-    }
-    .rev-table tbody tr:last-child {
-      border-bottom: none;
-      background: rgba(245,158,11,0.08);
-    }
-    .rev-table tbody tr:last-child td {
-      font-weight: 700;
-      color: var(--amber);
-    }
-    .rev-table td {
-      padding: 13px 16px;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-    .rev-table td:last-child {
-      font-family: 'Courier New', monospace;
-      color: var(--text);
-      white-space: nowrap;
-    }
-    .rev-note {
-      margin-top: 14px;
-      font-size: 0.78rem;
-      color: var(--muted);
-      line-height: 1.65;
-      font-style: italic;
-      border-left: 2px solid var(--border);
-      padding-left: 12px;
-    }
-
-    /* ── CTA ── */
-    .cta-card {
-      background: var(--amber);
-      border-radius: 8px;
-      padding: 44px 40px;
-      text-align: center;
-    }
-    .cta-card h3 {
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: #0a0f1e;
-      margin-bottom: 16px;
-      letter-spacing: -0.01em;
-    }
-    .cta-body {
-      font-size: 0.9rem;
-      color: rgba(10,15,30,0.75);
-      line-height: 1.75;
-      max-width: 600px;
-      margin: 0 auto 28px;
-    }
-    .cta-btn {
-      display: inline-block;
-      background: #0a0f1e;
-      color: var(--amber);
-      border: 2px solid #0a0f1e;
-      padding: 15px 40px;
-      border-radius: 6px;
-      font-size: 1rem;
-      font-weight: 700;
-      text-decoration: none;
-      letter-spacing: 0.02em;
-      transition: background 0.15s, color 0.15s;
-    }
-    .cta-btn:hover {
-      background: #111827;
-      border-color: #111827;
-    }
-    .cta-sub {
-      margin-top: 14px;
-      font-size: 0.78rem;
-      color: rgba(10,15,30,0.55);
-    }
+    .rev-table { width: 100%; border-collapse: collapse; margin-top: 4px; }
+    .rev-table thead tr { background: var(--amber); }
+    .rev-table thead th { padding: 11px 16px; text-align: left; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #0a0f1e; }
+    .rev-table tbody tr { border-bottom: 1px solid var(--border); }
+    .rev-table tbody tr:last-child { border-bottom: none; background: rgba(245,158,11,0.08); }
+    .rev-table tbody tr:last-child td { font-weight: 700; color: var(--amber); }
+    .rev-table td { padding: 13px 16px; font-size: 0.9rem; color: var(--muted); }
+    .rev-table td:last-child { font-family: 'Courier New', monospace; color: var(--text); white-space: nowrap; }
+    .rev-note { margin-top: 14px; font-size: 0.78rem; color: var(--muted); line-height: 1.65; font-style: italic; border-left: 2px solid var(--border); padding-left: 12px; }
 
     /* ── PATH STEPS ── */
-    .path-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-    .path-step {
-      background: var(--card2);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 20px 16px;
-    }
-    .step-num {
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--amber);
-      margin-bottom: 8px;
-    }
-    .step-title {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 6px;
-      line-height: 1.3;
-    }
-    .step-desc {
-      font-size: 0.78rem;
-      color: var(--muted);
-      line-height: 1.55;
-    }
+    .path-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .path-step { background: var(--card2); border: 1px solid var(--border); border-radius: 8px; padding: 20px 16px; }
+    .step-num { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); margin-bottom: 8px; }
+    .step-title { font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.3; }
+    .step-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
 
     /* ── FOOTER ── */
-    footer {
-      background: var(--card);
-      border-top: 1px solid var(--border);
-      padding: 28px 32px;
-      text-align: center;
-    }
-    .footer-name {
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-    .footer-email {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-    .footer-tagline {
-      font-size: 0.85rem;
-      color: var(--amber);
-      font-style: italic;
-      margin-bottom: 10px;
-    }
-    .footer-legal {
-      font-size: 0.72rem;
-      color: #334155;
-    }
+    footer { background: var(--card); border-top: 1px solid var(--border); padding: 28px 32px; text-align: center; }
+    .footer-name { font-size: 0.82rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .footer-email { font-size: 0.78rem; color: var(--muted); margin-bottom: 10px; }
+    .footer-tagline { font-size: 0.85rem; color: var(--amber); font-style: italic; margin-bottom: 10px; }
+    .footer-legal { font-size: 0.72rem; color: #334155; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 680px) {
@@ -376,8 +169,6 @@
       .score-row { grid-template-columns: 1fr; }
       .path-grid { grid-template-columns: repeat(2, 1fr); }
       .card { padding: 22px 18px; }
-      .cta-card { padding: 30px 20px; }
-      .cta-card h3 { font-size: 1.15rem; }
       .missing-card { padding: 22px 18px; }
     }
   </style>
@@ -395,26 +186,26 @@
     <!-- HERO -->
     <div class="hero">
       <div class="hero-eyebrow">FootprintIQ Intelligence Summary</div>
-      <h1>We audited Gardner Springs Dentistry before this conversation.</h1>
+      <h1>We audited [CLIENT_NAME] before this conversation.</h1>
       <h2>Here's what 3 hours of structured OSINT found.</h2>
-      <div class="hero-sub">Gardner Springs Dentistry &nbsp;·&nbsp; Boerne, TX &nbsp;·&nbsp; April 2026</div>
+      <div class="hero-sub">[CLIENT_NAME] &nbsp;·&nbsp; [CLIENT_LOCATION] &nbsp;·&nbsp; [CLIENT_DATE]</div>
     </div>
 
     <!-- SCORE ROW -->
     <div class="score-row">
       <div class="score-card">
         <div class="score-card-label">Digital Presence Score</div>
-        <div class="score-val">6.2<span style="font-size:1.1rem;font-weight:400;color:var(--muted)"> / 10</span></div>
-        <div class="score-sub">Strong reputation. Weak digital infrastructure.</div>
+        <div class="score-val">[DIGITAL_PRESENCE_SCORE]</div>
+        <div class="score-sub">Assessed across web, search, social, and tech stack.</div>
       </div>
       <div class="score-card">
         <div class="score-card-label">Automation Gap Score</div>
-        <div class="score-val">8.1<span style="font-size:1.1rem;font-weight:400;color:var(--muted)"> / 10</span></div>
+        <div class="score-val">[AUTOMATION_GAP_SCORE]</div>
         <div class="score-sub">Higher = more immediate opportunity</div>
       </div>
       <div class="score-card">
         <div class="score-card-label">Est. Monthly Revenue Leakage</div>
-        <div class="score-val" style="font-size:1.65rem;">$16,860<span style="font-size:1rem;font-weight:400;color:var(--muted)">+</span></div>
+        <div class="score-val" style="font-size:1.65rem;">[REVENUE_LEAKAGE_EST]</div>
         <div class="score-sub">Conservative. Industry benchmarks applied.</div>
       </div>
     </div>
@@ -424,11 +215,11 @@
       <div class="sec-label">Confirmed Findings</div>
       <div class="sec-title">What We Confirmed</div>
       <ul class="findings-list">
-        <li>No real-time online scheduling — appointment requests go to a web form with no availability calendar. Patients who want to book after hours leave without converting.</li>
-        <li>Patient intake is 100% paper PDF — no digital intake platform, no e-signature, no pre-visit automation. Every new patient packet is processed manually by staff.</li>
-        <li>Gardner Springs is absent from the Google local 3-pack for both "dentist Boerne TX" and "dental implants Boerne TX" — the two highest-intent searches in your market.</li>
-        <li>Zero active paid social advertising across Facebook and Instagram. Competitors aren't running ads either. First-mover window is open right now.</li>
-        <li>Google review velocity has slowed — most recent review approximately 10 months ago. No automated post-visit review request system detected in the tech stack.</li>
+        <li>[FINDING_1]</li>
+        <li>[FINDING_2]</li>
+        <li>[FINDING_3]</li>
+        <li>[FINDING_4]</li>
+        <li>[FINDING_5]</li>
       </ul>
     </div>
 
@@ -437,11 +228,11 @@
       <div class="sec-label" style="color:#f87171;">What We Didn't Find</div>
       <div class="sec-title">We Looked For These. They Weren't There.</div>
       <ul class="missing-list">
-        <li>Patient communication or texting platform (no vendor detected in tech stack scan)</li>
-        <li>AI-powered scheduling or intake system</li>
-        <li>Reputation management platform (Birdeye, Podium, or equivalent)</li>
-        <li>Online booking widget or real-time availability calendar</li>
-        <li>Post-visit follow-up or treatment plan nurture sequence for high-value cases</li>
+        <li>[GAP_1]</li>
+        <li>[GAP_2]</li>
+        <li>[GAP_3]</li>
+        <li>[GAP_4]</li>
+        <li>[GAP_5]</li>
       </ul>
     </div>
 
@@ -451,31 +242,16 @@
       <div class="sec-title">Conservative Revenue Leakage Estimate</div>
       <table class="rev-table">
         <thead>
-          <tr>
-            <th>Gap</th>
-            <th>Monthly Estimate</th>
-          </tr>
+          <tr><th>Gap</th><th>Monthly Estimate</th></tr>
         </thead>
         <tbody>
-          <tr>
-            <td>No-show / cancellation losses</td>
-            <td>$4,680</td>
-          </tr>
-          <tr>
-            <td>Inactive patient recall gap</td>
-            <td>$3,180</td>
-          </tr>
-          <tr>
-            <td>Missed online booking conversions</td>
-            <td>$9,000+</td>
-          </tr>
-          <tr>
-            <td>TOTAL CONSERVATIVE ESTIMATE</td>
-            <td>$16,860/mo — $202,320/yr</td>
-          </tr>
+          <tr><td>[LEAK_A_NAME]</td><td>[LEAK_A_AMOUNT]</td></tr>
+          <tr><td>[LEAK_B_NAME]</td><td>[LEAK_B_AMOUNT]</td></tr>
+          <tr><td>[LEAK_C_NAME]</td><td>[LEAK_C_AMOUNT]</td></tr>
+          <tr><td>TOTAL CONSERVATIVE ESTIMATE</td><td>[CONSERVATIVE_TOTAL] — [ANNUAL_TOTAL]</td></tr>
         </tbody>
       </table>
-      <p class="rev-note">Based on published dental industry benchmarks applied to your practice profile. Full brief contains your practice-specific model with your actual appointment volume.</p>
+      <p class="rev-note">Based on published industry benchmarks applied to your practice profile. Full brief contains your business-specific model with your actual numbers.</p>
     </div>
 
     <!-- CTA -->
@@ -491,7 +267,7 @@
         </h3>
 
         <p style="font-size:14px;color:#1a1a0a;margin:0 0 28px;line-height:1.6;max-width:560px;margin-left:auto;margin-right:auto;">
-          Complete vendor stack audit. Practice-specific revenue leakage model.
+          Complete vendor stack audit. Business-specific revenue leakage model.
           7-gap pain signal map with monthly dollar impact.
           Discovery question set that maps your Phase 1 roadmap.
           Delivered as a live URL within 24 hours of engagement.
@@ -515,8 +291,7 @@
             Or engage the full brief directly
           </div>
 
-          <!-- SECONDARY CTA — BRIEF PURCHASE -->
-          <a href="mailto:david@trustedservicessd.com?subject=FootprintIQ%20Brief%20-%20Gardner%20Springs%20Dentistry&body=Hi%20David%2C%20I%27d%20like%20to%20engage%20the%20full%20FootprintIQ%20Brief%20for%20Gardner%20Springs%20Dentistry."
+          <a href="mailto:david@trustedservicessd.com?subject=FootprintIQ%20Brief%20-%20[CLIENT_NAME]&body=Hi%20David%2C%20I%27d%20like%20to%20engage%20the%20full%20FootprintIQ%20Brief%20for%20[CLIENT_NAME]."
              style="display:inline-block;background:transparent;color:#0a0f1e;font-size:14px;font-weight:600;padding:12px 28px;border-radius:8px;text-decoration:none;border:2px solid #0a0f1e;">
             Engage FootprintIQ Brief — $1,500
           </a>
@@ -564,19 +339,17 @@
     <div class="footer-name">NFE LLC | Necaise Family Enterprises LLC</div>
     <div class="footer-email">david@trustedservicessd.com</div>
     <div class="footer-tagline">"AI poured the foundation. NFE LLC builds the house."</div>
-    <div class="footer-legal">© 2026 NFE LLC. Internal intelligence summary. Not for distribution.</div>
+    <div class="footer-legal">© 2026 NFE LLC · [CLIENT_INDUSTRY] Intelligence Summary · [CLIENT_DATE]</div>
   </footer>
 
   <!-- MEET THE BUILDER -->
   <section style="margin:0 0 32px;">
     <div style="background:#111827;border:1px solid #1e293b;border-radius:12px;padding:28px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
 
-      <!-- Avatar -->
       <div style="width:64px;height:64px;border-radius:50%;background:#f59e0b;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700;color:#0a0f1e;flex-shrink:0;">
         DN
       </div>
 
-      <!-- Bio -->
       <div style="flex:1;min-width:220px;">
         <div style="font-size:11px;color:#f59e0b;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">
           BUILT BY
@@ -593,7 +366,6 @@
         </div>
       </div>
 
-      <!-- CTA buttons -->
       <div style="display:flex;flex-direction:column;gap:10px;flex-shrink:0;">
         <a href="https://nfe-david.surge.sh"
            target="_blank"
@@ -623,7 +395,6 @@
     </a>
   </div>
 
-  <!-- Bottom padding so sticky bar doesn't cover content -->
   <div style="height:64px;"></div>
 
 </body>
