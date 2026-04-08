@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GSD FootprintIQ Full Brief | NFE LLC — CONFIDENTIAL</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:     #0a0f1e;
+      --card:   #111827;
+      --card2:  #0d1420;
+      --amber:  #f59e0b;
+      --amberd: #d97706;
+      --text:   #f1f5f9;
+      --muted:  #94a3b8;
+      --border: #1e293b;
+      --green:  #86efac;
+      --greenb: #14532d;
+      --red:    #fca5a5;
+      --redb:   #2e1a1a;
+      --blue:   #60a5fa;
+      --blueb:  #1e3a5f;
+      --purple: #a78bfa;
+      --purpleb:#1f1635;
+    }
+    body { background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; }
+
+    /* ── STICKY HEADER ── */
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--bg); border-bottom: 1px solid var(--border);
+      padding: 12px 28px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    }
+    .sh-left  { font-size: 1rem; font-weight: 700; color: var(--amber); }
+    .sh-center { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; color: var(--text); text-transform: uppercase; }
+    .sh-right  { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.06em; }
+
+    /* ── CLASSIFIED BANNER ── */
+    .classified-bar {
+      background: var(--amber); color: #0a0f1e;
+      font-weight: 700; text-align: center; padding: 9px 16px;
+      font-size: 0.82rem; letter-spacing: 0.05em;
+    }
+
+    /* ── LAYOUT ── */
+    .wrap { max-width: 960px; margin: 0 auto; padding: 48px 20px 80px; display: flex; flex-direction: column; gap: 36px; }
+
+    /* ── HERO ── */
+    .hero { border-left: 4px solid var(--amber); padding: 36px 40px; background: var(--card); border-radius: 8px; }
+    .hero-eye { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); margin-bottom: 14px; }
+    .hero h1 { font-size: 2.2rem; font-weight: 800; color: var(--text); line-height: 1.15; letter-spacing: -0.025em; margin-bottom: 8px; }
+    .hero h2 { font-size: 1.1rem; font-weight: 400; color: var(--muted); margin-bottom: 6px; }
+    .hero-sub { font-size: 0.82rem; color: var(--muted); margin-bottom: 20px; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+    .pill { display: inline-block; border: 1px solid var(--amber); color: var(--amber); border-radius: 20px; padding: 4px 14px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; }
+    .quick-nav { display: flex; flex-wrap: wrap; gap: 6px; border-top: 1px solid var(--border); padding-top: 16px; }
+    .quick-nav a { font-size: 0.75rem; color: var(--muted); text-decoration: none; border: 1px solid var(--border); border-radius: 4px; padding: 3px 10px; transition: color 0.1s, border-color 0.1s; }
+    .quick-nav a:hover { color: var(--amber); border-color: var(--amber); }
+    .qn-label { font-size: 0.72rem; color: var(--muted); margin-right: 4px; align-self: center; }
+
+    /* ── SECTION HEADER ── */
+    .sec-wrap { display: flex; flex-direction: column; gap: 20px; }
+    .sec-hdr { border-left: 3px solid var(--amber); padding-left: 16px; }
+    .sec-eye { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); margin-bottom: 4px; }
+    .sec-title { font-size: 1.3rem; font-weight: 700; color: var(--text); }
+
+    /* ── DATA TABLE ── */
+    .data-table { width: 100%; border-collapse: collapse; }
+    .data-table td { padding: 10px 14px; font-size: 0.875rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .data-table td:first-child { color: var(--muted); width: 38%; font-size: 0.82rem; }
+    .data-table td:last-child  { color: var(--text); font-weight: 500; }
+    .data-table tr:last-child td { border-bottom: none; }
+
+    /* ── LEAK CARDS ── */
+    .leak-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .leak-card { background: var(--card); border-left: 3px solid var(--amber); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .leak-title { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); }
+    .leak-assume { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
+    .leak-calc { font-size: 0.875rem; color: var(--text); line-height: 1.5; }
+    .leak-monthly { font-size: 1.8rem; font-weight: 700; color: var(--amber); line-height: 1; }
+    .leak-annual { font-size: 0.78rem; color: var(--muted); margin-top: -6px; }
+    .leak-note { font-size: 0.75rem; color: var(--muted); font-style: italic; line-height: 1.55; border-top: 1px solid var(--border); padding-top: 8px; }
+    .summary-row { background: var(--card); border: 1px solid var(--amber); border-radius: 8px; padding: 20px; display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; text-align: center; }
+    .sum-cell .sum-label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .sum-cell .sum-val { font-size: 1.4rem; font-weight: 700; color: var(--amber); }
+    .sum-cell.big .sum-val { font-size: 1.65rem; }
+    .sum-ceil { margin-top: 12px; font-size: 0.78rem; color: var(--muted); text-align: center; }
+    .sum-italic { font-size: 0.75rem; color: var(--muted); font-style: italic; text-align: center; margin-top: 6px; }
+
+    /* ── PAIN TABLE ── */
+    .pain-table { width: 100%; border-collapse: collapse; }
+    .pain-table th { background: var(--border); color: var(--amber); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 11px 14px; text-align: left; }
+    .pain-table td { padding: 13px 14px; font-size: 0.82rem; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.6; color: var(--muted); }
+    .pain-table td:first-child { color: var(--text); font-weight: 600; }
+    .pain-table td:last-child { color: var(--amber); font-weight: 600; }
+    .pain-table tr:nth-child(odd) td { background: var(--card); }
+    .pain-table tr:nth-child(even) td { background: var(--card2); }
+
+    /* ── VENDOR TABLE ── */
+    .vendor-table { width: 100%; border-collapse: collapse; }
+    .vendor-table th { background: var(--border); color: var(--amber); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 11px 14px; text-align: left; }
+    .vendor-table td { padding: 13px 14px; font-size: 0.82rem; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.6; color: var(--muted); }
+    .vendor-table tr:nth-child(odd)  td { background: var(--card); }
+    .vendor-table tr:nth-child(even) td { background: var(--card2); }
+    .flag { display: inline-block; border-radius: 4px; padding: 2px 8px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; }
+    .flag-enhance  { background: var(--greenb);  color: var(--green); }
+    .flag-replace  { background: var(--redb);    color: var(--red); }
+    .flag-invest   { background: var(--blueb);   color: var(--blue); }
+    .flag-add      { background: #2e2a0a;        color: #fde68a; }
+    .vendor-summary { background: var(--card); border-left: 3px solid var(--amber); border-radius: 6px; padding: 16px 20px; font-size: 0.85rem; line-height: 1.75; color: var(--muted); }
+    .vendor-summary strong { color: var(--text); }
+
+    /* ── OPENER CARDS ── */
+    .opener-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 22px; }
+    .opener-num { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+    blockquote.script { border-left: 3px solid var(--amber); background: var(--card2); padding: 14px 18px; border-radius: 0 6px 6px 0; font-size: 0.9rem; font-style: italic; color: var(--text); line-height: 1.75; margin-bottom: 14px; }
+    .why-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); margin-bottom: 4px; }
+    .why-text { font-size: 0.82rem; color: var(--muted); line-height: 1.6; margin-bottom: 10px; }
+    .use-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); margin-bottom: 4px; }
+    .use-text  { font-size: 0.82rem; color: var(--text); line-height: 1.6; }
+    .tactic-note { background: rgba(245,158,11,0.08); border: 1px solid var(--amber); border-radius: 6px; padding: 14px 18px; font-size: 0.85rem; color: var(--amber); line-height: 1.6; text-align: center; }
+
+    /* ── FIT SCORE ── */
+    .fit-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+    .fit-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 22px; }
+    .fit-dim { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    .fit-score { font-size: 3rem; font-weight: 700; color: var(--amber); line-height: 1; margin-bottom: 10px; }
+    .fit-score .denom { font-size: 1.2rem; font-weight: 400; color: var(--muted); }
+    .fit-ratio { font-size: 0.85rem; color: var(--text); line-height: 1.65; }
+    .composite-box { background: var(--amber); border-radius: 8px; padding: 28px; text-align: center; }
+    .composite-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #0a0f1e; margin-bottom: 8px; opacity: 0.7; }
+    .composite-val { font-size: 3rem; font-weight: 700; color: #0a0f1e; line-height: 1; }
+    .verdict-box { background: var(--card); border-left: 3px solid var(--amber); border-radius: 6px; padding: 18px 22px; font-size: 0.875rem; line-height: 1.75; color: var(--muted); }
+    .verdict-box strong { color: var(--text); }
+    .strategic-box { background: var(--card2); border-left: 3px solid var(--blue); border-radius: 6px; padding: 18px 22px; font-size: 0.875rem; line-height: 1.75; color: var(--muted); }
+    .strategic-box strong { color: var(--text); }
+
+    /* ── DISCOVERY Qs ── */
+    .q-intro { font-size: 0.875rem; color: var(--muted); line-height: 1.7; padding: 16px 20px; background: var(--card); border-radius: 6px; border-left: 3px solid var(--border); }
+    .q-card { background: var(--card); border-radius: 8px; padding: 22px; border-left: 3px solid var(--amber); display: flex; flex-direction: column; gap: 14px; }
+    .q-header { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); }
+    .q-text { font-size: 1rem; font-style: italic; color: var(--text); font-weight: 500; line-height: 1.6; background: var(--card2); border-left: 3px solid var(--amber); padding: 14px 18px; border-radius: 0 6px 6px 0; }
+    .q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .q-why-col { display: flex; flex-direction: column; gap: 6px; }
+    .q-if-col  { display: flex; flex-direction: column; gap: 10px; }
+    .q-why-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); }
+    .q-why-body  { font-size: 0.8rem; color: var(--muted); line-height: 1.65; }
+    .q-if-a, .q-if-b { display: flex; flex-direction: column; gap: 4px; }
+    .q-if-a .if-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #4ade80; }
+    .q-if-b .if-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); }
+    .q-if-a .if-body, .q-if-b .if-body { font-size: 0.8rem; color: var(--text); line-height: 1.6; }
+    .pivot-box { background: var(--amber); border-radius: 8px; padding: 24px 28px; }
+    .pivot-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #0a0f1e; opacity: 0.7; margin-bottom: 10px; }
+    .pivot-text  { font-size: 1rem; font-weight: 600; color: #0a0f1e; line-height: 1.7; }
+    .send-box { background: var(--card); border: 1px solid var(--amber); border-radius: 8px; padding: 22px 26px; }
+    .send-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+    .send-text { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 14px; }
+    .send-url { font-family: 'Courier New', monospace; font-size: 0.9rem; color: var(--amber); font-weight: 600; }
+
+    /* ── ENGAGEMENT PATH ── */
+    .path-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
+    .path-step { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 18px; }
+    .path-num  { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); margin-bottom: 6px; }
+    .path-title{ font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.3; }
+    .path-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.5; margin-bottom: 10px; }
+    .path-badge { display: inline-block; border-radius: 12px; padding: 2px 10px; font-size: 0.7rem; font-weight: 600; }
+
+    /* ── FOOTER ── */
+    .page-footer { background: var(--card); border-top: 1px solid var(--border); padding: 28px 32px; text-align: center; display: flex; flex-direction: column; gap: 6px; }
+    .pf-main    { font-size: 0.85rem; color: var(--muted); }
+    .pf-tagline { font-size: 0.88rem; color: var(--amber); font-style: italic; }
+    .pf-legal   { font-size: 0.72rem; color: #334155; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 720px) {
+      .site-header { padding: 10px 14px; }
+      .sh-center { display: none; }
+      .wrap { padding: 24px 12px 60px; }
+      .hero { padding: 24px 18px; }
+      .hero h1 { font-size: 1.55rem; }
+      .leak-grid { grid-template-columns: 1fr; }
+      .summary-row { grid-template-columns: repeat(2,1fr); }
+      .fit-grid { grid-template-columns: 1fr; }
+      .path-grid { grid-template-columns: repeat(2,1fr); }
+      .q-grid { grid-template-columns: 1fr; }
+      .pain-table, .vendor-table { font-size: 0.78rem; }
+    }
+    @media (max-width: 480px) {
+      .summary-row { grid-template-columns: 1fr; }
+      .path-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- STICKY HEADER -->
+<header class="site-header">
+  <span class="sh-left">NFE LLC</span>
+  <span class="sh-center">FootprintIQ Full Brief — CONFIDENTIAL</span>
+  <span class="sh-right">GSD · April 2026</span>
+</header>
+
+<!-- CLASSIFIED BANNER -->
+<div class="classified-bar">⚠ PAID ENGAGEMENT DOCUMENT — CONFIDENTIAL — NOT FOR DISTRIBUTION</div>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eye">FootprintIQ Intelligence Brief — Tier 1 Quick Strike</div>
+    <h1>Gardner Springs Dentistry</h1>
+    <h2>Complete Intelligence Package · Dr. Brandon Gardner, DDS</h2>
+    <p class="hero-sub">134 Menger Springs Rd Suite 1270 · Boerne TX 78006 · April 2026</p>
+    <div class="pill-row">
+      <span class="pill">Fit Score: 8.25 / 10</span>
+      <span class="pill">Leakage: $16,860–$43,860/mo</span>
+      <span class="pill">Close: 2–4 weeks</span>
+    </div>
+    <div class="quick-nav">
+      <span class="qn-label">Jump to:</span>
+      <a href="#snapshot">Snapshot</a>
+      <a href="#revenue">Revenue</a>
+      <a href="#pain">Pain Map</a>
+      <a href="#vendors">Vendors</a>
+      <a href="#openers">Openers</a>
+      <a href="#fitscore">Fit Score</a>
+      <a href="#discovery">Discovery Qs</a>
+    </div>
+  </div>
+
+  <!-- SECTION 1: PRACTICE SNAPSHOT -->
+  <div class="sec-wrap" id="snapshot">
+    <div class="sec-hdr">
+      <div class="sec-eye">Section 01</div>
+      <div class="sec-title">Practice Snapshot</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;">
+      <table class="data-table">
+        <tr><td>Practice Name</td><td>Gardner Springs Dentistry</td></tr>
+        <tr><td>Owner / Dentist</td><td>Dr. Brandon Gardner, DDS</td></tr>
+        <tr><td>Location</td><td>134 Menger Springs Rd, Suite 1270 · Boerne, TX 78006</td></tr>
+        <tr><td>Phone</td><td>(830) 267-8782</td></tr>
+        <tr><td>Email</td><td>info@GardnerSpringsDentistry.com</td></tr>
+        <tr><td>Practice Type</td><td>Single-location, owner-operated general practice</td></tr>
+        <tr><td>Staff</td><td>~20 (front desk, hygiene, assistants, admin)</td></tr>
+        <tr><td>Operating Hours</td><td>Tue–Thu + alternating Mon/Fri · 7:00 AM – 3:00 PM</td></tr>
+        <tr><td>Schedule Model</td><td>Condensed week — maximized chair utilization</td></tr>
+        <tr><td>Services — General</td><td>General dentistry, Preventative, Restorative</td></tr>
+        <tr><td>Services — High Value</td><td>Sedation packages, Dental implants, All-on-4, Cosmetic, Invisalign</td></tr>
+        <tr><td>Implant Pricing</td><td>$3,000 – $6,000 per tooth</td></tr>
+        <tr><td>All-on-4 Pricing</td><td>$20,000 – $40,000 per arch</td></tr>
+        <tr><td>Sedation</td><td>Premium pricing — unlocks otherwise deferred treatment</td></tr>
+        <tr><td>Reputation — Boerne Chamber</td><td>4.9 stars · 97 reviews</td></tr>
+        <tr><td>Reputation — Birdeye</td><td>5.0 stars · 176 reviews</td></tr>
+        <tr><td>Reputation — Facebook</td><td>100% recommend · 34 reviews</td></tr>
+        <tr><td>Google Reviews</td><td>5.0 stars · 150 reviews · Last review ~10 months ago</td></tr>
+        <tr><td>Website Platform</td><td>thedentalsitecontent (dental-specific builder)</td></tr>
+        <tr><td>Payment Portal</td><td>iPosPays — generic POS, not dental-specific</td></tr>
+        <tr><td>Texting Vendor</td><td>NONE DETECTED — no platform found in tech stack scan</td></tr>
+        <tr><td>Online Booking</td><td>NONE — contact form only, no real-time availability</td></tr>
+        <tr><td>Technology Page</td><td>Present on site · nearly empty · signals no intentional curation</td></tr>
+        <tr><td>AI Signal</td><td>Dr. Gardner posted Jan 2026 re: learning AI for dental image analysis — AI-curious, not AI-fluent</td></tr>
+        <tr><td>Relationship to NFE LLC</td><td>David Necaise is an active patient. Dr. Gardner was receptive to soft pitch. Warm, not cold.</td></tr>
+        <tr><td>Est. Patient Base</td><td>~800 active/inactive patients</td></tr>
+        <tr><td>Est. Monthly Appointments</td><td>~180 (condensed schedule, ~20 staff)</td></tr>
+        <tr><td>Avg Appointment Value</td><td>~$325 (blended, preventative + restorative)</td></tr>
+        <tr><td>Avg New Patient Value</td><td>~$750 (first visit + likely treatment plan)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- SECTION 2: REVENUE LEAKAGE -->
+  <div class="sec-wrap" id="revenue">
+    <div class="sec-hdr">
+      <div class="sec-eye">Section 02</div>
+      <div class="sec-title">Revenue Leakage Calculator</div>
+    </div>
+    <p style="font-size:0.875rem;color:var(--muted);line-height:1.7;">The following estimates are conservative and methodology-disclosed. All inputs are clearly stated so Dr. Gardner can verify with his own numbers.</p>
+    <div class="leak-grid">
+      <div class="leak-card">
+        <div class="leak-title">Leak A — No-Shows / Last-Minute Cancellations</div>
+        <div class="leak-assume">8% no-show rate (dental industry avg: 8–12%)<br>180 monthly appointments<br>$325 average appointment value</div>
+        <div class="leak-calc">14.4 no-shows/month × $325 = $4,680</div>
+        <div>
+          <div class="leak-monthly">$4,680<span style="font-size:0.9rem;font-weight:400;color:var(--muted)">/mo</span></div>
+          <div class="leak-annual">$56,160/yr</div>
+        </div>
+        <div class="leak-note">Condensed 7am–3pm schedule = no recovery window. Each no-show is near-total block loss.</div>
+      </div>
+      <div class="leak-card">
+        <div class="leak-title">Leak B — Inactive Patient Recall Gap</div>
+        <div class="leak-assume">18% of ~800 patients lapsed (12+ months)<br>$265 avg reactivation value</div>
+        <div class="leak-calc">144 inactive × $265 = $38,160 backlog ÷ 12 months</div>
+        <div>
+          <div class="leak-monthly">$3,180<span style="font-size:0.9rem;font-weight:400;color:var(--muted)">/mo</span></div>
+          <div class="leak-annual">$38,160 total backlog</div>
+        </div>
+        <div class="leak-note">Zero acquisition cost. Already earned trust. Automated sequences recover 30–45%.</div>
+      </div>
+      <div class="leak-card">
+        <div class="leak-title">Leak C — Missed Online Bookings</div>
+        <div class="leak-assume">400 monthly visitors · 12% would book online · $750 new patient value</div>
+        <div class="leak-calc">48 potential bookings × $750 = $36,000 full<br>Conservative 25% capture = $9,000</div>
+        <div>
+          <div class="leak-monthly" style="font-size:1.4rem;">$9,000–$36,000<span style="font-size:0.85rem;font-weight:400;color:var(--muted)">/mo</span></div>
+          <div class="leak-annual">Upper bound shown</div>
+        </div>
+        <div class="leak-note">Conservative floor ($9,000) used in totals. First-mover booking widget = most immediate revenue unlock.</div>
+      </div>
+    </div>
+    <div class="summary-row">
+      <div class="sum-cell">
+        <div class="sum-label">Leak A</div>
+        <div class="sum-val">$4,680<span style="font-size:0.9rem;font-weight:400;color:var(--muted)">/mo</span></div>
+      </div>
+      <div class="sum-cell">
+        <div class="sum-label">Leak B</div>
+        <div class="sum-val">$3,180<span style="font-size:0.9rem;font-weight:400;color:var(--muted)">/mo</span></div>
+      </div>
+      <div class="sum-cell">
+        <div class="sum-label">Leak C (floor)</div>
+        <div class="sum-val">$9,000<span style="font-size:0.9rem;font-weight:400;color:var(--muted)">/mo</span></div>
+      </div>
+      <div class="sum-cell big">
+        <div class="sum-label">Conservative Total</div>
+        <div class="sum-val">$16,860<span style="font-size:0.9rem;font-weight:400;color:var(--muted)">/mo</span></div>
+      </div>
+    </div>
+    <div class="sum-ceil">Full opportunity ceiling: <strong style="color:var(--amber);">$43,860/mo | $526,320/yr</strong></div>
+    <div class="sum-italic">Conservative number is what David presents. Full number is what closes.</div>
+  </div>
+
+  <!-- SECTION 3: PAIN SIGNAL MAP -->
+  <div class="sec-wrap" id="pain">
+    <div class="sec-hdr">
+      <div class="sec-eye">Section 03</div>
+      <div class="sec-title">Pain Signal Map</div>
+    </div>
+    <div style="overflow-x:auto;border-radius:8px;border:1px solid var(--border);">
+      <table class="pain-table">
+        <thead>
+          <tr><th>Gap</th><th>Current State</th><th>NFE AI Solution</th><th>Est. Monthly Impact</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>No-show management</td>
+            <td>No automated pre-appt reminders confirmed. Likely manual front desk reminder calls.</td>
+            <td>AI-driven SMS/email reminder sequences at 48hr, 24hr, 2hr. Smart rescheduling if cancellation occurs.</td>
+            <td>Recover $2,000–$4,680 in previously lost chair time</td>
+          </tr>
+          <tr>
+            <td>Inactive recall</td>
+            <td>Lapsed patients sit quiet. No confirmed automated recall. 144 patients likely overdue.</td>
+            <td>Automated recall campaign: AI-personalized outreach by last visit type, last procedure, hygiene interval.</td>
+            <td>$3,180/mo from existing patient base — zero new marketing cost</td>
+          </tr>
+          <tr>
+            <td>No online booking</td>
+            <td>Patients call to schedule. No booking widget. Visitors leave without converting.</td>
+            <td>Embedded booking widget + intake form + insurance pre-screen. 24/7 booking without front desk touch.</td>
+            <td>$9,000–$36,000/mo in self-scheduling new patients</td>
+          </tr>
+          <tr>
+            <td>Texting vendor fragmentation</td>
+            <td>No texting platform detected in tech stack scan. No Birdeye, Weave, NexHealth, or equivalent found.</td>
+            <td>Deploy unified AI comms platform: SMS, review requests, recall, booking in one inbox.</td>
+            <td>$200–$600/mo in new vendor spend replaced with more capable stack</td>
+          </tr>
+          <tr>
+            <td>Front desk administrative load</td>
+            <td>~20 staff. High-value procedures require heavy front desk coordination for consults, financing, follow-up.</td>
+            <td>AI handles intake, insurance pre-screen, recall, and follow-up. Staff focused on chair-side care.</td>
+            <td>Est. 8–12 hrs/week of front desk time recovered</td>
+          </tr>
+          <tr>
+            <td>Review management</td>
+            <td>5.0 stars on Birdeye (176 reviews). No systematic post-visit review request confirmed. Last Google review ~10 months ago.</td>
+            <td>AI post-visit review request automation. Protect score with systematic outreach. Google-first routing to close 3-pack gap.</td>
+            <td>Maintain competitive moat. Google review volume = local pack ranking signal.</td>
+          </tr>
+          <tr>
+            <td>High-value case follow-up</td>
+            <td>Implant/All-on-4 cases require multiple touchpoints. No confirmed drip sequence for unconverted consults.</td>
+            <td>AI follow-up sequences for consult non-converters. "Treatment plan is still available" sequencing.</td>
+            <td>Even 1 additional All-on-4/mo = $20,000–$40,000. Highest-ROI leakage.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SECTION 4: VENDOR STACK -->
+  <div class="sec-wrap" id="vendors">
+    <div class="sec-hdr">
+      <div class="sec-eye">Section 04</div>
+      <div class="sec-title">Vendor Stack Audit</div>
+    </div>
+    <div style="overflow-x:auto;border-radius:8px;border:1px solid var(--border);">
+      <table class="vendor-table">
+        <thead>
+          <tr><th>Vendor</th><th>Category</th><th>Est. Monthly Cost</th><th>Flag</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>thedentalsitecontent</td>
+            <td>Website CMS (dental-specific builder)</td>
+            <td>$100–$300</td>
+            <td><span class="flag flag-enhance">ENHANCE</span><br><span style="font-size:0.75rem;color:var(--muted);display:block;margin-top:4px;">Add booking widget + HIPAA forms</span></td>
+          </tr>
+          <tr>
+            <td>iPosPays</td>
+            <td>Payment portal (dental billing/collections)</td>
+            <td>$50–$150 + tx%</td>
+            <td><span class="flag flag-invest">INVESTIGATE</span><br><span style="font-size:0.75rem;color:var(--muted);display:block;margin-top:4px;">Assess if it blocks automation</span></td>
+          </tr>
+          <tr>
+            <td>Texting/Comms Vendor (NONE DETECTED)</td>
+            <td>Patient comms (texting, reviews, recall)</td>
+            <td>$0 currently</td>
+            <td><span class="flag flag-add">ADD</span><br><span style="font-size:0.75rem;color:var(--muted);display:block;margin-top:4px;">Unified AI platform — highest priority</span></td>
+          </tr>
+          <tr>
+            <td>PMS — UNKNOWN (Dentrix/Eaglesoft/Open Dental most likely)</td>
+            <td>Scheduling + charting (Practice Management Software)</td>
+            <td>$200–$800</td>
+            <td><span class="flag flag-invest">INTEGRATE</span><br><span style="font-size:0.75rem;color:var(--muted);display:block;margin-top:4px;">Identity = critical unknown. All automation depends on API access.</span></td>
+          </tr>
+          <tr>
+            <td>Online Booking Widget</td>
+            <td>Real-time scheduling</td>
+            <td>$0 spent today</td>
+            <td><span class="flag flag-add">ADD FIRST</span><br><span style="font-size:0.75rem;color:var(--muted);display:block;margin-top:4px;">$9,000–$36,000/mo opportunity</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="vendor-summary">
+      <strong>Est. current monthly vendor spend:</strong> $650–$1,850<br>
+      <strong>Key unknowns:</strong> PMS identity · Texting vendor identity<br>
+      <strong>Opportunity:</strong> Consolidate fragmented stack into unified NFE AI platform — single dashboard, one vendor relationship, compounding data value.
+    </div>
+  </div>
+
+  <!-- SECTION 5: CONVERSATION OPENERS -->
+  <div class="sec-wrap" id="openers">
+    <div class="sec-hdr">
+      <div class="sec-eye">Section 05</div>
+      <div class="sec-title">Conversation Openers</div>
+    </div>
+    <div class="opener-card">
+      <div class="opener-num">Opener 1 — The AI Post (Strongest Trust Signal)</div>
+      <blockquote class="script">"I saw your post from January — you were learning to use AI for dental images. That caught my attention because that's basically what I do for practices — applying AI to the systems side instead of the clinical side."</blockquote>
+      <div class="why-label">Why it works</div>
+      <div class="why-text">Dr. Gardner voluntarily shared this publicly. Referencing it signals you paid attention, not that you surveilled him. It instantly establishes shared language (AI) without David having to explain what NFE does. Positions him as a peer in the AI conversation, not a salesperson.</div>
+      <div class="use-label">Use this when</div>
+      <div class="use-text">Any first or early conversation. The highest-credibility opener in the set.</div>
+    </div>
+    <div class="opener-card">
+      <div class="opener-num">Opener 2 — The Reputation Signal</div>
+      <blockquote class="script">"You guys have 176 reviews on Birdeye at a 5.0 — that's genuinely rare. Most practices let that score coast. You're clearly doing something right on the patient experience side."</blockquote>
+      <div class="why-label">Why it works</div>
+      <div class="why-text">The compliment is specific and credible — not generic. Dr. Gardner knows his review count. This signals David looked. Follow-up: "The practices I work with usually have a gap between how good the clinical experience is and how automated the follow-up is — your score makes me think the clinical side is excellent."</div>
+      <div class="use-label">Use this when</div>
+      <div class="use-text">Opening that naturally pivots to review automation and the Google vs Birdeye split conversation.</div>
+    </div>
+    <div class="opener-card">
+      <div class="opener-num">Opener 3 — The Schedule Model</div>
+      <blockquote class="script">"You run a condensed schedule — Tue through Thu plus alternating days, out by 3. That's an intentional choice. The practices that run that model usually have the tightest operations I've seen, but they also have zero margin for no-shows."</blockquote>
+      <div class="why-label">Why it works</div>
+      <div class="why-text">Demonstrates David understands how the practice operates, not just that it exists. The no-show observation is a natural pivot to the automation conversation without pitching. Respects the design of the practice instead of implying something is broken.</div>
+      <div class="use-label">Use this when</div>
+      <div class="use-text">In-person or scheduled call where you have a few minutes to demonstrate depth before getting to business.</div>
+    </div>
+    <div class="tactic-note">
+      <strong>TACTICAL NOTE:</strong> Use ONE opener per conversation. Do not lead with all three.<br>
+      The goal is to signal homework done — not to perform homework done.
+    </div>
+  </div>
+
+  <!-- SECTION 6: FIT SCORE -->
+  <div class="sec-wrap" id="fitscore">
+    <div class="sec-hdr">
+      <div class="sec-eye">Section 06</div>
+      <div class="sec-title">NFE LLC Fit Score</div>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-card">
+        <div class="fit-dim">Budget Likelihood</div>
+        <div class="fit-score">8<span class="denom"> / 10</span></div>
+        <div class="fit-ratio">Single-owner practice with All-on-4 and implant revenue ($20K–$40K/case). Boutique pricing model suggests premium positioning. Dr. Gardner invests in quality. Not a high-volume discount mill. Likely has discretionary budget for something that demonstrably pays back.</div>
+      </div>
+      <div class="fit-card">
+        <div class="fit-dim">Pain Clarity</div>
+        <div class="fit-score">9<span class="denom"> / 10</span></div>
+        <div class="fit-ratio">Pain is textbook and verifiable: no online booking, no texting vendor, no recall automation, condensed schedule with no-show exposure. David can walk in with specific dollar numbers Dr. Gardner can check against his own data.</div>
+      </div>
+      <div class="fit-card">
+        <div class="fit-dim">Relationship Warmth</div>
+        <div class="fit-score">9<span class="denom"> / 10</span></div>
+        <div class="fit-ratio">David is an active patient. Not a cold call. Dr. Gardner was already receptive to a soft pitch. The January AI post signals he is thinking about technology independently — David doesn't have to sell the concept of AI, only the application.</div>
+      </div>
+      <div class="fit-card">
+        <div class="fit-dim">Speed to Close</div>
+        <div class="fit-score">7<span class="denom"> / 10</span></div>
+        <div class="fit-ratio">Owner-operated single location = one decision maker, no committee. But dentists are risk-averse by nature (liability culture), and "new vendor" triggers caution even for warm leads. Expect 2–4 week close cycle once discovery is scheduled. Discovery meeting is the unlock.</div>
+      </div>
+    </div>
+    <div class="composite-box">
+      <div class="composite-label">Composite Fit Score</div>
+      <div class="composite-val">8.25 / 10</div>
+    </div>
+    <div class="verdict-box">
+      <strong>Verdict:</strong> Strong first dental engagement. Pain is confirmed, relationship is warm, decision-maker is reachable, and the revenue math is compelling without being speculative. This should close. The primary risk is timeline drift if discovery doesn't get scheduled promptly. <strong>Get the 30-minute meeting on the calendar before any written proposal goes out.</strong>
+    </div>
+    <div class="strategic-box">
+      <strong>Strategic Note for David:</strong> The dental industry is fertile ground for NFE LLC. Gardner Springs Dentistry is not the client with the largest practice — it is the client with the most personal access. That access is the asset. A successful case study here opens the Boerne/San Antonio dental market at referral speed. Dr. Gardner moves in a professional network of other dentists. Deliver exceptional work here and the next three clients come from his referral, not from David's outreach.
+    </div>
+  </div>
+
+  <!-- SECTION 7: DISCOVERY QUESTIONS -->
+  <div class="sec-wrap" id="discovery">
+    <div class="sec-hdr">
+      <div class="sec-eye">Section 07</div>
+      <div class="sec-title">Discovery Question Guide — 45-Minute Session</div>
+    </div>
+    <div class="q-intro">Engineered from what the OSINT confirmed and what only Dr. Gardner can answer. Each question fills a specific intelligence gap that feeds the Phase 1 scope. Ask in order — each answer feeds the next question.</div>
+
+    <div class="q-card">
+      <div class="q-header">Q1 — Reminder System</div>
+      <div class="q-text">"What does your reminder and follow-up process look like right now — is that something your team handles manually or do you have a system running it?"</div>
+      <div class="q-grid">
+        <div class="q-why-col">
+          <div class="q-why-label">Why we're asking</div>
+          <div class="q-why-body">Biggest unknown. No texting platform detected in full tech stack scan — no Birdeye, Weave, NexHealth, RevenueWell, Podium, or equivalent found in page source. Need to confirm if a vendor exists that we couldn't detect, or if it's purely manual. This is the primary replacement or enhancement opportunity.</div>
+        </div>
+        <div class="q-if-col">
+          <div class="q-if-a"><div class="if-label">If A → Has a vendor</div><div class="if-body">Get name, ask what it does and doesn't do, ask if contract is annual. Position as enhancement — supplement, don't replace, lower friction.</div></div>
+          <div class="q-if-b"><div class="if-label">If B → Manual only</div><div class="if-body">Zero switching friction. No contract to break. Automated reminders is Deliverable 1 in Phase 1. Immediate close. "This is the fastest win we can build. Running in two weeks."</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-header">Q2 — No-Show Pain</div>
+      <div class="q-text">"How big of an issue are no-shows for you — and with your condensed schedule, what actually happens when someone cancels last minute?"</div>
+      <div class="q-grid">
+        <div class="q-why-col">
+          <div class="q-why-label">Why we're asking</div>
+          <div class="q-why-body">Validates $4,680/month leak estimate. Condensed 7am–3pm = no recovery window. This is emotional pain, not just financial. Dr. Gardner feels this — the question is how consciously.</div>
+        </div>
+        <div class="q-if-col">
+          <div class="q-if-a"><div class="if-label">If A → High pain, vocal</div><div class="if-body">No-show prevention leads Phase 1 pitch. "We can cut this in half in the first 30 days." 48hr/24hr/2hr reminder sequence + smart rescheduling.</div></div>
+          <div class="q-if-b"><div class="if-label">If B → Minimizes it</div><div class="if-body">"That's interesting — most practices running your schedule feel this acutely. Let me show you what the data says." Run the math live: 8% × 180 appts × $325 = $4,680/month.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-header">Q3 — Patient Intake</div>
+      <div class="q-text">"When a new patient books — what does that process look like for them and for your front desk before they walk in the door?"</div>
+      <div class="q-grid">
+        <div class="q-why-col">
+          <div class="q-why-label">Why we're asking</div>
+          <div class="q-why-body">Confirms paper PDF intake finding. Website has downloadable "NP-PAPERWORK" PDF. No Yapi, Modento, mConsent, or digital intake found. Paper intake = 10–15 min of staff processing per new patient.</div>
+        </div>
+        <div class="q-if-col">
+          <div class="q-if-a"><div class="if-label">If A → All paper</div><div class="if-body">Digital intake is fastest visible demo win. Buildable in Phase 1 week 1. Frame as staff time recovered, not tech upgrade.</div></div>
+          <div class="q-if-b"><div class="if-label">If B → Partial digital</div><div class="if-body">"What platform is that? Does it connect to your scheduling software?" Identify the gap, integrate rather than replace.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-header">Q4 — Practice Management Software</div>
+      <div class="q-text">"What's your main scheduling and charting software — Dentrix, Eaglesoft, Open Dental, or something else?"</div>
+      <div class="q-grid">
+        <div class="q-why-col">
+          <div class="q-why-label">Why we're asking</div>
+          <div class="q-why-body">Most critical technical unknown. All automation ROI depends on PMS API access. Cannot scope Phase 1 without this answer. Everything runs through the PMS.</div>
+        </div>
+        <div class="q-if-col">
+          <div class="q-if-a"><div class="if-label">If Dentrix or Eaglesoft</div><div class="if-body">Well-documented APIs. Broad integration ecosystem. Clean build path. Flag for David post-session.</div></div>
+          <div class="q-if-b"><div class="if-label">If Open Dental or other</div><div class="if-body">Open Dental = open source, most flexible, easiest to build on. Other → research before scoping. Do not scope Phase 1 on the call.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-header">Q5 — Inactive Recall</div>
+      <div class="q-text">"Do you have a sense of how many patients from the last 2–3 years have just gone quiet — and is there a process for reaching back out to them?"</div>
+      <div class="q-grid">
+        <div class="q-why-col">
+          <div class="q-why-label">Why we're asking</div>
+          <div class="q-why-body">Validates 144-patient inactive estimate and $3,180/month recovery calc. Key insight: zero acquisition cost to reactivate. They already chose this practice once.</div>
+        </div>
+        <div class="q-if-col">
+          <div class="q-if-a"><div class="if-label">If A → No recall process</div><div class="if-body">Reactivation campaign = highest-ROI quick win. Propose as standalone deliverable. "We build a 3-touch sequence over 30 days. You'll see patients booking in the first week."</div></div>
+          <div class="q-if-b"><div class="if-label">If B → Manual recall</div><div class="if-body">"How often does that actually happen? What's the response rate?" AI-personalized by last visit type creates 3–4× better response rates.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-header">Q6 — Online Booking</div>
+      <div class="q-text">"Do patients ever ask about booking online, or does everything come through the phone?"</div>
+      <div class="q-grid">
+        <div class="q-why-col">
+          <div class="q-why-label">Why we're asking</div>
+          <div class="q-why-body">Confirms no-booking-widget gap. If patients ask → pain confirmed. If patients don't ask → "They're leaving without asking. Silent exit is actually worse — you never know what you lost."</div>
+        </div>
+        <div class="q-if-col">
+          <div class="q-if-a"><div class="if-label">If A → Patients ask for it</div><div class="if-body">Pain confirmed by market, not just research. Online booking widget leads Phase 1. Easy close.</div></div>
+          <div class="q-if-b"><div class="if-label">If B → No complaints</div><div class="if-body">Show Leak C math: 400 visitors × 12% × $750 = $36,000/mo opportunity. "They're leaving without asking."</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-header">Q7 — Growth Orientation</div>
+      <div class="q-text">"Right now is the focus more on growing the patient base or optimizing what you already have?"</div>
+      <div class="q-grid">
+        <div class="q-why-col">
+          <div class="q-why-label">Why we're asking</div>
+          <div class="q-why-body">Determines which product stack to pitch first. Also opens the Google 3-pack gap — GSD is absent from "dentist Boerne TX" and "dental implants Boerne TX" in local search. Same products, different frame.</div>
+        </div>
+        <div class="q-if-col">
+          <div class="q-if-a"><div class="if-label">If A → Growth focused</div><div class="if-body">Local SEO + Google review velocity + paid social first-mover window + booking widget = acquisition stack. "You're invisible in local search for your two highest-value service lines."</div></div>
+          <div class="q-if-b"><div class="if-label">If B → Optimize focused</div><div class="if-body">Recall + no-shows + digital intake = retention/efficiency stack. Same systems, different entry point into the pitch.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-header">Q8 — Review Management</div>
+      <div class="q-text">"Your online reputation is genuinely exceptional — 176 reviews at a 5.0 on Birdeye. Is that something you're actively managing or did it build organically?"</div>
+      <div class="q-grid">
+        <div class="q-why-col">
+          <div class="q-why-label">Why we're asking</div>
+          <div class="q-why-body">Opens automated review request conversation. Key detail: Google shows 150 reviews, Birdeye shows 176. That 26-review gap means reviews are splitting platforms. Birdeye reviews don't move Google local pack rankings. Google reviews do.</div>
+        </div>
+        <div class="q-if-col">
+          <div class="q-if-a"><div class="if-label">If A → Organic, no system</div><div class="if-body">"The risk is it stays that way until one bad week. And Birdeye reviews don't move Google pack ranking — Google reviews do. If 15% go to Birdeye, you're leaving SEO juice on the table."</div></div>
+          <div class="q-if-b"><div class="if-label">If B → Managed by vendor</div><div class="if-body">"Who handles that? Is it bundled with your texting system?" Get vendor name. Cross-reference Q1 answer for consolidation play.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-header">Q9 — High-Value Case Conversion</div>
+      <div class="q-text">"For your implant and All-on-4 consultations — roughly what percentage actually move forward with treatment, and what happens to the ones that don't?"</div>
+      <div class="q-grid">
+        <div class="q-why-col">
+          <div class="q-why-label">Why we're asking</div>
+          <div class="q-why-body">Highest-dollar gap in the practice. One lost All-on-4 = $20K–$40K. No post-visit follow-up detected. AI follow-up for unconverted implant consults = single highest-ROI automation in the engagement. This closes the deal faster than any other finding.</div>
+        </div>
+        <div class="q-if-col">
+          <div class="q-if-a"><div class="if-label">If A → Low conversion / no follow-up</div><div class="if-body">Treatment plan nurture sequence becomes the flagship deliverable. "This is where the money actually is. One recovered All-on-4 pays for the entire first year of NFE LLC."</div></div>
+          <div class="q-if-b"><div class="if-label">If B → High conversion</div><div class="if-body">"Even protecting that pipeline is worth systemizing. One unconverted case is $20K–$40K walking out. That's the ROI on this entire engagement."</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-header">Q10 — AI Vision</div>
+      <div class="q-text">"You posted in January about learning to use AI for dental images — how far are you thinking about AI for the practice overall? Is this something you're actively looking to move on or still in the exploring phase?"</div>
+      <div class="q-grid">
+        <div class="q-why-col">
+          <div class="q-why-label">Why we're asking</div>
+          <div class="q-why-body">Calibrates readiness to buy. The January post signals genuine curiosity — he's thinking independently. David doesn't need to sell the concept of AI, only the application. This separates "interested" from "ready to move" and determines whether you close on the call or the follow-up.</div>
+        </div>
+        <div class="q-if-col">
+          <div class="q-if-a"><div class="if-label">If A → Ready to move</div><div class="if-body">"Perfect. I want to show you three specific systems I'd build for you in the first 90 days that would pay for themselves in the first 30. Can we get 45 minutes on the calendar this week?" → This is the close.</div></div>
+          <div class="q-if-b"><div class="if-label">If B → Still exploring</div><div class="if-body">"Then the smartest first step is letting the data tell you where to focus. That's exactly what the FootprintIQ Brief does — it takes the guesswork out." → Soft close to $1,500 brief.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pivot-box">
+      <div class="pivot-label">The Pivot Line — Say this after Q8–Q10:</div>
+      <div class="pivot-text">"Based on what I've already seen — before this conversation — there are at least three specific systems I'd build for you in the first 90 days that would pay for themselves in the first 30. I want to show you exactly what those are. Can we get 45 minutes on the calendar this week?"</div>
+    </div>
+
+    <div class="send-box">
+      <div class="send-label">The Send — What you send immediately after:</div>
+      <div class="send-text">"I'll send you a summary of what we found before we meet so you can see the data before we even sit down. Takes about 3 minutes to read. You'll know immediately if this is worth your time."</div>
+      <div class="send-url">→ https://nfe-gsd-teaser.surge.sh</div>
+    </div>
+  </div>
+
+  <!-- ENGAGEMENT PATH -->
+  <div class="sec-wrap">
+    <div class="sec-hdr">
+      <div class="sec-eye">Next Steps</div>
+      <div class="sec-title">The Compounding Engine</div>
+    </div>
+    <div class="path-grid">
+      <div class="path-step">
+        <div class="path-num">Step 1</div>
+        <div class="path-title">FootprintIQ Brief — $1,500</div>
+        <div class="path-desc">Full intelligence file delivered as live URL in 24hrs</div>
+        <span class="path-badge" style="background:var(--greenb);color:var(--green);">✅ DELIVERED</span>
+      </div>
+      <div class="path-step">
+        <div class="path-num">Step 2</div>
+        <div class="path-title">Critical Fix Sprint — $3,500</div>
+        <div class="path-desc">Top 3–5 gaps implemented. Quick wins build trust.</div>
+        <span class="path-badge" style="background:#2e2a0a;color:#fde68a;">⏳ NEXT</span>
+      </div>
+      <div class="path-step">
+        <div class="path-num">Step 3</div>
+        <div class="path-title">ICM Retainer — $2,500/mo</div>
+        <div class="path-desc">AI systems deployed. The machine learns your business.</div>
+        <span class="path-badge" style="background:var(--border);color:var(--muted);">PHASE 3</span>
+      </div>
+      <div class="path-step">
+        <div class="path-num">Step 4</div>
+        <div class="path-title">Ongoing Partner</div>
+        <div class="path-desc">Embedded AI that runs on autopilot. Switching costs skyrocket.</div>
+        <span class="path-badge" style="background:var(--border);color:var(--muted);">PHASE 4</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="page-footer">
+  <div class="pf-main">NFE LLC | Necaise Family Enterprises LLC</div>
+  <div class="pf-main">Prepared for: Dr. Brandon Gardner, DDS | Gardner Springs Dentistry | April 2026</div>
+  <div class="pf-main">Prepared by: David Necaise, Managing Member | david@trustedservicessd.com</div>
+  <div class="pf-tagline">"AI poured the foundation. NFE LLC builds the house."</div>
+  <div class="pf-legal">© 2026 NFE LLC — CONFIDENTIAL — NOT FOR DISTRIBUTION — PAID ENGAGEMENT DOCUMENT</div>
+</footer>
+
+</body>
+</html>

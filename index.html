@@ -929,11 +929,11 @@
         </div>
         <div class="hero-stats">
           <div>
-            <div class="stat-value">1</div>
+            <div class="stat-value">2</div>
             <div class="stat-label">Active Clients</div>
           </div>
           <div>
-            <div class="stat-value">2</div>
+            <div class="stat-value">3</div>
             <div class="stat-label">Case Studies</div>
           </div>
           <div>
@@ -1457,6 +1457,13 @@
 
       <p class="intro-para italic">Every engagement becomes a case study. Every case study opens the next door. After 3 clients this table tells the story automatically.</p>
 
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;font-size:12px;">
+        <span style="background:#14532d;color:#86efac;padding:2px 10px;border-radius:12px;font-weight:500;">🟢 RETAINER ACTIVE</span>
+        <span style="background:#1c3d5a;color:#60a5fa;padding:2px 10px;border-radius:12px;font-weight:500;">🟡 ENGAGEMENT ACTIVE</span>
+        <span style="background:#1e3558;color:#93c5fd;padding:2px 10px;border-radius:12px;font-weight:500;">🔵 INTEL COMPLETE</span>
+        <span style="background:#1f1635;color:#a78bfa;padding:2px 10px;border-radius:12px;font-weight:500;">✅ DELIVERED</span>
+      </div>
+
       <table class="client-table">
         <thead>
           <tr>
@@ -1474,7 +1481,7 @@
             <td><span class="client-name">WBE Supply Solutions</span></td>
             <td style="color:var(--ink3);font-size:13px;">Defense supply chain / WOSB</td>
             <td><span class="layer-pill">Layer 1 — Audit</span></td>
-            <td><span class="status-pill status-green">✅ DELIVERED</span></td>
+            <td><span class="status-pill" style="background:#1f1635;color:#a78bfa;border:1px solid #7c3aed;">✅ DELIVERED</span></td>
             <td class="client-result">OSINT brief surfaced $8.4B in missed NASSCO Navy contract revenue. SAM.gov lapse identified. Brief delivered as interactive HTML artifact. First NFE LLC paid engagement.</td>
           </tr>
           <tr>
@@ -1482,7 +1489,7 @@
             <td><span class="client-name">SpitzLift Manufacturing</span></td>
             <td style="color:var(--ink3);font-size:13px;">Defense-adjacent specialty manufacturing</td>
             <td><span class="layer-pill">Layer 2 — Discovery</span></td>
-            <td><span class="status-pill status-amber">🟡 ACTIVE</span></td>
+            <td><span class="status-pill" style="background:#1c3d5a;color:#60a5fa;border:1px solid #3b82f6;">🟡 ENGAGEMENT ACTIVE</span></td>
             <td class="client-result">
               Demo delivered in &lt;1 week. "Love this!" — Lt. Col. Janet Pattison (USAF Ret.) and CEO Michael Spitsbergen. Retainer call completed April 3, 2026. Follow-up in 2–3 days.
               <br><br>
@@ -1499,7 +1506,10 @@
             <td style="color:var(--ink3);font-size:13px;">Dental / Healthcare</td>
             <td><span class="layer-pill">Layer 0 — FootprintIQ Teaser</span></td>
             <td><span class="status-pill" style="background:#1e3a5f;color:#60a5fa;border:1px solid #3b82f6;">🔵 INTEL COMPLETE</span></td>
-            <td class="client-result">7 automation gaps confirmed. $16,860/mo conservative leakage. Fit score: 8.25/10. Warm lead — patient relationship. No texting platform detected. Not in Google 3-pack. Paper-only intake. Zero paid social. Teaser live at <a href="clients/gsd/" style="color:var(--gold);font-size:12px;font-family:'DM Mono',monospace;">→ /clients/gsd/</a></td>
+            <td class="client-result">7 automation gaps. $16,860/mo leakage. Fit: 8.25/10. Warm lead — patient relationship.
+              <br><a href="https://nfe-gsd-teaser.surge.sh" target="_blank" style="color:var(--gold);">Teaser →</a> |
+              <a href="https://nfe-gsd-brief.surge.sh" target="_blank" style="color:var(--gold);">Full Brief →</a> |
+              <a href="clients/gsd/brief/" style="color:var(--ink4);font-size:11px;">Local review</a></td>
           </tr>
           <tr style="opacity:0.3;">
             <td><span class="case-num">004</span></td>
@@ -1695,6 +1705,16 @@
             <span class="link-name">Email</span>
             <span class="link-plain">david@trustedservicessd.com</span>
           </div>
+        </div>
+      </div>
+
+      <!-- GSD Client Links -->
+      <div style="background:#111827;border:1px solid #1e293b;border-radius:12px;padding:20px;margin-top:16px;">
+        <div style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:12px;text-transform:uppercase;letter-spacing:0.05em;font-family:'DM Mono',monospace;">GSD Client Links — Case 003</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <a href="https://nfe-gsd-teaser.surge.sh" target="_blank" style="color:var(--ink);font-size:13px;text-decoration:none;">Teaser Brief (Surge) → <span style="color:var(--ink4);">nfe-gsd-teaser.surge.sh</span></a>
+          <a href="https://nfe-gsd-brief.surge.sh" target="_blank" style="color:var(--ink);font-size:13px;text-decoration:none;">Full Brief — Paid (Surge) → <span style="color:var(--ink4);">nfe-gsd-brief.surge.sh</span></a>
+          <a href="clients/gsd/brief/" style="color:var(--ink4);font-size:12px;text-decoration:none;">Internal Review Copy (GitHub Pages)</a>
         </div>
       </div>
 
