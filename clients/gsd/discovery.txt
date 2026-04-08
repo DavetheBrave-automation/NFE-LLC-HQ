@@ -308,7 +308,7 @@ the data before we even sit down. Takes about 3 minutes to read.
 You'll know immediately if this is worth your time."
 
 → SEND THIS URL:
-  https://davethebrave-automation.github.io/NFE-LLC-HQ/clients/gsd/
+  https://footprintiq-gsd.surge.sh
 
 ================================================================================
 END OF DISCOVERY GUIDE
