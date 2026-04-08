@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NFE LLC — ICM Service Pricing Menu</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:        #0a0f1e;
+    --card:      #111827;
+    --card-alt:  #0d1420;
+    --amber:     #f59e0b;
+    --amber-dim: rgba(245,158,11,0.12);
+    --amber-glow:rgba(245,158,11,0.25);
+    --text:      #f1f5f9;
+    --muted:     #94a3b8;
+    --border:    #1e293b;
+    --green:     #86efac;
+    --green-bg:  #14532d;
+    --blue:      #60a5fa;
+    --blue-bg:   #1e3a5f;
+    --purple:    #a78bfa;
+    --purple-bg: #1f1635;
+    --red:       #fca5a5;
+    --red-bg:    #2e1a1a;
+    --font:      system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --mono:      'SF Mono', 'Cascadia Code', 'Fira Code', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── STICKY HEADER ── */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 52px;
+    gap: 12px;
+  }
+  .header-brand {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--amber);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+  .header-center {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .header-email {
+    font-size: 12px;
+    color: var(--muted);
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  /* ── LAYOUT ── */
+  .page-wrap { max-width: 1200px; margin: 0 auto; padding: 0 20px 80px; }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 60px 0 48px;
+    text-align: center;
+  }
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--amber);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+  .hero h2 {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--muted);
+    max-width: 680px;
+    margin: 0 auto 16px;
+    line-height: 1.55;
+  }
+  .hero-sub {
+    font-size: 14px;
+    color: var(--muted);
+    max-width: 580px;
+    margin: 0 auto 32px;
+    font-style: italic;
+  }
+  .metric-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 16px;
+    border: 1px solid var(--amber);
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--amber);
+    background: var(--amber-dim);
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── SECTION HEADERS ── */
+  .section {
+    margin-top: 64px;
+  }
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--amber);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .section-sub {
+    font-size: 14px;
+    color: var(--muted);
+    max-width: 640px;
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
+
+  /* ── ENGAGEMENT LADDER ── */
+  .ladder {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .step-card {
+    flex: 1 1 200px;
+    background: var(--card);
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    position: relative;
+    min-width: 0;
+  }
+  .step-card::before {
+    content: '';
+    display: block;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+    position: absolute;
+    top: 0; left: 0; right: 0;
+  }
+  .step-card.amber::before { background: var(--amber); }
+  .step-card.blue::before  { background: var(--blue); }
+  .step-card.green::before { background: var(--green); }
+  .step-card.purple::before{ background: var(--purple); }
+  .step-card.amber-glow {
+    box-shadow: 0 0 24px var(--amber-glow), inset 0 0 40px var(--amber-dim);
+  }
+  .step-badge {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .step-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .step-price {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--amber);
+    line-height: 1.1;
+    margin-bottom: 2px;
+  }
+  .step-sub {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .step-timeline {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .step-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+  .step-converts {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--amber);
+    font-family: var(--mono);
+  }
+
+  /* ── ARR TRACKER ── */
+  .arr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .arr-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+  }
+  .arr-scenario {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+  }
+  .arr-number {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--green);
+    margin-bottom: 4px;
+  }
+  .arr-sub {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .arr-note {
+    font-size: 13px;
+    color: var(--amber);
+    font-style: italic;
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  /* ── TAB SYSTEM ── */
+  .tab-nav-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .tab-nav {
+    display: flex;
+    gap: 0;
+    min-width: max-content;
+    padding: 0 0 0 0;
+  }
+  .tab-btn {
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: var(--muted);
+    font-family: var(--font);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 16px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 0.15s, border-color 0.15s;
+    margin-bottom: -1px;
+  }
+  .tab-btn:hover { color: var(--text); }
+  .tab-btn.active {
+    color: var(--amber);
+    border-bottom-color: var(--amber);
+    font-weight: 700;
+  }
+
+  /* ── VERTICAL PANEL ── */
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  .v-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .v-header {
+    padding: 24px 28px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .v-title-block {}
+  .v-icon { font-size: 28px; margin-bottom: 6px; }
+  .v-name {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 3px;
+  }
+  .v-profile {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .v-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+  .v-badge {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .badge-fast   { background: var(--green-bg); color: var(--green); }
+  .badge-medium { background: var(--blue-bg);  color: var(--blue); }
+  .badge-slow   { background: var(--red-bg);   color: var(--red); }
+  .badge-low    { background: var(--green-bg); color: var(--green); }
+  .badge-high   { background: var(--red-bg);   color: var(--red); }
+  .badge-active { background: var(--amber-dim); color: var(--amber); border: 1px solid var(--amber); }
+
+  .v-body { padding: 24px 28px; }
+  .v-section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 10px;
+    margin-top: 24px;
+  }
+  .v-section-label:first-child { margin-top: 0; }
+
+  /* Pricing table */
+  .price-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+  .price-table th {
+    text-align: left;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 8px 12px;
+    background: var(--card-alt);
+    border: 1px solid var(--border);
+  }
+  .price-table td {
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    vertical-align: top;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .price-table tr:nth-child(even) td { background: var(--card-alt); }
+  .price-table td:first-child { font-weight: 600; color: var(--text); }
+  .price-table td.price-val {
+    font-weight: 800;
+    color: var(--amber);
+    font-family: var(--mono);
+    white-space: nowrap;
+  }
+  .price-table td.timeline-val {
+    font-family: var(--mono);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  /* Pain signals */
+  .pain-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .pain-list li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .pain-num {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--red);
+    background: var(--red-bg);
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-family: var(--mono);
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+
+  /* AI systems */
+  .systems-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .systems-list li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .sys-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--blue);
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+
+  /* Upsell / pitch */
+  .upsell-path {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+    font-family: var(--mono);
+    padding: 12px 16px;
+    background: var(--card-alt);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+
+  .one-liner {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    font-style: italic;
+    padding: 16px 20px;
+    border-left: 3px solid var(--amber);
+    background: var(--amber-dim);
+    border-radius: 0 6px 6px 0;
+    line-height: 1.6;
+    margin-top: 4px;
+  }
+
+  .v-footer-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+  .v-footer-cell {
+    flex: 1 1 140px;
+  }
+  .v-footer-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .v-footer-val {
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .speed-fast   { color: var(--green); }
+  .speed-medium { color: var(--blue); }
+  .speed-slow   { color: var(--red); }
+  .diff-low    { color: var(--green); }
+  .diff-medium { color: var(--blue); }
+  .diff-high   { color: var(--red); }
+
+  /* ── ARR ROADMAP ── */
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .timeline-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+  }
+  .timeline-card::before {
+    content: '';
+    display: block;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+    position: absolute;
+    top: 0; left: 0; right: 0;
+  }
+  .timeline-card.amber::before { background: var(--amber); }
+  .timeline-card.blue::before  { background: var(--blue); }
+  .timeline-card.green::before { background: var(--green); }
+  .timeline-phase {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+    font-family: var(--mono);
+  }
+  .timeline-name {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+  .timeline-actions {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .timeline-actions li {
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+  .timeline-actions li::before {
+    content: '•';
+    color: var(--amber);
+    font-weight: 700;
+    margin-top: 0;
+    flex-shrink: 0;
+  }
+  .timeline-rev {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--amber);
+    font-family: var(--mono);
+  }
+
+  .milestone-box {
+    background: var(--amber-dim);
+    border: 1px solid var(--amber);
+    border-radius: 8px;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .milestone-line {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+  .milestone-line:last-child { margin-bottom: 0; }
+  .milestone-line span { color: var(--amber); }
+
+  /* ── COMPARISON TABLE ── */
+  .comp-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    min-width: 700px;
+  }
+  .comp-table th {
+    text-align: left;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 10px 14px;
+    background: var(--card-alt);
+    border: 1px solid var(--border);
+  }
+  .comp-table td {
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  .comp-table tr.nfe-row td {
+    background: var(--amber-dim);
+    color: var(--text);
+    font-weight: 600;
+  }
+  .comp-table tr.nfe-row td:first-child { color: var(--amber); }
+  .comp-table td:nth-child(5) {
+    font-weight: 700;
+  }
+  .comp-table td:first-child { font-weight: 600; color: var(--text); }
+  .switch-high   { color: var(--amber); }
+  .switch-low    { color: var(--red); }
+  .switch-medium { color: var(--blue); }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    margin-top: 80px;
+    padding: 32px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  .footer-brand {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+  .footer-contact {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .footer-contact a {
+    color: var(--amber);
+    text-decoration: none;
+  }
+  .footer-contact a:hover { text-decoration: underline; }
+  .footer-tagline {
+    font-size: 14px;
+    color: var(--amber);
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  .footer-meta {
+    font-size: 12px;
+    color: var(--border);
+    margin-top: 8px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .site-header { padding: 0 16px; }
+    .header-center { display: none; }
+    .page-wrap { padding: 0 16px 60px; }
+    .hero { padding: 40px 0 32px; }
+    .hero h1 { font-size: 24px; }
+    .hero h2 { font-size: 16px; }
+    .ladder { flex-direction: column; }
+    .v-header { flex-direction: column; }
+    .v-meta { align-items: flex-start; }
+    .v-body { padding: 16px; }
+    .price-table { font-size: 12px; }
+    .price-table th, .price-table td { padding: 7px 8px; }
+    .comp-table th, .comp-table td { padding: 8px 10px; }
+    .timeline-grid { grid-template-columns: 1fr; }
+    .tab-btn { font-size: 12px; padding: 10px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     STICKY HEADER
+═══════════════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="header-brand">NFE LLC</div>
+  <div class="header-center">ICM Service Pricing Menu</div>
+  <div class="header-email">david@trustedservicessd.com</div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════ -->
+<div class="page-wrap">
+  <section class="hero">
+    <div class="eyebrow">NFE LLC — Necaise Family Enterprises</div>
+    <h1>ICM Service Pricing Menu</h1>
+    <h2>From $1,500 FootprintIQ Audit to full AI automation retainer — every vertical, every tier, every upsell path.</h2>
+    <p class="hero-sub">All engagements begin with the FootprintIQ Brief. The brief IS the demonstration. You show up with the blueprint already built.</p>
+    <div class="metric-pills">
+      <div class="pill">$1,500 Entry</div>
+      <div class="pill">$5,000 Sprint</div>
+      <div class="pill">$2,500/mo Retainer</div>
+      <div class="pill">$20k–$150k Full Build</div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       ENGAGEMENT LADDER
+  ═══════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="section-label">The Engagement Ladder</div>
+    <div class="section-title">Every Client Follows This Path</div>
+    <p class="section-sub">Each rung creates the conditions for the next. The brief gets you in the door. The retainer keeps you there.</p>
+
+    <div class="ladder">
+
+      <div class="step-card amber">
+        <div class="step-badge">Step 0 · The Hook</div>
+        <div class="step-title">FootprintIQ Brief</div>
+        <div class="step-price">$1,500</div>
+        <div class="step-sub">One-time · Credited to retainer</div>
+        <div class="step-timeline">⏱ 24–48 hours</div>
+        <p class="step-desc">OSINT audit of their entire digital footprint. Delivered as a live URL. The brief IS the pitch. Walk in knowing their business before they say a word.</p>
+        <div class="step-converts">→ Critical Fix Sprint or ICM Retainer direct</div>
+      </div>
+
+      <div class="step-card blue">
+        <div class="step-badge">Step 1 · The Proof</div>
+        <div class="step-title">Critical Fix Sprint</div>
+        <div class="step-price">$3,500–$5,000</div>
+        <div class="step-sub">One-time · 30 days</div>
+        <div class="step-timeline">⏱ 30 days</div>
+        <p class="step-desc">Implement the top 3–5 gaps the brief identified. Quick wins that pay back fast and prove execution speed. Booking widget. Intake automation. Review system. Whatever bleeds most — fixed first.</p>
+        <div class="step-converts">→ ICM Deployment Retainer (90% conversion rate)</div>
+      </div>
+
+      <div class="step-card green">
+        <div class="step-badge">Step 2 · The Engine</div>
+        <div class="step-title">ICM Deployment Retainer</div>
+        <div class="step-price">$2,500/mo</div>
+        <div class="step-sub">Month-to-month after 90-day anchor</div>
+        <div class="step-timeline">⏱ Ongoing</div>
+        <p class="step-desc">The machine that knows their business. AI systems deployed, tuned, and running. Switching cost compounds every month. This is the real product.</p>
+        <div class="step-converts">→ Expanded retainer · Additional verticals · Referrals</div>
+      </div>
+
+      <div class="step-card purple">
+        <div class="step-badge">Step 3 · The Build</div>
+        <div class="step-title">Full AI Automation Build</div>
+        <div class="step-price">$20k–$150k</div>
+        <div class="step-sub">Project-based · Fixed scope</div>
+        <div class="step-timeline">⏱ 60–180 days</div>
+        <p class="step-desc">Custom AI systems at scale. Multi-location deployments. CRM + PMS + comms integration. Proprietary tools built for their specific workflow. No two builds look the same.</p>
+        <div class="step-converts">→ Enterprise retainer · C3PAO channel · Referral network</div>
+      </div>
+
+      <div class="step-card amber amber-glow">
+        <div class="step-badge">Step 4 · The Moat</div>
+        <div class="step-title">Embedded AI Partner</div>
+        <div class="step-price">$5k–$15k/mo</div>
+        <div class="step-sub">Annual contract · Preferred pricing</div>
+        <div class="step-timeline">⏱ Perpetual</div>
+        <p class="step-desc">NFE LLC is embedded in their operations. The AI knows their clients, their pricing, their workflows, their communication style. Switching cost is enormous. You are not a vendor. You are infrastructure.</p>
+        <div class="step-converts">→ They send you clients</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ARR TRACKER -->
+  <section class="section">
+    <div class="section-label">ARR Scenarios</div>
+    <div class="section-title">What the Numbers Look Like</div>
+    <div class="arr-grid">
+      <div class="arr-card">
+        <div class="arr-scenario">10 Retainers @ $2,500</div>
+        <div class="arr-number">$300,000 ARR</div>
+        <div class="arr-sub">$25,000/mo recurring</div>
+      </div>
+      <div class="arr-card">
+        <div class="arr-scenario">5 Retainers + 2 Full Builds</div>
+        <div class="arr-number">$390,000 ARR</div>
+        <div class="arr-sub">$32,500/mo blended</div>
+      </div>
+      <div class="arr-card">
+        <div class="arr-scenario">10 Retainers + Upsells</div>
+        <div class="arr-number">$720,000+ ARR</div>
+        <div class="arr-sub">$60,000+/mo with expansion</div>
+      </div>
+    </div>
+    <div class="arr-note">Target: 10 recurring clients. Build on that.</div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       VERTICAL PRICING MATRIX
+  ═══════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="section-label">Vertical Pricing Matrix</div>
+    <div class="section-title">All 10 Target Verticals</div>
+    <p class="section-sub">Every vertical has a different pain, a different entry price, and a different ceiling. Know these before you walk in.</p>
+
+    <!-- TAB NAV -->
+    <div class="tab-nav-wrap">
+      <div class="tab-nav">
+        <button class="tab-btn active" onclick="showTab('dental',this)">🦷 Dental</button>
+        <button class="tab-btn" onclick="showTab('home',this)">🏠 Home Svc</button>
+        <button class="tab-btn" onclick="showTab('law',this)">⚖️ Law</button>
+        <button class="tab-btn" onclick="showTab('realestate',this)">🏘️ Real Estate</button>
+        <button class="tab-btn" onclick="showTab('auto',this)">🚗 Auto</button>
+        <button class="tab-btn" onclick="showTab('insurance',this)">🛡️ Insurance</button>
+        <button class="tab-btn" onclick="showTab('ecomm',this)">🛒 E-comm</button>
+        <button class="tab-btn" onclick="showTab('staffing',this)">👥 Staffing</button>
+        <button class="tab-btn" onclick="showTab('wealth',this)">💰 Wealth Mgmt</button>
+        <button class="tab-btn" onclick="showTab('mfg',this)">🏭 Manufacturer</button>
+      </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────
+         TAB 1: DENTAL
+    ───────────────────────────────────────────── -->
+    <div id="tab-dental" class="tab-panel active">
+      <div class="v-card">
+        <div class="v-header">
+          <div class="v-title-block">
+            <div class="v-icon">🦷</div>
+            <div class="v-name">Dental Practice / Med Spa</div>
+            <div class="v-profile">Revenue Profile: $1M–$10M · Single location to small DSO</div>
+          </div>
+          <div class="v-meta">
+            <span class="v-badge badge-fast">⚡ Fast Close · 2–3 Weeks</span>
+            <span class="v-badge badge-low">✓ Difficulty: LOW</span>
+            <span class="v-badge badge-active">🔴 ACTIVE · Case 003 — GSD</span>
+          </div>
+        </div>
+        <div class="v-body">
+          <div class="v-section-label">Pricing Tiers</div>
+          <table class="price-table">
+            <thead>
+              <tr><th>Tier</th><th>Deliverable</th><th>Price</th><th>Timeline</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>FootprintIQ Brief</td>
+                <td>Full OSINT audit, tech stack, gap map, revenue leakage calc</td>
+                <td class="price-val">$1,500</td>
+                <td class="timeline-val">24–48 hrs</td>
+              </tr>
+              <tr>
+                <td>Critical Fix Sprint</td>
+                <td>Online booking widget, digital intake, review automation</td>
+                <td class="price-val">$3,500</td>
+                <td class="timeline-val">30 days</td>
+              </tr>
+              <tr>
+                <td>ICM Retainer</td>
+                <td>Recall engine, no-show prevention, new patient nurture, review system</td>
+                <td class="price-val">$2,500/mo</td>
+                <td class="timeline-val">Ongoing</td>
+              </tr>
+              <tr>
+                <td>Full Build</td>
+                <td>Multi-location AI comms stack, PMS integration, treatment plan nurture</td>
+                <td class="price-val">$20k–$40k</td>
+                <td class="timeline-val">60–90 days</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="v-section-label">Top 3 Pain Signals</div>
+          <ul class="pain-list">
+            <li><span class="pain-num">01</span>No-shows destroy condensed schedules — every empty chair = $300–$500 lost</li>
+            <li><span class="pain-num">02</span>Inactive recall leakage — 15–25% of patient base overdue, zero cost to reactivate</li>
+            <li><span class="pain-num">03</span>Paper intake + manual follow-up — front desk drowning in admin while chair sits empty</li>
+          </ul>
+
+          <div class="v-section-label">Primary AI Systems to Sell</div>
+          <ul class="systems-list">
+            <li><span class="sys-dot"></span>AI recall + reactivation engine (texts lapsed patients, books automatically)</li>
+            <li><span class="sys-dot"></span>No-show prevention + same-day fill (48hr/24hr/2hr reminders + waitlist trigger)</li>
+            <li><span class="sys-dot"></span>New patient intake automation (digital forms, insurance pre-screen, welcome sequence)</li>
+            <li><span class="sys-dot"></span>Post-visit review request automation (Google-first routing)</li>
+            <li><span class="sys-dot"></span>High-value case nurture (implant/All-on-4 unconverted consult follow-up)</li>
+          </ul>
+
+          <div class="v-section-label">Upsell Path</div>
+          <div class="upsell-path">Brief → Fix Sprint (booking widget) → Retainer (recall + no-show) → Full Build (PMS integration + multi-location) → Embedded partner</div>
+
+          <div class="v-section-label">One-Liner Pitch</div>
+          <div class="one-liner">"Your schedule is your revenue. Every no-show, every lapsed patient, every website visitor who leaves without booking — that's real money your front desk can't recover manually. We automate the recovery."</div>
+
+          <div class="v-footer-row">
+            <div class="v-footer-cell"><div class="v-footer-label">Close Speed</div><div class="v-footer-val speed-fast">FAST · 2–3 weeks</div></div>
+            <div class="v-footer-cell"><div class="v-footer-label">Difficulty</div><div class="v-footer-val diff-low">LOW</div></div>
+            <div class="v-footer-cell"><div class="v-footer-label">Entry Angle</div><div class="v-footer-val" style="color:var(--muted);font-weight:400;">FootprintIQ Brief + recall leakage calc</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────
+         TAB 2: HOME SERVICES
+    ───────────────────────────────────────────── -->
+    <div id="tab-home" class="tab-panel">
+      <div class="v-card">
+        <div class="v-header">
+          <div class="v-title-block">
+            <div class="v-icon">🏠</div>
+            <div class="v-name">Home Services</div>
+            <div class="v-profile">Window Cleaning, Roofing, HVAC, Landscaping, Pest · $500K–$10M</div>
+          </div>
+          <div class="v-meta">
+            <span class="v-badge badge-fast">⚡ Fast Close · 1–2 Weeks</span>
+            <span class="v-badge badge-low">✓ Difficulty: LOW</span>
+            <span class="v-badge badge-active">📋 Proof: Window Ninjas</span>
+          </div>
+        </div>
+        <div class="v-body">
+          <div class="v-section-label">Pricing Tiers</div>
+          <table class="price-table">
+            <thead><tr><th>Tier</th><th>Deliverable</th><th>Price</th><th>Timeline</th></tr></thead>
+            <tbody>
+              <tr><td>FootprintIQ Brief</td><td>Digital audit, review sweep, lead capture analysis</td><td class="price-val">$1,500</td><td class="timeline-val">24–48 hrs</td></tr>
+              <tr><td>Critical Fix Sprint</td><td>Lead capture form, review automation, quote follow-up</td><td class="price-val">$3,500</td><td class="timeline-val">30 days</td></tr>
+              <tr><td>ICM Retainer</td><td>AI lead triage, quote follow-up, seasonal campaign automation</td><td class="price-val">$2,500/mo</td><td class="timeline-val">Ongoing</td></tr>
+              <tr><td>Full Build</td><td>Full CRM + dispatch + quote + review + referral system</td><td class="price-val">$15k–$35k</td><td class="timeline-val">60–90 days</td></tr>
+            </tbody>
+          </table>
+
+          <div class="v-section-label">Top 3 Pain Signals</div>
+          <ul class="pain-list">
+            <li><span class="pain-num">01</span>Lead rot — estimate sent, no follow-up, job goes to competitor</li>
+            <li><span class="pain-num">02</span>No review system — 5-star work, 12 Google reviews</li>
+            <li><span class="pain-num">03</span>Seasonal revenue chaos — feast/famine with no automated pipeline</li>
+          </ul>
+
+          <div class="v-section-label">Primary AI Systems to Sell</div>
+          <ul class="systems-list">
+            <li><span class="sys-dot"></span>AI lead response (responds to web form/missed call in &lt;60 seconds)</li>
+            <li><span class="sys-dot"></span>Quote follow-up sequence (3-touch AI text/email after estimate sent)</li>
+            <li><span class="sys-dot"></span>Seasonal campaign engine (pre-books next season before season ends)</li>
+            <li><span class="sys-dot"></span>Review request automation (post-job text triggers Google review)</li>
+            <li><span class="sys-dot"></span>Referral system (existing customer referral incentive automation)</li>
+          </ul>
+
+          <div class="v-section-label">Upsell Path</div>
+          <div class="upsell-path">Brief → Sprint (lead capture + review) → Retainer (quote follow-up + seasonal) → Full Build (CRM + dispatch integration) → Multi-location franchise model</div>
+
+          <div class="v-section-label">One-Liner Pitch</div>
+          <div class="one-liner">"You do great work and lose the job because you didn't follow up fast enough. We fix that — automatically, every time, before the competitor responds."</div>
+
+          <div class="v-footer-row">
+            <div class="v-footer-cell"><div class="v-footer-label">Close Speed</div><div class="v-footer-val speed-fast">FAST · 1–2 weeks</div></div>
+            <div class="v-footer-cell"><div class="v-footer-label">Difficulty</div><div class="v-footer-val diff-low">LOW</div></div>
+            <div class="v-footer-cell"><div class="v-footer-label">Entry Angle</div><div class="v-footer-val" style="color:var(--muted);font-weight:400;">Lead rot + review gap audit</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────
+         TAB 3: LAW FIRM
+    ───────────────────────────────────────────── -->
+    <div id="tab-law" class="tab-panel">
+      <div class="v-card">
+        <div class="v-header">
+          <div class="v-title-block">
+            <div class="v-icon">⚖️</div>
+            <div class="v-name">Regional Law Firm</div>
+            <div class="v-profile">PI, Family, Business, Criminal · $1M–$15M · 5–40 attorneys</div>
+          </div>
+          <div class="v-meta">
+            <span class="v-badge badge-medium">◑ Medium Close · 3–4 Weeks</span>
+            <span class="v-badge badge-medium" style="background:var(--blue-bg);color:var(--blue);">~ Difficulty: MEDIUM</span>
+          </div>
+        </div>
+        <div class="v-body">
+          <div class="v-section-label">Pricing Tiers</div>
+          <table class="price-table">
+            <thead><tr><th>Tier</th><th>Deliverable</th><th>Price</th><th>Timeline</th></tr></thead>
+            <tbody>
+              <tr><td>FootprintIQ Brief</td><td>Web audit, intake test, competitor response time, Google presence</td><td class="price-val">$1,500</td><td class="timeline-val">24–48 hrs</td></tr>
+              <tr><td>Critical Fix Sprint</td><td>AI intake bot, contact form response automation, review system</td><td class="price-val">$5,000</td><td class="timeline-val">30 days</td></tr>
+              <tr><td>ICM Retainer</td><td>AI client intake, case status updates, document automation, referral tracking</td><td class="price-val">$2,500–$3,500/mo</td><td class="timeline-val">Ongoing</td></tr>
+              <tr><td>Full Build</td><td>Full case management AI layer, client portal, document generation, billing automation</td><td class="price-val">$30k–$75k</td><td class="timeline-val">90–120 days</td></tr>
+            </tbody>
+          </table>
+
+          <div class="v-section-label">Top 3 Pain Signals</div>
+          <ul class="pain-list">
+            <li><span class="pain-num">01</span>Intake leakage — potential client calls after hours, no answer, calls competitor</li>
+            <li><span class="pain-num">02</span>Manual document assembly — paralegals spending hours on templated docs</li>
+            <li><span class="pain-num">03</span>No client communication system — clients call for status updates all day</li>
+          </ul>
+
+          <div class="v-section-label">Primary AI Systems to Sell</div>
+          <ul class="systems-list">
+            <li><span class="sys-dot"></span>24/7 AI intake bot (qualifies leads, books consults, captures contact info after hours)</li>
+            <li><span class="sys-dot"></span>Document automation (intake forms, retainer agreements, demand letters from templates)</li>
+            <li><span class="sys-dot"></span>Client status update automation (reduces "where is my case" calls by 70%)</li>
+            <li><span class="sys-dot"></span>Referral attorney relationship manager (tracks and nurtures referral sources)</li>
+            <li><span class="sys-dot"></span>Review request system (post-case resolution automated outreach)</li>
+          </ul>
+
+          <div class="v-section-label">Upsell Path</div>
+          <div class="upsell-path">Brief → Sprint (intake bot) → Retainer (docs + client comms) → Full Build (case management AI layer) → CMMC if fed contracts exist</div>
+
+          <div class="v-section-label">One-Liner Pitch</div>
+          <div class="one-liner">"A potential client called at 7pm. Nobody answered. They hired the firm that texted them back in 3 minutes. We make sure that firm is yours."</div>
+
+          <div class="v-footer-row">
+            <div class="v-footer-cell"><div class="v-footer-label">Close Speed</div><div class="v-footer-val speed-medium">MEDIUM · 3–4 weeks</div></div>
+            <div class="v-footer-cell"><div class="v-footer-label">Difficulty</div><div class="v-footer-val diff-medium">MEDIUM</div></div>
+            <div class="v-footer-cell"><div class="v-footer-label">Entry Angle</div><div class="v-footer-val" style="color:var(--muted);font-weight:400;">Intake leakage — 30–40% of leads lost at first contact</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────
+         TAB 4: REAL ESTATE
+    ───────────────────────────────────────────── -->
+    <div id="tab-realestate" class="tab-panel">
+      <div class="v-card">
+        <div class="v-header">
+          <div class="v-title-block">
+            <div class="v-icon">🏘️</div>
+            <div class="v-name">Real Estate Brokerage / CRE</div>
+            <div class="v-profile">$2M–$50M GCI · 5–50 agents</div>
+          </div>
+          <div class="v-meta">
+            <span class="v-badge badge-medium">◑ Medium Close · 2–3 Weeks</span>
+            <span class="v-badge badge-medium" style="background:var(--blue-bg);color:var(--blue);">~ Difficulty: MEDIUM</span>
+          </div>
+        </div>
+        <div class="v-body">
+          <div class="v-section-label">Pricing Tiers</div>
+          <table class="price-table">
+            <thead><tr><th>Tier</th><th>Deliverable</th><th>Price</th><th>Timeline</th></tr></thead>
+            <tbody>
+              <tr><td>FootprintIQ Brief</td><td>Web audit, CRM signal, listing quality, lead response test</td><td class="price-val">$1,500</td><td class="timeline-val">24–48 hrs</td></tr>
+              <tr><td>Critical Fix Sprint</td><td>AI lead response, CRM automation, listing drip sequences</td><td class="price-val">$5,000</td><td class="timeline-val">30 days</td></tr>
+              <tr><td>ICM Retainer</td><td>AI lead nurture, market report automation, agent productivity tools</td><td class="price-val">$2,500–$4,000/mo</td><td class="timeline-val">Ongoing</td></tr>
+              <tr><td>Full Build</td><td>Full AI brokerage stack — leads, CRM, listings, market intel, agent tools</td><td class="price-val">$25k–$60k</td><td class="timeline-val">90 days</td></tr>
+            </tbody>
+          </table>
+
+          <div class="v-section-label">Top 3 Pain Signals</div>
+          <ul class="pain-list">
+            <li><span class="pain-num">01</span>Lead response speed — NAR data shows 78% of buyers go with first responder</li>
+            <li><span class="pain-num">02</span>Manual CMA and market reports — agent time killer, high automation potential</li>
+            <li><span class="pain-num">03</span>Database decay — thousands of past clients with no systematic re-engagement</li>
+          </ul>
+
+          <div class="v-section-label">Primary AI Systems to Sell</div>
+          <ul class="systems-list">
+            <li><span class="sys-dot"></span>Instant AI lead response (web, Zillow, Realtor.com — responds in &lt;90 seconds)</li>
+            <li><span class="sys-dot"></span>Past client re-engagement engine (anniversary, market update, equity alert sequences)</li>
+            <li><span class="sys-dot"></span>AI market report generator (auto-produces weekly/monthly CMA for sphere)</li>
+            <li><span class="sys-dot"></span>Transaction coordination automation (deadline tracking, document collection)</li>
+            <li><span class="sys-dot"></span>Agent recruiting AI (targeted outreach to agents at competing brokerages)</li>
+          </ul>
+
+          <div class="v-section-label">Upsell Path</div>
+          <div class="upsell-path">Brief → Sprint (lead response) → Retainer (database + market reports) → Full Build (full brokerage AI stack) → Multi-office expansion</div>
+
+          <div class="v-section-label">One-Liner Pitch</div>
+          <div class="one-liner">"Your database is a gold mine nobody is working. We build the machine that works it automatically — while your agents focus on closing."</div>
+
+          <div class="v-footer-row">
+            <div class="v-footer-cell"><div class="v-footer-label">Close Speed</div><div class="v-footer-val speed-medium">MEDIUM · 2–3 weeks</div></div>
+            <div class="v-footer-cell"><div class="v-footer-label">Difficulty</div><div class="v-footer-val diff-medium">MEDIUM</div></div>
+            <div class="v-footer-cell"><div class="v-footer-label">Entry Angle</div><div class="v-footer-val" style="color:var(--muted);font-weight:400;">Lead response speed + database re-engagement</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────
+         TAB 5: AUTO DEALERSHIP
+    ───────────────────────────────────────────── -->
+    <div id="tab-auto" class="tab-panel">
+      <div class="v-card">
+        <div class="v-header">
+          <div class="v-title-block">
+            <div class="v-icon">🚗</div>
+            <div class="v-name">Auto Dealership Group</div>
+            <div class="v-profile">2–5 stores · $20M–$150M · Highest upfront potential of all 10 verticals</div>
+          </div>
+          <div class="v-meta">
+            <span class="v-badge badge-medium">◑ Medium-Slow · 3–5 Weeks</span>
+            <span class="v-badge badge-medium" style="background:var(--blue-bg);color:var(--blue);">~ Difficulty: MEDIUM</span>
+          </div>
+        </div>
+        <div class="v-body">
+          <div class="v-section-label">Pricing Tiers</div>
+          <table class="price-table">
+            <thead><tr><th>Tier</th><th>Deliverable</th><th>Price</th><th>Timeline</th></tr></thead>
+            <tbody>
+              <tr><td>FootprintIQ Brief</td><td>Website audit, BDC response test, Google presence, review velocity</td><td class="price-val">$1,500</td><td class="timeline-val">24–48 hrs</td></tr>
+              <tr><td>Critical Fix Sprint</td><td>AI BDC response, missed lead recovery, review automation</td><td class="price-val">$7,500</td><td class="timeline-val">30 days</td></tr>
+              <tr><td>ICM Retainer</td><td>AI BDC + lead nurture + service recall + conquest campaigns</td><td class="price-val">$3,500–$5,000/mo</td><td class="timeline-val">Ongoing</td></tr>
+              <tr><td>Full Build</td><td>Full AI dealership stack — BDC, CRM, service lane, F&amp;I follow-up, conquest</td><td class="price-val">$50k–$150k</td><td class="timeline-val">120–180 days</td></tr>
+            </tbody>
+          </table>
+
+          <div class="v-section-label">Top 3 Pain Signals</div>
+          <ul class="pain-list">
+            <li><span class="pain-num">01</span>Internet lead rot — average dealership responds to web leads in 7+ hours, loses 60%</li>
+            <li><span class="pain-num">02</span>BDC inefficiency — BDC team handles volume manually, misses after-hours leads</li>
+            <li><span class="pain-num">03</span>Service lane upsell — no automated follow-up on declined service recommendations</li>
+          </ul>
+
+          <div class="v-section-label">Primary AI Systems to Sell</div>
+          <ul class="systems-list">
+            <li><span class="sys-dot"></span>AI BDC (responds to every internet lead in &lt;2 min, 24/7, qualifies and sets appointment)</li>
+            <li><span class="sys-dot"></span>Missed lead recovery (pulls aged leads from CRM, re-engages with AI sequences)</li>
+            <li><span class="sys-dot"></span>Service recall + declined work follow-up (automated service department revenue)</li>
+            <li><span class="sys-dot"></span>F&amp;I product follow-up (extended warranty, GAP — AI nurture post-delivery)</li>
+            <li><span class="sys-dot"></span>Conquest campaign engine (targets competitor service customers)</li>
+          </ul>
+
+          <div class="v-section-label">Upsell Path</div>
+          <div class="upsell-path">Brief → Sprint (BDC response fix) → Retainer (full lead + service stack) → Full Build (enterprise AI dealership system) → Multi-rooftop expansion</div>
+
+          <div class="v-section-label">One-Liner Pitch</div>
+          <div class="one-liner">"Your BDC responds to leads in 7 hours. Your competitor responds in 4 minutes. We make you the 4-minute dealership — automatically, around the clock."</div>
+
+          <div class="v-footer-row">
+            <div class="v-footer-cell"><div class="v-footer-label">Close Speed</div><div class="v-footer-val speed-medium">MEDIUM-SLOW · 3–5 weeks</div></div>
+            <div class="v-footer-cell"><div class="v-footer-label">Difficulty</div><div class="v-footer-val diff-medium">MEDIUM</div></div>
+            <div class="v-footer-cell"><div class="v-footer-label">Budget Signal</div><div class="v-footer-val" style="color:var(--amber);">Highest upfront potential of all 10</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────
+         TAB 6: INSURANCE
+    ───────────────────────────────────────────── -->
+    <div id="tab-insurance" class="tab-panel">
+      <div class="v-card">
+        <div class="v-header">
+          <div class="v-title-block">
+            <div class="v-icon">🛡️</div>
+            <div class="v-name">Regional Insurance Agency</div>
+            <div class="v-profile">Independent or Captive · $500K–$5M premium · 10–50 staff</div>
+          </div>
+          <div class="v-meta">
+            <span class="v-badge badge-fast">⚡ Fast Close · 2–3 Weeks</span>
+            <span class="v-badge badge-low">✓ Difficulty: LOW-MEDIUM</span>
+          </div>
+        </div>
+        <div class="v-body">
+          <div class="v-section-label">Pricing Tiers</div>
+          <table class="price-table">
+            <thead><tr><th>Tier</th><th>Deliverable</th><th>Price</th><th>Timeline</th></tr></thead>
+            <tbody>
+              <tr><td>FootprintIQ Brief</td><td>Web audit, quote response test, review sweep, carrier mix analysis</td><td class="price-val">$1,500</td><td class="timeline-val">24–48 hrs</td></tr>
+              <tr><td>Critical Fix Sprint</td><td>AI quote follow-up, renewal alert system, review automation</td><td class="price-val">$3,500</td><td class="timeline-val">30 days</td></tr>
+              <tr><td>ICM Retainer</td><td>AI quote nurture, renewal engine, cross-sell sequences, referral system</td><td class="price-val">$2,500/mo</td><td class="timeline-val">Ongoing</td></tr>
+              <tr><td>Full Build</td><td>Full AI agency stack — quotes, renewals, cross-sell, CSR workflow automation</td><td class="price-val">$20k–$40k</td><td class="timeline-val">60–90 days</td></tr>
+            </tbody>
+          </table>
+
+          <div class="v-section-label">Top 3 Pain Signals</div>
+          <ul class="pain-list">
+            <li><span class="pain-num">01</span>Quote leakage — quote sent, no follow-up, client buys from next agent who called</li>
+            <li><span class="pain-num">02</span>Renewal blindspot — renewals hitting without proactive outreach, losing to competitors</li>
+            <li><span class="pain-num">03</span>CSR overload — service staff buried in manual tasks, can't focus on growth</li>
+          </ul>
+
+          <div class="v-section-label">Primary AI Systems to Sell</div>
+          <ul class="systems-list">
+            <li><span class="sys-dot"></span>AI quote follow-up (3-touch sequence after quote sent, before competitor calls)</li>
+            <li><span class="sys-dot"></span>Renewal alert engine (90/60/30-day proactive outreach before renewal date)</li>
+            <li><span class="sys-dot"></span>Cross-sell sequence (home to auto, auto to umbrella — automated trigger-based)</li>
+            <li><span class="sys-dot"></span>Referral engine (post-bind automated referral ask with incentive tracking)</li>
+            <li><span class="sys-dot"></span>CSR workflow AI (automates certificates, ID cards, coverage change requests)</li>
+          </ul>
+
+          <div class="v-section-label">Upsell Path</div>
+          <div class="upsell-path">Brief → Sprint (quote follow-up) → Retainer (renewal + cross-sell) → Full Build (full agency AI stack) → Agency acquisition targeting (distressed books)</div>
+
+          <div class="v-section-label">One-Liner Pitch</div>
+          <div class="one-liner">"You quoted them. Then your competitor called. We make sure you're the one who follows up — in the right sequence, at the right time, automatically."</div>
+
+          <div class="v-footer-row">
+            <div class="v-footer-cell"><div class="v-footer-label">Close Speed</div><div class="v-footer-val speed-fast">FAST · 2–3 weeks</div></div>
+            <div class="v-footer-cell"><div class="v-footer-label">Difficulty</div><div class="v-footer-val diff-low">LOW-MEDIUM</div></div>
+            <div class="v-footer-cell"><div class="v-footer-label">Entry Angle</div><div class="v-footer-val" style="color:var(--muted);font-weight:400;">Quote leakage + renewal blindspot audit</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────
+         TAB 7: E-COMMERCE
+    ───────────────────────────────────────────── -->
+    <div id="tab-ecomm" class="tab-panel">
+      <div class="v-card">
+        <div class="v-header">
+          <div class="v-title-block">
+            <div class="v-icon">🛒</div>
+            <div class="v-name">DTC E-Commerce Brand</div>
+            <div class="v-profile">Shopify/WooCommerce · $1M–$20M · Most AI-native of all 10 verticals</div>
+          </div>
+          <div class="v-meta">
+            <span class="v-badge badge-fast">⚡ Fast Close · 1–2 Weeks</span>
+            <span class="v-badge badge-low">✓ Difficulty: LOW</span>
+          </div>
+        </div>
+        <div class="v-body">
+          <div class="v-section-label">Pricing Tiers</div>
+          <table class="price-table">
+            <thead><tr><th>Tier</th><th>Deliverable</th><th>Price</th><th>Timeline</th></tr></thead>
+            <tbody>
+              <tr><td>FootprintIQ Brief</td><td>Tech stack audit (BuiltWith), ad spend signals, review sentiment, CS ticket analysis</td><td class="price-val">$1,500</td><td class="timeline-val">24–48 hrs</td></tr>
+              <tr><td>Critical Fix Sprint</td><td>Abandoned cart recovery, CS bot, review automation</td><td class="price-val">$3,500</td><td class="timeline-val">30 days</td></tr>
+              <tr><td>ICM Retainer</td><td>AI CS + retention flows + win-back sequences + UGC automation</td><td class="price-val">$2,500/mo</td><td class="timeline-val">Ongoing</td></tr>
+              <tr><td>Full Build</td><td>Full AI retention + CS + influencer + inventory alert system</td><td class="price-val">$20k–$50k</td><td class="timeline-val">60–90 days</td></tr>
+            </tbody>
+          </table>
+
+          <div class="v-section-label">Top 3 Pain Signals</div>
+          <ul class="pain-list">
+            <li><span class="pain-num">01</span>Abandoned cart — industry average 70% abandonment rate, most brands recover &lt;5%</li>
+            <li><span class="pain-num">02</span>CS ticket volume — scaling brands drown in repetitive support tickets</li>
+            <li><span class="pain-num">03</span>Post-purchase silence — no retention sequence, customers buy once and disappear</li>
+          </ul>
+
+          <div class="v-section-label">Primary AI Systems to Sell</div>
+          <ul class="systems-list">
+            <li><span class="sys-dot"></span>Abandoned cart recovery AI (multi-touch SMS + email, dynamic discount logic)</li>
+            <li><span class="sys-dot"></span>AI customer service bot (resolves 70%+ of tickets without human touch)</li>
+            <li><span class="sys-dot"></span>Win-back sequence (lapsed customer reactivation with AI-personalized offers)</li>
+            <li><span class="sys-dot"></span>Post-purchase nurture (review request, upsell, referral — automated sequence)</li>
+            <li><span class="sys-dot"></span>Inventory alert + waitlist system (demand capture when products are OOS)</li>
+          </ul>
+
+          <div class="v-section-label">Upsell Path</div>
+          <div class="upsell-path">Brief → Sprint (cart recovery + CS bot) → Retainer (retention + win-back) → Full Build (full AI retention OS) → White-label for their agency clients</div>
+
+          <div class="v-section-label">One-Liner Pitch</div>
+          <div class="one-liner">"7 out of 10 people who add to cart leave without buying. We recover them — automatically, in the first 3 hours, before they forget you exist."</div>
+
+          <div class="v-footer-row">
+            <div class="v-footer-cell"><div class="v-footer-label">Close Speed</div><div class="v-footer-val speed-fast">FAST · 1–2 weeks</div></div>
+            <div class="v-footer-cell"><div class="v-footer-label">Difficulty</div><div class="v-footer-val diff-low">LOW</div></div>
+            <div class="v-footer-cell"><div class="v-footer-label">Note</div><div class="v-footer-val" style="color:var(--amber);">Easiest conceptual sell — they already get AI</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────
+         TAB 8: STAFFING
+    ───────────────────────────────────────────── -->
+    <div id="tab-staffing" class="tab-panel">
+      <div class="v-card">
+        <div class="v-header">
+          <div class="v-title-block">
+            <div class="v-icon">👥</div>
+            <div class="v-name">Regional Staffing / Recruiting Firm</div>
+            <div class="v-profile">Any vertical specialty · $2M–$30M</div>
+          </div>
+          <div class="v-meta">
+            <span class="v-badge badge-medium">◑ Medium Close · 2–4 Weeks</span>
+            <span class="v-badge badge-medium" style="background:var(--blue-bg);color:var(--blue);">~ Difficulty: MEDIUM</span>
+          </div>
+        </div>
+        <div class="v-body">
+          <div class="v-section-label">Pricing Tiers</div>
+          <table class="price-table">
+            <thead><tr><th>Tier</th><th>Deliverable</th><th>Price</th><th>Timeline</th></tr></thead>
+            <tbody>
+              <tr><td>FootprintIQ Brief</td><td>Web audit, ATS signal, LinkedIn presence, job posting volume analysis</td><td class="price-val">$1,500</td><td class="timeline-val">24–48 hrs</td></tr>
+              <tr><td>Critical Fix Sprint</td><td>AI candidate screening, intake automation, recruiter triage tools</td><td class="price-val">$5,000</td><td class="timeline-val">30 days</td></tr>
+              <tr><td>ICM Retainer</td><td>AI screening + matching + recruiter productivity + client reporting</td><td class="price-val">$3,000/mo</td><td class="timeline-val">Ongoing</td></tr>
+              <tr><td>Full Build</td><td>Full AI recruiting stack — sourcing, screening, matching, placement tracking</td><td class="price-val">$30k–$60k</td><td class="timeline-val">90 days</td></tr>
+            </tbody>
+          </table>
+
+          <div class="v-section-label">Top 3 Pain Signals</div>
+          <ul class="pain-list">
+            <li><span class="pain-num">01</span>Resume volume — recruiters buried in applications, can't screen fast enough</li>
+            <li><span class="pain-num">02</span>Candidate ghosting — no automated follow-up after application or interview</li>
+            <li><span class="pain-num">03</span>Client reporting — manual weekly/monthly reports to hiring managers eat hours</li>
+          </ul>
+
+          <div class="v-section-label">Primary AI Systems to Sell</div>
+          <ul class="systems-list">
+            <li><span class="sys-dot"></span>AI candidate screener (reads resumes, scores against JD criteria, ranks top 10%)</li>
+            <li><span class="sys-dot"></span>Application acknowledgment + status sequence (eliminates ghosting complaints)</li>
+            <li><span class="sys-dot"></span>Recruiter match engine (surfaces best-fit candidates from existing database)</li>
+            <li><span class="sys-dot"></span>Client reporting automation (weekly placement pipeline report, auto-generated)</li>
+            <li><span class="sys-dot"></span>Job posting optimizer (AI rewrites JDs for response rate improvement)</li>
+          </ul>
+
+          <div class="v-section-label">Upsell Path</div>
+          <div class="upsell-path">Brief → Sprint (screening AI) → Retainer (full recruiter stack) → Full Build (proprietary AI matching platform) → License to other agencies</div>
+
+          <div class="v-section-label">One-Liner Pitch</div>
+          <div class="one-liner">"Your recruiters spend 60% of their time screening resumes. We give that time back — and the candidates they surface are better matched than anything a human can sort manually."</div>
+
+          <div class="v-footer-row">
+            <div class="v-footer-cell"><div class="v-footer-label">Close Speed</div><div class="v-footer-val speed-medium">MEDIUM · 2–4 weeks</div></div>
+            <div class="v-footer-cell"><div class="v-footer-label">Difficulty</div><div class="v-footer-val diff-medium">MEDIUM</div></div>
+            <div class="v-footer-cell"><div class="v-footer-label">Entry Angle</div><div class="v-footer-val" style="color:var(--muted);font-weight:400;">Resume volume + recruiter productivity gap</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────
+         TAB 9: WEALTH MANAGEMENT
+    ───────────────────────────────────────────── -->
+    <div id="tab-wealth" class="tab-panel">
+      <div class="v-card">
+        <div class="v-header">
+          <div class="v-title-block">
+            <div class="v-icon">💰</div>
+            <div class="v-name">Wealth Management / RIA</div>
+            <div class="v-profile">$100M–$1B AUM · 5–30 advisors · High ticket. Long close. Worth the wait.</div>
+          </div>
+          <div class="v-meta">
+            <span class="v-badge badge-slow">⏳ Slow Close · 4–8 Weeks</span>
+            <span class="v-badge badge-high">⚠ Difficulty: HIGH</span>
+          </div>
+        </div>
+        <div class="v-body">
+          <div class="v-section-label">Pricing Tiers</div>
+          <table class="price-table">
+            <thead><tr><th>Tier</th><th>Deliverable</th><th>Price</th><th>Timeline</th></tr></thead>
+            <tbody>
+              <tr><td>FootprintIQ Brief</td><td>SEC IAPD audit, web presence, content analysis, competitor AUM intel</td><td class="price-val">$1,500</td><td class="timeline-val">48–72 hrs</td></tr>
+              <tr><td>Critical Fix Sprint</td><td>AI prospect research tool, client report automation, compliance review</td><td class="price-val">$7,500</td><td class="timeline-val">30 days</td></tr>
+              <tr><td>ICM Retainer</td><td>AI client reporting, prospect intel, advisor productivity, meeting prep</td><td class="price-val">$3,500–$5,000/mo</td><td class="timeline-val">Ongoing</td></tr>
+              <tr><td>Full Build</td><td>Full AI advisory stack — reporting, prospecting, compliance, client portal</td><td class="price-val">$50k–$120k</td><td class="timeline-val">120–180 days</td></tr>
+            </tbody>
+          </table>
+
+          <div class="v-section-label">Top 3 Pain Signals</div>
+          <ul class="pain-list">
+            <li><span class="pain-num">01</span>Manual client reporting — advisors spending Sundays on quarterly reports</li>
+            <li><span class="pain-num">02</span>Prospect research — hours building profiles before every first meeting</li>
+            <li><span class="pain-num">03</span>Client meeting prep — pulling together portfolio performance manually before every call</li>
+          </ul>
+
+          <div class="v-section-label">Primary AI Systems to Sell</div>
+          <ul class="systems-list">
+            <li><span class="sys-dot"></span>AI client report generator (pulls portfolio data, auto-produces quarterly reports)</li>
+            <li><span class="sys-dot"></span>Prospect intelligence brief (AI builds full dossier before first meeting)</li>
+            <li><span class="sys-dot"></span>Meeting prep AI (produces agenda + talking points + portfolio summary before each call)</li>
+            <li><span class="sys-dot"></span>Compliance monitoring (flags communications and documents for review triggers)</li>
+            <li><span class="sys-dot"></span>Client retention alert (detects behavioral signals of at-risk clients before they leave)</li>
+          </ul>
+
+          <div class="v-section-label">Upsell Path</div>
+          <div class="upsell-path">Brief → Sprint (reporting automation) → Retainer (prospect intel + meeting prep) → Full Build (proprietary advisory AI platform) → White-label to other RIAs</div>
+
+          <div class="v-section-label">One-Liner Pitch</div>
+          <div class="one-liner">"Your advisors spend Sunday building reports instead of spending time with clients. We automate the Sunday. They keep the relationship."</div>
+
+          <div class="v-footer-row">
+            <div class="v-footer-cell"><div class="v-footer-label">Close Speed</div><div class="v-footer-val speed-slow">SLOW · 4–8 weeks</div></div>
+            <div class="v-footer-cell"><div class="v-footer-label">Difficulty</div><div class="v-footer-val diff-high">HIGH</div></div>
+            <div class="v-footer-cell"><div class="v-footer-label">Note</div><div class="v-footer-val" style="color:var(--amber);">Compliance-sensitive · Long close worth the wait</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────
+         TAB 10: MANUFACTURER
+    ───────────────────────────────────────────── -->
+    <div id="tab-mfg" class="tab-panel">
+      <div class="v-card">
+        <div class="v-header">
+          <div class="v-title-block">
+            <div class="v-icon">🏭</div>
+            <div class="v-name">Specialty Manufacturer / Defense-Adjacent</div>
+            <div class="v-profile">$5M–$100M · Complex products · CMMC channel opens here</div>
+          </div>
+          <div class="v-meta">
+            <span class="v-badge badge-slow">⏳ Slow Close · 4–8 Weeks</span>
+            <span class="v-badge badge-high">⚠ Difficulty: HIGH</span>
+            <span class="v-badge badge-active">🔴 ACTIVE · Case 002 — SpitzLift</span>
+          </div>
+        </div>
+        <div class="v-body">
+          <div class="v-section-label">Pricing Tiers</div>
+          <table class="price-table">
+            <thead><tr><th>Tier</th><th>Deliverable</th><th>Price</th><th>Timeline</th></tr></thead>
+            <tbody>
+              <tr><td>FootprintIQ Brief</td><td>Full OSINT, SAM.gov check, distributor network, federal contract exposure</td><td class="price-val">$1,500–$2,500</td><td class="timeline-val">2–3 days</td></tr>
+              <tr><td>Discovery Sprint</td><td>2-week structured sessions, tech ecosystem audit, Phase 1 scope</td><td class="price-val">$10,000</td><td class="timeline-val">14 days</td></tr>
+              <tr><td>ICM Retainer</td><td>AI ops command center, order management, distributor portal, compliance</td><td class="price-val">$5k–$10k/mo</td><td class="timeline-val">Ongoing</td></tr>
+              <tr><td>Full Build</td><td>Custom AI manufacturing OS — inventory, production, compliance, distributor network</td><td class="price-val">$75k–$150k</td><td class="timeline-val">180 days</td></tr>
+            </tbody>
+          </table>
+
+          <div class="v-section-label">Top 3 Pain Signals</div>
+          <ul class="pain-list">
+            <li><span class="pain-num">01</span>Order-to-ship chaos — no single source of truth, Excel spreadsheets running production</li>
+            <li><span class="pain-num">02</span>Distributor communication — manual price sheets, inventory updates, order confirmations</li>
+            <li><span class="pain-num">03</span>CMMC exposure — mandatory by November 2026, most haven't started, C3PAOs booked out 18 months</li>
+          </ul>
+
+          <div class="v-section-label">Primary AI Systems to Sell</div>
+          <ul class="systems-list">
+            <li><span class="sys-dot"></span>Operations command center (live dashboard — inventory, orders, production, compliance)</li>
+            <li><span class="sys-dot"></span>Distributor portal (automated price sheets, order entry, inventory visibility)</li>
+            <li><span class="sys-dot"></span>CMMC compliance AI (gap analysis, SSP/POA&amp;M documentation, pre-assessment prep)</li>
+            <li><span class="sys-dot"></span>Federal contract opportunity scanner (USASpending + SAM.gov + FPDS monitoring)</li>
+            <li><span class="sys-dot"></span>AI quote and proposal generator (specs → quote in minutes, not days)</li>
+          </ul>
+
+          <div class="v-section-label">Upsell Path</div>
+          <div class="upsell-path">Brief → Discovery Sprint → Retainer → Full Build → CMMC Advisory ($5K–$15K) → C3PAO referral partnership → Defense supply chain network (sends new clients perpetually)</div>
+
+          <div class="v-section-label">One-Liner Pitch</div>
+          <div class="one-liner">"Your biggest competitor for federal contracts isn't another manufacturer. It's your own compliance gap. CMMC Level 2 is mandatory November 2026. C3PAOs are already booked 18 months out. We start the clock now."</div>
+
+          <div class="v-footer-row">
+            <div class="v-footer-cell"><div class="v-footer-label">Close Speed</div><div class="v-footer-val speed-slow">SLOW · 4–8 weeks</div></div>
+            <div class="v-footer-cell"><div class="v-footer-label">Difficulty</div><div class="v-footer-val diff-high">HIGH</div></div>
+            <div class="v-footer-cell"><div class="v-footer-label">Ceiling</div><div class="v-footer-val" style="color:var(--amber);">Highest-value engagements of all 10</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section><!-- end vertical matrix section -->
+
+  <!-- ═══════════════════════════════════════════════════
+       ARR ROADMAP — 30/60/90
+  ═══════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="section-label">ARR Roadmap</div>
+    <div class="section-title">The $20K Sprint — 30 Days to First Revenue</div>
+    <p class="section-sub">Target: $20,000 in 30 days. Build on that.</p>
+
+    <div class="timeline-grid">
+
+      <div class="timeline-card amber">
+        <div class="timeline-phase">Day 1–10</div>
+        <div class="timeline-name">OSINT + Outreach</div>
+        <ul class="timeline-actions">
+          <li>Run FootprintIQ briefs on top 3 targets (Dental, Home Services, Roofing)</li>
+          <li>Send teasers to warm leads (GSD first)</li>
+          <li>Close 1 audit brief at $1,500</li>
+          <li>Book 2 discovery calls</li>
+        </ul>
+        <div class="timeline-rev">Revenue: $1,500</div>
+      </div>
+
+      <div class="timeline-card blue">
+        <div class="timeline-phase">Day 11–20</div>
+        <div class="timeline-name">Close + Sprint</div>
+        <ul class="timeline-actions">
+          <li>Close 1–2 fix sprints from discovery calls ($3,500–$5,000 each)</li>
+          <li>Deliver GSD fix sprint week 1 quick win</li>
+          <li>Run briefs on 3 more targets (Auto, Insurance, Law)</li>
+          <li>Book 2 more discovery calls</li>
+        </ul>
+        <div class="timeline-rev">Revenue: $8,500–$11,500</div>
+      </div>
+
+      <div class="timeline-card green">
+        <div class="timeline-phase">Day 21–30</div>
+        <div class="timeline-name">Retainer Lock</div>
+        <ul class="timeline-actions">
+          <li>Convert 2 sprints to retainers ($2,500/mo each)</li>
+          <li>Close 1 additional fix sprint</li>
+          <li>Pipeline: 5 active conversations across 3 verticals</li>
+          <li>First recurring revenue locked</li>
+        </ul>
+        <div class="timeline-rev">$20,000–$25,000 total · $5,000/mo recurring starts</div>
+      </div>
+
+    </div>
+
+    <div class="milestone-box">
+      <div class="milestone-line">MONTH 3 TARGET: <span>10 retainers × $2,500 = $25,000/mo recurring</span></div>
+      <div class="milestone-line">MONTH 6 TARGET: <span>10 retainers + 2 full builds = $40,000+/mo</span></div>
+      <div class="milestone-line">YEAR 1 TARGET: <span>$300,000–$500,000 ARR</span></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       COMPETITIVE COMPARISON
+  ═══════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="section-label">Competitive Position</div>
+    <div class="section-title">WHY NFE LLC WINS — Against Every Alternative</div>
+
+    <div class="comp-table-wrap">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Approach</th>
+            <th>Who Does It</th>
+            <th>What They Deliver</th>
+            <th>Monthly Cost</th>
+            <th>Switching Cost</th>
+            <th>NFE LLC Advantage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Generic AI chatbot</td>
+            <td>Any freelancer</td>
+            <td>Slab. No integration.</td>
+            <td>$200–$500/mo</td>
+            <td class="switch-low">None — they'll leave anyway</td>
+            <td>We build the house on top of it</td>
+          </tr>
+          <tr>
+            <td>Agency retainer</td>
+            <td>Digital marketing agency</td>
+            <td>Templates, reports, no real AI</td>
+            <td>$2,000–$8,000/mo</td>
+            <td class="switch-low">Low</td>
+            <td>We deploy actual AI systems, not campaigns</td>
+          </tr>
+          <tr>
+            <td>SaaS point solution</td>
+            <td>Weave, Birdeye, NexHealth</td>
+            <td>One tool, one problem</td>
+            <td>$300–$800/mo</td>
+            <td class="switch-low">Low</td>
+            <td>We integrate everything into one system that knows the business</td>
+          </tr>
+          <tr>
+            <td>Internal hire</td>
+            <td>Junior AI specialist</td>
+            <td>Limited scope, salary overhead</td>
+            <td>$5,000–$8,000/mo fully loaded</td>
+            <td class="switch-medium">Medium</td>
+            <td>We cost less and know more verticals cold</td>
+          </tr>
+          <tr class="nfe-row">
+            <td>NFE LLC</td>
+            <td>David Necaise</td>
+            <td>Full system architecture, deployed and running</td>
+            <td>$2,500–$5,000/mo</td>
+            <td class="switch-high">HIGH — system knows their business cold</td>
+            <td>You are not a vendor. You are infrastructure.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-brand">NFE LLC | Necaise Family Enterprises LLC</div>
+    <div class="footer-contact">
+      <a href="mailto:david@trustedservicessd.com">david@trustedservicessd.com</a>
+      &nbsp;·&nbsp;
+      <a href="https://calendar.app.google/7DjbWAb9omg1mzL49" target="_blank">Book a Call →</a>
+    </div>
+    <div class="footer-tagline">AI poured the foundation. NFE LLC builds the house.</div>
+    <div class="footer-meta">© 2026 NFE LLC — Internal Document — Version 1.0 — April 2026</div>
+  </footer>
+
+</div><!-- end page-wrap -->
+
+<script>
+  function showTab(id, btn) {
+    // Hide all panels
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    // Deactivate all buttons
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    // Show target panel
+    document.getElementById('tab-' + id).classList.add('active');
+    // Activate button
+    btn.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
