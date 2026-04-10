@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FootprintIQ | Intelligence Brief: Timeshare Contract Resolution</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0a0a;
+    --paper: #f4f0e8;
+    --paper-dark: #e8e3d8;
+    --red: #c0392b;
+    --red-dark: #922b21;
+    --amber: #d68910;
+    --green: #1e8449;
+    --rule: #2c2c2c;
+    --muted: #5a5a5a;
+    --accent-line: #c0392b;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* MASTHEAD */
+  .masthead {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .masthead::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255,255,255,0.015) 2px,
+      rgba(255,255,255,0.015) 4px
+    );
+    pointer-events: none;
+  }
+
+  .masthead-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 40px 36px;
+  }
+
+  .brand-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .brand-logo {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--paper);
+    background: var(--red);
+    padding: 6px 12px;
+  }
+
+  .brand-descriptor {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+
+  .brief-type {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 16px;
+  }
+
+  .masthead h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--paper);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .masthead h1 em {
+    font-style: italic;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .masthead-sub {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.55);
+    font-style: italic;
+    margin-bottom: 28px;
+    max-width: 600px;
+  }
+
+  .meta-row {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .meta-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .meta-value {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+  }
+
+  /* VERDICT BAR */
+  .verdict-bar {
+    background: var(--red);
+    padding: 14px 40px;
+  }
+
+  .verdict-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .verdict-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    white-space: nowrap;
+  }
+
+  .verdict-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    font-style: italic;
+  }
+
+  /* DISCLAIMER */
+  .disclaimer-band {
+    background: var(--paper-dark);
+    border-bottom: 2px solid var(--ink);
+    padding: 12px 40px;
+  }
+
+  .disclaimer-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .disclaimer-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+    padding-top: 2px;
+  }
+
+  .disclaimer-text {
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* MAIN CONTENT */
+  .content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* SECTION */
+  .section {
+    padding: 40px 0;
+    border-bottom: 1px solid #ccc7ba;
+  }
+
+  .section:last-child { border-bottom: none; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .section-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--red);
+    letter-spacing: 0.15em;
+    min-width: 28px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .section-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--ink);
+    opacity: 0.15;
+  }
+
+  /* BOMBSHELL CARDS */
+  .bombshell-grid {
+    display: grid;
+    gap: 16px;
+  }
+
+  .bombshell {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 24px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bombshell::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: var(--red);
+  }
+
+  .bombshell-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+
+  .bombshell-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .bombshell p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.65;
+  }
+
+  .bombshell .highlight {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .mono-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    background: rgba(192,57,43,0.2);
+    color: #e8a59a;
+    padding: 2px 8px;
+    margin-left: 8px;
+  }
+
+  /* DOMAIN FINDING */
+  .domain-finding {
+    background: #fff8e1;
+    border: 1px solid #f0c040;
+    border-left: 4px solid var(--amber);
+    padding: 20px 24px;
+    margin-bottom: 16px;
+  }
+
+  .domain-finding .label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 8px;
+  }
+
+  .domain-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 12px;
+  }
+
+  .domain-col {
+    padding: 12px 16px;
+    background: rgba(0,0,0,0.04);
+  }
+
+  .domain-col .col-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .domain-col .col-val {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .domain-col.claimed .col-val { color: var(--red); }
+  .domain-col.actual .col-val { color: var(--green); }
+
+  /* DATA TABLE */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    margin-top: 8px;
+  }
+
+  .data-table th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: left;
+    padding: 8px 12px;
+    background: var(--paper-dark);
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .data-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #ddd8cc;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .data-table tr:last-child td { border-bottom: none; }
+
+  .data-table .case-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--red);
+  }
+
+  .badge {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+
+  .badge-red { background: #fde8e6; color: var(--red-dark); }
+  .badge-amber { background: #fef3cd; color: #7d5a00; }
+  .badge-green { background: #e8f5e9; color: #1b5e20; }
+  .badge-dark { background: var(--ink); color: var(--paper); }
+
+  /* COMPLAINT CARDS */
+  .complaint-grid {
+    display: grid;
+    gap: 12px;
+  }
+
+  .complaint-card {
+    border: 1px solid #ccc7ba;
+    padding: 18px 20px;
+    position: relative;
+  }
+
+  .complaint-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--red);
+  }
+
+  .complaint-meta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+
+  .complaint-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+  }
+
+  .complaint-body {
+    font-size: 0.9rem;
+    color: #333;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .complaint-body strong {
+    font-style: normal;
+    color: var(--ink);
+  }
+
+  /* MARRIOTT BOX */
+  .marriott-box {
+    border: 2px solid var(--green);
+    padding: 28px;
+    background: #f0faf0;
+    margin-top: 16px;
+  }
+
+  .marriott-box .box-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--green);
+    margin-bottom: 12px;
+  }
+
+  .marriott-specs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .spec-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .spec-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .spec-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--green);
+  }
+
+  /* RED FLAGS LIST */
+  .flags-list {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+  }
+
+  .flags-list li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 14px 16px;
+    background: #fff;
+    border: 1px solid #ddd8cc;
+    font-size: 0.9rem;
+  }
+
+  .flag-icon {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--red);
+    min-width: 20px;
+    padding-top: 1px;
+    font-weight: 500;
+  }
+
+  /* ENTITY TABLE */
+  .entity-box {
+    background: var(--ink);
+    padding: 28px;
+    color: var(--paper);
+  }
+
+  .entity-box .entity-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 16px;
+  }
+
+  .entity-list {
+    list-style: none;
+    display: grid;
+    gap: 8px;
+  }
+
+  .entity-list li {
+    display: flex;
+    gap: 16px;
+    align-items: baseline;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-size: 0.88rem;
+  }
+
+  .entity-list li:last-child { border-bottom: none; }
+
+  .entity-name {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+    color: #fff;
+    flex: 1;
+  }
+
+  .entity-status {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--red);
+  }
+
+  /* PULLQUOTE */
+  .pullquote {
+    border-left: 4px solid var(--red);
+    padding: 20px 28px;
+    margin: 24px 0;
+    background: var(--paper-dark);
+  }
+
+  .pullquote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+
+  .pullquote cite {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 10px;
+    font-style: normal;
+  }
+
+  /* VERDICT SECTION */
+  .verdict-section {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 40px;
+    margin: 40px 0 0;
+  }
+
+  .verdict-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--red);
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  .verdict-section p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.75;
+    margin-bottom: 14px;
+  }
+
+  .verdict-section p:last-child { margin-bottom: 0; }
+
+  .verdict-section strong { color: #fff; }
+
+  /* FOOTER */
+  .footer {
+    background: var(--paper-dark);
+    border-top: 2px solid var(--ink);
+    padding: 24px 40px;
+    text-align: center;
+  }
+
+  .footer-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .footer p {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  .footer .footprintiq-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--ink);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section {
+    animation: fadeIn 0.5s ease both;
+  }
+
+  .section:nth-child(1) { animation-delay: 0.1s; }
+  .section:nth-child(2) { animation-delay: 0.2s; }
+  .section:nth-child(3) { animation-delay: 0.3s; }
+  .section:nth-child(4) { animation-delay: 0.4s; }
+  .section:nth-child(5) { animation-delay: 0.5s; }
+
+  @media (max-width: 640px) {
+    .masthead-inner, .content, .disclaimer-inner, .verdict-bar, .footer { padding-left: 20px; padding-right: 20px; }
+    .domain-compare { grid-template-columns: 1fr; }
+    .marriott-specs { grid-template-columns: 1fr 1fr; }
+    .meta-row { gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="masthead-inner">
+    <div class="brand-bar">
+      <div class="brand-logo">FootprintIQ</div>
+      <div class="brand-descriptor">Consumer Intelligence Brief</div>
+    </div>
+    <div class="brief-type">⬛ Subject Report — Timeshare Exit Industry</div>
+    <h1>Timeshare Contract Resolution:<br><em>What the Digital Record Reveals</em></h1>
+    <p class="masthead-sub">A multi-source investigation into the company behind timesharecontractresolution.com — its true legal identity, federal litigation history, founding date claims, and documented consumer outcomes.</p>
+    <div class="meta-row">
+      <div class="meta-item">
+        <span class="meta-label">Published</span>
+        <span class="meta-value">April 10, 2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Sources</span>
+        <span class="meta-value">Federal Court Records, BBB, WHOIS, Wayback Machine</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Classification</span>
+        <span class="meta-value">Consumer Due Diligence</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VERDICT BAR -->
+<div class="verdict-bar">
+  <div class="verdict-inner">
+    <span class="verdict-label">Finding</span>
+    <span class="verdict-text">TCR is a DBA of Light On Marketing, LLC — a front company in a network facing a $16.2M federal disgorgement order. Their "founded 2009" claim is contradicted by domain records showing registration in July 2019.</span>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer-band">
+  <div class="disclaimer-inner">
+    <span class="disclaimer-label">Disclaimer</span>
+    <p class="disclaimer-text">This brief is produced for consumer education purposes only. All findings are sourced from publicly available records including federal court filings, WHOIS data, the Wayback Machine, and the Better Business Bureau. This document does not constitute legal advice. FootprintIQ is an independent research publisher with no financial relationship to any timeshare company or exit service.</p>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="content">
+
+  <!-- SECTION 1: TRUE IDENTITY -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">True Legal Identity</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <p style="margin-bottom:20px;">"Timeshare Contract Resolution" is not the legal name of the company consumers are contracting with. It is a trade name — a DBA — operated by <strong>Light On Marketing, LLC</strong>. That LLC is one of several entities owned and controlled by <strong>Rich Folk</strong> and <strong>William "Bo" Wilson</strong>, operating through a trust vehicle called the <strong>Collaborative Administrative Trust (CAT)</strong>.</p>
+
+    <div class="entity-box">
+      <div class="entity-title">▸ Known Entity Network — Folk / Wilson / CAT</div>
+      <ul class="entity-list">
+        <li><span class="entity-name">Pandora Marketing, LLC (d/b/a Timeshare Compliance)</span><span class="entity-status">BANKRUPT</span></li>
+        <li><span class="entity-name">Pandora Servicing, LLC</span><span class="entity-status">BANKRUPT — DISMISSED BAD FAITH</span></li>
+        <li><span class="entity-name">Savi Collaborative, LLC (d/b/a Timeshare Compliance)</span><span class="entity-status">Post-bankruptcy successor</span></li>
+        <li><span class="entity-name">Light On Marketing, LLC (d/b/a Timeshare Contract Resolution)</span><span class="entity-status">ACTIVE — SUBJECT OF THIS BRIEF</span></li>
+        <li><span class="entity-name">Intermarketing Media, LLC</span><span class="entity-status">Related entity</span></li>
+        <li><span class="entity-name">Collaborative Administrative Trust (CAT)</span><span class="entity-status">Master ownership vehicle</span></li>
+      </ul>
+    </div>
+
+    <p style="margin-top:16px; font-size:0.9rem; color:var(--muted);">Source: Federal court records, Case No. 6:19-cv-01908 (M.D. Florida) and Case No. 8:24-cv-01747 (C.D. California).</p>
+  </div>
+
+  <!-- SECTION 2: FOUNDING DATE FRAUD -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">The "Founded 2009" Claim — Domain Evidence</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <p style="margin-bottom:20px;">TCR states repeatedly across their website and in BBB responses that they have been in business for <strong>16 years</strong>, implying a founding date of approximately 2009–2010. WHOIS and Wayback Machine records directly contradict this claim.</p>
+
+    <div class="domain-finding">
+      <div class="label">▸ Domain Intelligence Finding</div>
+      <p style="font-size:0.9rem;">The domain <strong>timesharecontractresolution.com</strong> was registered on <strong>July 3, 2019</strong> via GoDaddy.com, LLC. A Wayback Machine crawl of all captures between January 2009 and January 2012 returned <strong>zero results</strong> — the site did not exist in any form during the period they claim to have been operating.</p>
+      <div class="domain-compare">
+        <div class="domain-col claimed">
+          <div class="col-label">TCR Claims</div>
+          <div class="col-val">Founded ~2009</div>
+          <div style="font-size:0.8rem; margin-top:4px; color:#922b21;">16 years in business</div>
+        </div>
+        <div class="domain-col actual">
+          <div class="col-label">Domain Record Shows</div>
+          <div class="col-val">Registered 2019</div>
+          <div style="font-size:0.8rem; margin-top:4px; color:#1b5e20;">Zero pre-2019 web presence found</div>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:0.88rem; color:var(--muted);">Note: It is possible TCR operated under a different brand or domain prior to 2019. However, no verifiable web presence for this specific brand, its owners, or this DBA has been found predating the 2019 domain registration. The burden of proof rests with the company making the longevity claim.</p>
+  </div>
+
+  <!-- SECTION 3: FEDERAL LITIGATION -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Federal Litigation Record</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <p style="margin-bottom:20px;">The network of entities behind "Timeshare Contract Resolution" is the subject of significant ongoing federal litigation. The following cases are sourced from PACER via CourtListener's RECAP archive.</p>
+
+    <div class="bombshell-grid">
+
+      <div class="bombshell">
+        <div class="bombshell-label">⬛ Active Federal Case — M.D. Florida</div>
+        <div class="bombshell-title">Wyndham Vacation Ownership v. Pandora Marketing / Folk / Wilson et al. <span class="mono-tag">6:19-cv-01908</span></div>
+        <p>Filed October 2019. <span class="highlight">Still active as of April 9, 2026.</span> Wyndham sued the Pandora/Folk/Wilson network for trademark infringement and unlawful business practices. The TCR website appears as a <span class="highlight">court exhibit</span> in a 2023 motion citing continued unlawful operation. Magistrate Judge recommended a <span class="highlight">$16,231,197.88 disgorgement award</span> plus a permanent injunction against the core network. Pandora filed a retaliatory countersuit (6:23-cv-1513) which is also pending.</p>
+      </div>
+
+      <div class="bombshell">
+        <div class="bombshell-label">⬛ Resolved Federal Case — C.D. California</div>
+        <div class="bombshell-title">Wyndham Vacation Ownership v. Miranda Dempsey (MXM Legal) <span class="mono-tag">8:24-cv-01747</span></div>
+        <p>Filed August 2024. The complaint <span class="highlight">explicitly names Light On Marketing, LLC d/b/a Timeshare Contract Resolution</span> as part of an unlawful attorney referral scheme. The defendant attorney — who was accepting client referrals from Folk/Wilson's network — <span class="highlight">consented to a permanent injunction</span>. Case dismissed November 20, 2024.</p>
+      </div>
+
+    </div>
+
+    <table class="data-table" style="margin-top:20px;">
+      <thead>
+        <tr>
+          <th>Event</th>
+          <th>Entity</th>
+          <th>Outcome</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Pandora Servicing Ch. 11 Bankruptcy (Jan 2023)</td>
+          <td>Pandora Servicing, LLC</td>
+          <td>Dismissed — court found bad faith filing</td>
+          <td><span class="badge badge-red">Dismissed</span></td>
+        </tr>
+        <tr>
+          <td>Pandora Marketing Ch. 11 Bankruptcy (Jan 2024, Wyoming)</td>
+          <td>Pandora Marketing, LLC</td>
+          <td>U.S. Trustee raised potential criminal implications</td>
+          <td><span class="badge badge-red">Under Scrutiny</span></td>
+        </tr>
+        <tr>
+          <td>$205M UCC Liens — 31 filings (Aug–Sep 2023)</td>
+          <td>Collaborative Administrative Trust</td>
+          <td>Courts characterized as legally baseless "paper terrorism"</td>
+          <td><span class="badge badge-red">Struck Down</span></td>
+        </tr>
+        <tr>
+          <td>FTC settlement — Sanctuary Belize fraud</td>
+          <td>Michael Santos (former Pandora owner/agent)</td>
+          <td>Settled FTC charges related to real estate fraud</td>
+          <td><span class="badge badge-amber">Settled</span></td>
+        </tr>
+        <tr>
+          <td>Wyndham v. MXM Legal (8:24-cv-01747)</td>
+          <td>Light On Marketing / TCR (named in complaint)</td>
+          <td>Defendant attorney consented to permanent injunction</td>
+          <td><span class="badge badge-dark">Closed</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 4: CONSUMER COMPLAINTS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Consumer Complaint Patterns</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <p style="margin-bottom:20px;">A review of 12 published BBB complaints, Trustpilot reviews, and independent consumer accounts reveals five consistent failure patterns. The following are direct consumer accounts from BBB filings.</p>
+
+    <ul class="flags-list" style="margin-bottom:24px;">
+      <li><span class="flag-icon">01</span><div><strong>Communication blackout after payment.</strong> The single most consistent theme: once money changes hands, TCR becomes nearly unreachable. Clients report months of unanswered emails, staff who cannot locate their case files, and complete turnover of assigned contacts.</div></li>
+      <li><span class="flag-icon">02</span><div><strong>Verbal promises the written contract does not support.</strong> Clients were told TCR would "go to court if necessary," "get their money back," and "fix their credit." TCR's BBB responses repeatedly clarify: "We never promise litigation." The gap between the sales pitch and the contract is a primary driver of complaints.</div></li>
+      <li><span class="flag-icon">03</span><div><strong>Out-of-jurisdiction or unqualified attorneys.</strong> Multiple complainants discovered their assigned attorney was not licensed in the state where their timeshare was located. In one case, this resulted in a court judgment being entered against the client.</div></li>
+      <li><span class="flag-icon">04</span><div><strong>Hidden stacked fees.</strong> After paying an initial deposit — sometimes via third-party financing — clients are informed they must pay a separate attorney retainer ($950 in at least two documented cases) before any work begins.</div></li>
+      <li><span class="flag-icon">05</span><div><strong>Default strategy not disclosed upfront.</strong> Consumer reviews describe the realization that TCR's exit method is advising clients to stop paying their timeshare, let it default, and wait for the company to charge off the debt — something any owner can do independently, at no cost.</div></li>
+    </ul>
+
+    <div class="complaint-grid">
+
+      <div class="complaint-card">
+        <div class="complaint-meta">
+          <span class="complaint-date">Sep 25, 2025</span>
+          <span class="badge badge-red">Marriott — $13,000+</span>
+        </div>
+        <p class="complaint-body">"TCR wrote two letters that Marriott completely ignored, then stalled waiting for responses. Marriott filed a Notice of Default/Foreclosure while TCR went silent. TCR also never returned original signed documents. <strong>BUYER BEWARE.</strong>"</p>
+      </div>
+
+      <div class="complaint-card">
+        <div class="complaint-meta">
+          <span class="complaint-date">Mar 31, 2025</span>
+          <span class="badge badge-red">Out-of-State Attorney</span>
+        </div>
+        <p class="complaint-body">"TCR assigned an out-of-state lawyer who couldn't legally represent the client in their jurisdiction. A court judgment was entered against the client because the 'handling' attorney failed to actually handle it."</p>
+      </div>
+
+      <div class="complaint-card">
+        <div class="complaint-meta">
+          <span class="complaint-date">Jun 21, 2024</span>
+          <span class="badge badge-amber">Refund Failure</span>
+        </div>
+        <p class="complaint-body">"Client cancelled within two weeks. A DocuSign refund agreement promised a full refund within 90 days. 90+ days later, no refund. TCR staff: <strong>'Due to changes in accountant and staff, we are backlogged but it will be paid.'</strong>"</p>
+      </div>
+
+      <div class="complaint-card">
+        <div class="complaint-meta">
+          <span class="complaint-date">May 2025 — Trustpilot</span>
+          <span class="badge badge-dark">Default Strategy</span>
+        </div>
+        <p class="complaint-body">"The lawyer that wrote the letter for us just rewrote the letter that we wrote originally. That is all that was done and now they say they are done. <strong>We paid thousands of dollars for a letter.</strong> They made promises that they did not keep — they are as bad as the timeshare people."</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION 5: MARRIOTT PATH -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">The Marriott Direct Exit — What TCR Doesn't Tell You</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <p style="margin-bottom:16px;">TCR's single documented Marriott case resulted in a $13,000 loss for the consumer and a Notice of Default. What TCR does not prominently disclose is that <strong>Marriott Vacation Club maintains its own direct exit program</strong> — listed on ARDA's official Responsible Exit directory.</p>
+
+    <div class="pullquote">
+      <p>"If they're truly only charging $400, pay it and get out. It won't get easier than that."</p>
+      <cite>— Reddit r/TimeshareOwners, on the Marriott direct exit program</cite>
+    </div>
+
+    <div class="marriott-box">
+      <div class="box-title">✓ Marriott Vacation Club — Official Exit Program (April 2026)</div>
+      <p style="font-size:0.9rem; margin-bottom:4px;">Marriott operates a dedicated Exit Services team accessible through Owner Services. The program is active, legitimate, and listed on the industry's verified Responsible Exit directory (responsibleexit.com).</p>
+      <div class="marriott-specs">
+        <div class="spec-item">
+          <span class="spec-label">Cost</span>
+          <span class="spec-val">$0–$400</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Timeline</span>
+          <span class="spec-val">120–180 days</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Requirements</span>
+          <span class="spec-val">Loan paid, MFs current</span>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:16px; font-size:0.88rem; color:var(--muted);">Note: Marriott does not accept deed-backs on contracts with outstanding loan balances. Owners with active financing should contact MVC Owner Services to discuss eligibility before engaging any third-party exit company.</p>
+  </div>
+
+</div><!-- /content -->
+
+<!-- VERDICT -->
+<div class="content">
+  <div class="verdict-section">
+    <h2>Our Finding</h2>
+    <p>Timeshare Contract Resolution presents itself as a 16-year-old consumer advocacy leader. The documentary record tells a different story. The brand is a trade name for <strong>Light On Marketing, LLC</strong> — one of several entities controlled by Rich Folk and Bo Wilson, whose primary enterprise (Pandora Marketing / Timeshare Compliance) has declared bankruptcy twice and faces a recommended federal disgorgement award of over $16 million.</p>
+    <p>The domain that carries the "Timeshare Contract Resolution" brand was registered in July 2019 — a decade after their claimed founding date, with zero archived web presence to bridge the gap. Federal courts have already entered a permanent injunction against an attorney who accepted client referrals from this network.</p>
+    <p>Consumers considering this company are advised to: <strong>(1)</strong> contact their timeshare developer directly about any official exit or deed-back program before paying any third party; <strong>(2)</strong> demand all fees in writing before any screening call or document submission; <strong>(3)</strong> independently verify that any assigned attorney is licensed in the relevant jurisdiction; and <strong>(4)</strong> review the FTC's consumer guidance on timeshare exit companies at consumer.ftc.gov.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-inner">
+    <span class="footprintiq-mark">FootprintIQ</span>
+    <p>This brief was produced through independent consumer research using publicly available records.<br>
+    Sources include: CourtListener / PACER RECAP Archive · WHOIS / RDAP · Internet Archive Wayback Machine<br>
+    Better Business Bureau · Trustpilot · Federal Trade Commission consumer guidance<br><br>
+    This document is not legal advice. No compensation was received from any party.<br>
+    © 2026 FootprintIQ — Independent Consumer Intelligence</p>
+  </div>
+</div>
+
+</body>
+</html>
